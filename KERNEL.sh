@@ -4,9 +4,9 @@ sudo pacman -Sy --noconfirm --quiet bc coreutils cpio gettext initramfs kmod lib
 wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.2.tar.xz && \
 sudo tar -xvf linux-6.*.tar.xz && \
 cd linux-6.15.2 && \
-sudo make clean && \
-sudo make mrproper && \
-sudo make defconfig;
+sudo make clean -j$(nproc) && \
+sudo make mrproper -j$(nproc) && \
+sudo make defconfig -j$(nproc);
 
 #DESATIVAR SWAP
 sudo sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' .config;
@@ -77,8 +77,9 @@ sudo sed -i 's/^.*CONFIG_RANDOMIZE_MEMORY.*$/CONFIG_RANDOMIZE_MEMORY=n/' .config
 sudo sed -i 's/^.*CONFIG_DEBUG_KERNEL.*$/CONFIG_DEBUG_KERNEL=n/' .config;
 sudo sed -i 's/^.*CONFIG_DEBUG_MISC.*$/CONFIG_DEBUG_MISC=n/' .config;
 
+#DESATIVAR AUDIT
 sudo sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' .config;
 
 sudo make -j$(nproc) && \
-sudo make modules_install && \
-sudo make install;
+sudo make modules_install -j$(nproc) && \
+sudo make install -j$(nproc);
