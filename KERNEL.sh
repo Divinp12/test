@@ -73,6 +73,12 @@ sudo sed -i 's/^.*CONFIG_NTFS_FS.*$/CONFIG_NTFS_FS=n/' .config;
 sudo sed -i 's/^.*CONFIG_RANDOMIZE_BASE.*$/CONFIG_RANDOMIZE_BASE=n/' .config;
 sudo sed -i 's/^.*CONFIG_RANDOMIZE_MEMORY.*$/CONFIG_RANDOMIZE_MEMORY=n/' .config;
 
+#DESATIVAR DEBUG
+sudo sed -i 's/^.*CONFIG_DEBUG_KERNEL.*$/CONFIG_DEBUG_KERNEL=n/' .config;
+sudo sed -i 's/^.*CONFIG_DEBUG_MISC.*$/CONFIG_DEBUG_MISC=n/' .config;
+
+CONFIG_AUDIT=n/' .config;
+
 sudo make -j$(nproc) && \
 sudo make modules_install && \
 sudo make install;
