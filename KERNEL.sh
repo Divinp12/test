@@ -82,6 +82,12 @@ sudo sed -i 's/^.*CONFIG_DEBUG_SG.*$/CONFIG_DEBUG_SG=n/' .config;
 sudo sed -i 's/^.*CONFIG_DEBUG_NOTIFIERS.*$/CONFIG_DEBUG_NOTIFIERS=n/' .config;
 sudo sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' .config;
 
+#DESATIVAR KASAN
+sudo sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' .config;
+
+#DESATIVAR HYPERV
+sudo sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' .config;
+
 #DESATIVAR AUDIT
 sudo sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' .config;
 
