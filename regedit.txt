@@ -1,0 +1,115 @@
+HKEY_CURRENT_USER\Control Panel\Desktop
+
+UserPreferencesMask = 00 00 00 00 00 00 00 00
+MenuShowDelay = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\edgeupdate
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\edgeupdatem
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Telemetry
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Themes
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\fastfat
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Fax
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\VSS
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Spooler
+
+Start = 4
+Type = 0
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
+
+EnableSuperfetch = 0
+
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games
+
+Priority = 6
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile
+
+EnableFirewall = 0
+DisableNotifications = 1
+
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile
+
+EnableFirewall = 0
+DisableNotifications = 1
+
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects
+
+VisualFXSetting = 3
