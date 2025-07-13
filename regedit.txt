@@ -105,6 +105,16 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushservice
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WindowsTrustedRT
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WindowsTrustedRTProxy
+
+Start = 4
+Type = 0
+
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
 
 EnableSuperfetch = 0
