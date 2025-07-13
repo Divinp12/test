@@ -3,6 +3,9 @@ HKEY_CURRENT_USER\Control Panel\Desktop
 UserPreferencesMask = 00 00 00 00 00 00 00 00
 MenuShowDelay = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control
+
+WaitToKillServiceTimeout = 0
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain
 
