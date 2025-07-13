@@ -90,6 +90,15 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Spooler
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TPM
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HyperVideo
+
+Start = 4
+Type = 0
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
 
