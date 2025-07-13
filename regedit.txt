@@ -120,6 +120,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ahcache
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinMad
+
+Start = 4
+Type = 0
+
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
 
 EnableSuperfetch = 0
