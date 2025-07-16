@@ -18,6 +18,20 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagsvc
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DoSvc
+
+Start = 4
+Type = 0
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\edgeupdate
 
