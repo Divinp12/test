@@ -139,6 +139,36 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinMad
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblAuthManager
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblGameSave
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xboxgip
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxGipSvc
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc
+
+Start = 4
+Type = 0
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xinputhid
+
+Start = 4
+Type = 0
+
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
 
 EnableSuperfetch = 0
