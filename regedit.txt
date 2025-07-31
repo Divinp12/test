@@ -169,6 +169,17 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xinputhid
 Start = 4
 Type = 0
 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
+
+DisableDeleteNotification = 1
+NtfsDisable8dot3NameCreation = 1
+NtfsDisableCompression = 1
+NtfsDisableEncryption = 1
+NtfsDisableLastAccessUpdate = 1
+NtfsDisableLfsDowngrade = 1
+NtfsDisableVolsnapHints = 1
+NtfsMemoryUsage = 2
+
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
 
 EnableSuperfetch = 0
