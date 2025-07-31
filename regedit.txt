@@ -170,6 +170,14 @@ Start = 4
 Type = 0
 
 
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM
+
+AlwaysHibernateThumbnails = 0
+Composition = 0
+EnableAeroPeek = 0
+EnableWindowColorization = 0
+
+
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
 
 DisableDeleteNotification = 1
