@@ -1,6 +1,8 @@
 use std::process::{Command, Stdio};
 
 fn main() {
+    println!("Atualizando repositórios...");
+    
     let status = Command::new("pacman")
         .arg("-Sy")
         .stdout(Stdio::null())
