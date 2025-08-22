@@ -1,10 +1,10 @@
 use std::process::{Command, Stdio};
 
 fn main() {
-    let status = Command::new("sudo")
-        .arg("pacman")
+    let status = Command::new("pacman")
         .arg("-Syu")
         .arg("--noconfirm")
+        .arg("--quiet")
         .stdout(Stdio::null())
         .stderr(Stdio::null())
         .status()
