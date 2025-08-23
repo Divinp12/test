@@ -1,7 +1,7 @@
 use std::process::{Command, Stdio};
 
 fn main() {
-    println!("Atualizando repositórios...");
+    println!("Atualizando repositórios");
     
     let status = Command::new("pacman")
         .arg("-Sy")
@@ -13,6 +13,6 @@ fn main() {
     if status.success() {
         println!("Atualização concluída");
     } else {
-        eprintln!("Falha na atualização.");
+        eprintln!("Falha na atualização");
     }
 }
