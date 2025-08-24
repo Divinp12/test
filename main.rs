@@ -56,6 +56,30 @@ let _ = Command::new("clear")
 .stderr(Stdio::null())
 .status();
 }
+
+
+
+println!("atualizando repositorios");
+let status3 = Command::new("pacman")
+.arg("-Sy")
+.arg("--noconfirm")
+.arg("--quiet")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status()
+.expect("algo deu errado ao executar comando de atualizar repositorios");
+if status3.success() {
+println!("sucesso");
+let _ = Command::new("sleep")
+.arg("3")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+let _ = Command::new("clear")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+}
         
         else {
         eprintln!("falha na atualização");
