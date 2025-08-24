@@ -9,7 +9,7 @@ let status1 = Command::new("sh")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
-.expect("algo deu errado ao executar comando de adicionar espelho brasileiro");
+.expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
 println!("sucesso");
 let _ = Command::new("sleep")
@@ -43,7 +43,7 @@ Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
-.expect("algo deu errado ao executar comando de sobscrever arquivo pacman.conf");
+.expect("algo deu errado ao sobscrever arquivo pacman.conf");
 if status2.success() {
 println!("sucesso");
 let _ = Command::new("sleep")
@@ -66,7 +66,7 @@ let status3 = Command::new("pacman")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
-.expect("algo deu errado ao executar comando de atualizar repositorios");
+.expect("algo deu errado ao atualizar repositorios");
 if status3.success() {
 println!("sucesso");
 let _ = Command::new("sleep")
@@ -122,8 +122,50 @@ fi"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
-.expect("algo deu errado ao executar comando de formatar 1 disco rigido valido");
+.expect("algo deu errado ao formatar 1 disco rigido valido");
 if status4.success() {
+println!("sucesso");
+let _ = Command::new("sleep")
+.arg("3")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+let _ = Command::new("clear")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+}
+
+
+
+println!("instalando pacotes do sistema");
+let status5 = Command::new("pacstrap")
+.arg("/mnt")
+.arg("--noconfirm")
+.arg("base")
+.arg("base-devel")
+.arg("linux")
+.arg("linux-firmware")
+.arg("linux-headers")
+.arg("networkmanager")
+.arg("sudo")
+.arg("git")
+.arg("fastfetch")
+.arg("mesa")
+.arg("plasma")
+.arg("wayland")
+.arg("lib32-wayland")
+.arg("xorg-xwayland")
+.arg("foot")
+.arg("pulseaudio")
+.arg("pavucontrol")
+.arg("grub-efi-x86_64")
+.arg("efibootmgr")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status()
+.expect("algo deu errado ao instalar pacotes do sistema");
+if status5.success() {
 println!("sucesso");
 let _ = Command::new("sleep")
 .arg("3")
