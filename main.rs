@@ -5,7 +5,7 @@ fn main() {
 println!("adicionando espelho brasileiro");
 let status1 = Command::new("sh")
 .arg("-c")
-.arg("echo 'Server=https://mirror.ufscar.br/archlinux/\\$repo/os/\\$arch' > /etc/pacman.d/mirrorlist")
+.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/\$repo/os/\$arch' > /etc/pacman.d/mirrorlist"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
@@ -28,7 +28,7 @@ let _ = Command::new("clear")
 println!("sobscrevendo arquivo pacman.conf");
 let status2 = Command::new("sh")
 .arg("-c")
-.arg("echo '[options]
+.arg(r#"echo '[options]
 Architecture=auto
 CheckSpace
 ParallelDownloads=1
@@ -39,7 +39,7 @@ Include=/etc/pacman.d/mirrorlist
 [extra]
 Include=/etc/pacman.d/mirrorlist
 [multilib]
-Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf")
+Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
