@@ -84,7 +84,7 @@ let _ = Command::new("clear")
 
 
 println!("formatando 1 disco rigido valido");
-let status3 = Command::new("sh")
+let status4 = Command::new("sh")
 .arg("-c")
 .arg("if dd if=/dev/zero of=/dev/nvme0n1p bs=64M")
 .arg("&&")
@@ -96,37 +96,76 @@ let status3 = Command::new("sh")
 .arg("&&")
 .arg("parted /dev/nvme0n1p mkpart primary ext4 1025MiB 30721MiB")
 .arg("&&")
-parted /dev/nvme0n1p mkpart primary ext4 30721MiB 100% &&
-partprobe &&
-mkfs.fat -F32 /dev/nvme0n1p1 &&
-mkfs.ext4 -F /dev/nvme0n1p2 &&
-mkfs.ext4 -F /dev/nvme0n1p3 &&
-mount /dev/nvme0n1p2 /mnt &&
-mkdir /mnt/boot &&
-mkdir /mnt/boot/EFI &&
-mkdir /mnt/home &&
-mount /dev/nvme0n1p1 /mnt/boot/EFI &&
-mount /dev/nvme0n1p3 /mnt/home
-
-else
-
-dd if=/dev/zero of=/dev/sda bs=64M && \
-parted /dev/sda mklabel gpt && \
-parted /dev/sda mkpart ESP fat32 1MiB 1025MiB && \
-parted /dev/sda set 1 esp on && \
-parted /dev/sda mkpart primary ext4 1025MiB 30721MiB && \
-parted /dev/sda mkpart primary ext4 30721MiB 100% && \
-partprobe && \
-mkfs.fat -F32 /dev/sda1 && \
-mkfs.ext4 -F /dev/sda2 && \
-mkfs.ext4 -F /dev/sda3 && \
-mount /dev/sda2 /mnt && \
-mkdir /mnt/boot && \
-mkdir /mnt/boot/EFI && \
-mkdir /mnt/home && \
-mount /dev/sda1 /mnt/boot/EFI && \
-mount /dev/sda3 /mnt/home
-fi
+.arg("parted /dev/nvme0n1p mkpart primary ext4 30721MiB 100%")
+.arg("&&")
+.arg("partprobe")
+.arg("&&")
+.arg("mkfs.fat -F32 /dev/nvme0n1p1")
+.arg("&&")
+.arg("mkfs.ext4 -F /dev/nvme0n1p2")
+.arg("&&")
+.arg("mkfs.ext4 -F /dev/nvme0n1p3")
+.arg("&&")
+.arg("mount /dev/nvme0n1p2 /mnt")
+.arg("&&")
+.arg("mkdir /mnt/boot")
+.arg("&&")
+.arg("mkdir /mnt/boot/EFI")
+.arg("&&")
+.arg("mkdir /mnt/home")
+.arg("&&")
+.arg("mount /dev/nvme0n1p1 /mnt/boot/EFI")
+.arg("&&")
+.arg("mount /dev/nvme0n1p3 /mnt/home
+else")
+.arg("dd if=/dev/zero of=/dev/sda bs=64M")
+.arg("&&")
+.arg("parted /dev/sda mklabel gpt")
+.arg("&&")
+.arg("parted /dev/sda mkpart ESP fat32 1MiB 1025MiB")
+.arg("&&")
+.arg("parted /dev/sda set 1 esp on")
+.arg("&&")
+.arg("parted /dev/sda mkpart primary ext4 1025MiB 30721MiB")
+.arg("&&")
+.arg("parted /dev/sda mkpart primary ext4 30721MiB 100%")
+.arg("&&")
+.arg("partprobe")
+.arg("&&")
+.arg("mkfs.fat -F32 /dev/sda1")
+.arg("&&")
+.arg("mkfs.ext4 -F /dev/sda2")
+.arg("&&")
+.arg("mkfs.ext4 -F /dev/sda3")
+.arg("&&")
+.arg("mount /dev/sda2 /mnt")
+.arg("&&")
+.arg("mkdir /mnt/boot")
+.arg("&&")
+.arg("mkdir /mnt/boot/EFI")
+.arg("&&")
+.arg("mkdir /mnt/home")
+.arg("&&")
+.arg("mount /dev/sda1 /mnt/boot/EFI")
+.arg("&&")
+.arg("mount /dev/sda3 /mnt/home
+fi")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status()
+.expect("algo deu errado ao executar comando de formatar 1 disco rigido valido");
+if status4.success() {
+println!("sucesso");
+let _ = Command::new("sleep")
+.arg("3")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+let _ = Command::new("clear")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+}
         
         else {
         eprintln!("falha na atualização");
