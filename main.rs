@@ -12,7 +12,15 @@ let status1 = Command::new("sh")
 .expect("algo deu errado ao executar comando de adicionar espelho brasileiro");
 if status1.success() {
 println!("sucesso");
-let _ = Command::new("clear").status();
+let _ = Command::new("sleep")
+.arg("3")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+let _ = Command::new("clear")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
 }
 
 
@@ -38,7 +46,15 @@ Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf")
 .expect("algo deu errado ao executar comando de sobscrever arquivo pacman.conf");
 if status2.success() {
 println!("sucesso");
-let _ = Command::new("clear").status();
+let _ = Command::new("sleep")
+.arg("3")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
+let _ = Command::new("clear")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.status();
 }
         
         else {
