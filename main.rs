@@ -10,14 +10,13 @@ let status1 = Command::new("sh")
 .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
 println!("sucesso");
 thread::sleep(Duration::from_secs(3));
 let _ = Command::new("clear")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
 .status();
 }
 
@@ -40,6 +39,7 @@ Include=/etc/pacman.d/mirrorlist
 Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao sobscrever arquivo pacman.conf");
 if status2.success() {
