@@ -2,6 +2,12 @@ use std::process::{Command, Stdio};
 use std::thread;
 use std::time::Duration;
 
+fn pausa_e_limpar () { thread::sleep(Duration::from_secs(3));
+                       let _ = Command::new("clear")
+                       .status();
+                     }
+
+
 fn main() {
 
 println!("adicionando espelho brasileiro");
@@ -15,9 +21,7 @@ let status1 = Command::new("sh")
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
 println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
-.status();
+pausa_e_limpar ();
 }
 
 
