@@ -3,7 +3,7 @@ use std::thread;
 use std::time::Duration;
 
 
-// atalhos
+// atalhos para facilita
 
 fn pausa_e_limpar ()       { 
                              thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
@@ -17,21 +17,21 @@ fn sem_mensagem_e_input () {
                              .stdin(Stdio::null())                  // redirecionar input de teclado, mouse, etc para lugar nenhum.
                            }
 
-// executar
+
+// executa formatacao
   
 fn main() {
-
-println!("adicionando espelho brasileiro");
-let status1 = Command::new("sh")
-.arg("-c")
-.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
-sem_mensagem_e_input ();
-.status()
-.expect("algo deu errado ao adicionar espelho brasileiro");
-if status1.success() {
-println!("sucesso");
-pausa_e_limpar ();
-}
+           println!("adicionando espelho brasileiro");
+           let status1 = Command::new("sh")
+           .arg("-c")
+           .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
+           sem_mensagem_e_input ();
+           .status()
+           .expect("algo deu errado ao adicionar espelho brasileiro");
+           if status1.success() {
+           println!("sucesso");
+           pausa_e_limpar ();
+          }
 
 
 
