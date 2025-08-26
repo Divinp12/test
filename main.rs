@@ -25,9 +25,7 @@ println!("adicionando espelho brasileiro");
 let status1 = Command::new("sh")
 .arg("-c")
 .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.stdin(Stdio::null())
+sem_mensagem_e_input ();
 .status()
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
@@ -52,22 +50,12 @@ Include=/etc/pacman.d/mirrorlist
 Include=/etc/pacman.d/mirrorlist
 [multilib]
 Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.stdin(Stdio::null())
+sem_mensagem_e_input ();
 .status()
 .expect("algo deu errado ao sobscrever arquivo pacman.conf");
 if status2.success() {
 println!("sucesso");
-let _ = Command::new("sleep")
-.arg("3")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
-let _ = Command::new("clear")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
+pausa_e_limpar ();
 }
 
 
@@ -76,21 +64,12 @@ println!("atualizando repositorios");
 let status3 = Command::new("pacman")
 .arg("-Sy")
 .arg("--noconfirm")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
+sem_mensagem_e_input ();
 .status()
 .expect("algo deu errado ao atualizar repositorios");
 if status3.success() {
 println!("sucesso");
-let _ = Command::new("sleep")
-.arg("3")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
-let _ = Command::new("clear")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
+pausa_e_limpar ();
 }
 
 
@@ -132,21 +111,12 @@ mkdir /mnt/home && \
 mount /dev/sda1 /mnt/boot/EFI && \
 mount /dev/sda3 /mnt/home
 fi"#)
-.stdout(Stdio::null())
-.stderr(Stdio::null())
+sem_mensagem_e_input ();
 .status()
 .expect("algo deu errado ao formatar 1 disco rigido valido");
 if status4.success() {
 println!("sucesso");
-let _ = Command::new("sleep")
-.arg("3")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
-let _ = Command::new("clear")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
+pausa_e_limpar ();
 }
 
 
@@ -174,21 +144,12 @@ let status5 = Command::new("pacstrap")
 .arg("pavucontrol")
 .arg("grub-efi-x86_64")
 .arg("efibootmgr")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
+sem_mensagem_e_input ();
 .status()
 .expect("algo deu errado ao instalar pacotes do sistema");
 if status5.success() {
 println!("sucesso");
-let _ = Command::new("sleep")
-.arg("3")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
-let _ = Command::new("clear")
-.stdout(Stdio::null())
-.stderr(Stdio::null())
-.status();
+pausa_e_limpar ();
 }
         
         else {
