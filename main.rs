@@ -21,23 +21,23 @@ fn sem_mensagem_e_input () {
 // executa formatacao
   
 fn main() {
-           println!("adicionando espelho brasileiro");
-           let status1 = Command::new("sh")
-           .arg("-c")
-           .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
-           sem_mensagem_e_input ();
-           .status()
-           .expect("algo deu errado ao adicionar espelho brasileiro");
-           if status1.success() {
-           println!("sucesso");
-           pausa_e_limpar ();
-           }
+println!("adicionando espelho brasileiro");
+let status1 = Command::new("sh")
+.arg("-c")
+.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar espelho brasileiro");
+if status1.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
 
   
-           println!("sobscrevendo arquivo pacman.conf");
-           let status2 = Command::new("sh")
-           .arg("-c")
-           .arg(r#"echo '[options]
+println!("sobscrevendo arquivo pacman.conf");
+let status2 = Command::new("sh")
+.arg("-c")
+.arg(r#"echo '[options]
 Architecture=auto
 CheckSpace
 ParallelDownloads=1
@@ -49,26 +49,26 @@ Include=/etc/pacman.d/mirrorlist
 Include=/etc/pacman.d/mirrorlist
 [multilib]
 Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
-           sem_mensagem_e_input ();
-           .status()
-           .expect("algo deu errado ao sobscrever arquivo pacman.conf");
-           if status2.success() {
-           println!("sucesso");
-           pausa_e_limpar ();
-           }
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao sobscrever arquivo pacman.conf");
+if status2.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
 
 
-           println!("atualizando repositorios");
-           let status3 = Command::new("pacman")
-           .arg("-Sy")
-           .arg("--noconfirm")
-           sem_mensagem_e_input ();
-           .status()
-           .expect("algo deu errado ao atualizar repositorios");
-           if status3.success() {
-           println!("sucesso");
-           pausa_e_limpar ();
-           }
+println!("atualizando repositorios");
+let status3 = Command::new("pacman")
+.arg("-Sy")
+.arg("--noconfirm")
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao atualizar repositorios");
+if status3.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
 
 
 
