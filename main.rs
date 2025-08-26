@@ -21,6 +21,8 @@ fn sem_mensagem_e_input () {
 // executa formatacao
   
 fn main() {
+
+
 println!("adicionando espelho brasileiro");
 let status1 = Command::new("sh")
 .arg("-c")
