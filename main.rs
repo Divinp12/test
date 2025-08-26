@@ -5,7 +5,7 @@ fn main() {
 println!("adicionando espelho brasileiro");
 let status1 = Command::new("sh")
 .arg("-c")
-.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/\$repo/os/\$arch' > /etc/pacman.d/mirrorlist"#)
+.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .status()
