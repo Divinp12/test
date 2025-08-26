@@ -2,7 +2,7 @@ use std::process::{Command, Stdio};
 use std::thread;
 use std::time::Duration;
 
-fn pausa_e_limpar () { thread::sleep(Duration::from_secs(3));
+fn pausa_e_limpar () { thread::sleep(Duration::from_secs(3));     // para mudar duracao da pausa mude o numero que esta depois de from_secs(
                        let _ = Command::new("clear")
                        .status();
                      }
