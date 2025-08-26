@@ -151,7 +151,21 @@ if status5.success() {
 println!("sucesso");
 pausa_e_limpar ();
 }
-        
+
+
+println!("configurando partições no arquivo fstab");
+let status6 = Command::new("sh")
+.arg("-c")
+.arg("genfstab -U -p /mnt > /mnt/etc/fstab")
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao instalar pacotes do sistema");
+if status6.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+  
         else {
         eprintln!("falha na atualização");
     }
