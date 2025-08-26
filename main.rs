@@ -2,12 +2,23 @@ use std::process::{Command, Stdio};
 use std::thread;
 use std::time::Duration;
 
-fn pausa_e_limpar () { thread::sleep(Duration::from_secs(3));     // para mudar duracao da pausa mude o numero que esta depois de from_secs(
-                       let _ = Command::new("clear")
-                       .status();
-                     }
 
+// atalhos
 
+fn pausa_e_limpar ()       { 
+                             thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
+                             let _ = Command::new("clear")
+                             .status();
+                           }
+
+fn sem_mensagem_e_input () {
+                             .stdout(Stdio::null())                 // redirecionar mensagens para lugar nenhum.
+                             .stderr(Stdio::null())                 // redirecionar mensagens de erro para lugar nenhum.
+                             .stdin(Stdio::null())                  // redirecionar input de teclado, mouse, etc para lugar nenhum.
+                           }
+
+// executar
+  
 fn main() {
 
 println!("adicionando espelho brasileiro");
