@@ -259,6 +259,19 @@ println!("sucesso");
 pausa_e_limpar ();
 }
 
+
+println!("aplicando caracteres portugues brasileiro");
+let status13 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("locale-gen")
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao aplicar caracteres portugues brasileiro");
+if status13.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
   
         else {
         eprintln!("falha na atualização");
