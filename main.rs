@@ -165,6 +165,70 @@ println!("sucesso");
 pausa_e_limpar ();
 }
 
+
+println!("adicionando nome bux ao usuario root no arquivo hostname");
+let status7 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo bux > /etc/hostname"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar nome bux ao usuario root no arquivo hostname");
+if status7.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("adicionando senha bux ao usuario root");
+let status8 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo -e 'bux\nbux' | passwd root"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar senha bux ao usuario root");
+if status8.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("adicionando usuario normal com nome bux");
+let status9 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("useradd")
+.arg("-m")
+.arg("-g")
+.arg("users")
+.arg("-G")
+.arg("wheel")
+.arg("bux")
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar usuario normal com nome bux");
+if status9.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("adicionando senha bux ao usuario normal");
+let status10 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo -e 'bux\nbux' | passwd bux"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar senha bux ao usuario normal");
+if status10.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
   
         else {
         eprintln!("falha na atualização");
