@@ -4,13 +4,10 @@ use std::time::Duration;
 
 // status1.expect("algo deu errado ao executar o comando").success()
 
-// atalhos para facilita
+// thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
+// let _ = Command::new("clear")
+// .status();
 
-fn pausa_e_limpar ()       { 
-                             thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
-                             let _ = Command::new("clear")
-                             .status();
-}
 // .stdout(Stdio::null()) redirecionar mensagens para lugar nenhum.
 // .stderr(Stdio::null()) redirecionar mensagens de erro para lugar nenhum.
 // .stdin(Stdio::null())  redirecionar input de teclado, mouse, etc para lugar nenhum.
@@ -32,7 +29,9 @@ let status1 = Command::new("sh")
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
   
@@ -58,7 +57,9 @@ Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
 .expect("algo deu errado ao sobscrever arquivo pacman.conf");
 if status2.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -73,7 +74,9 @@ let status3 = Command::new("pacman")
 .expect("algo deu errado ao atualizar repositorios");
 if status3.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -122,7 +125,9 @@ fi"#)
 .expect("algo deu errado ao formatar 1 disco rigido valido");
 if status4.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -157,7 +162,9 @@ let status5 = Command::new("pacstrap")
 .expect("algo deu errado ao instalar pacotes do sistema");
 if status5.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -172,7 +179,9 @@ let status6 = Command::new("sh")
 .expect("algo deu errado ao instalar pacotes do sistema");
 if status6.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -189,7 +198,9 @@ let status7 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar nome bux ao usuario root no arquivo hostname");
 if status7.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -206,7 +217,9 @@ let status8 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar senha bux ao usuario root");
 if status8.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -227,7 +240,9 @@ let status9 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar usuario normal com nome bux");
 if status9.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -244,7 +259,9 @@ let status10 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar senha bux ao usuario normal");
 if status10.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -261,7 +278,9 @@ let status11 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar caracteres portugues brasileiro");
 if status11.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -278,7 +297,9 @@ let status12 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar caracteres portugues brasileiro");
 if status12.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -293,7 +314,9 @@ let status13 = Command::new("arch-chroot")
 .expect("algo deu errado ao aplicar caracteres portugues brasileiro");
 if status13.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -309,7 +332,9 @@ let status14 = Command::new("arch-chroot")
 .expect("algo deu errado ao sincronizar relogio");
 if status14.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -326,7 +351,9 @@ let status15 = Command::new("arch-chroot")
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status15.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
 
 
@@ -371,7 +398,9 @@ sudo sed -i \"22,\\\$d\" /home/bux/.bashrc' > /home/bux/.bashrc"#)
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status16.success() {
 println!("sucesso");
-pausa_e_limpar ();
+thread::sleep(Duration::from_secs(3));
+let _ = Command::new("clear")
+.status();
 }
   
         else {
