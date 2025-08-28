@@ -272,6 +272,77 @@ println!("sucesso");
 pausa_e_limpar ();
 }
 
+
+println!("sincronizando relogio");
+let status14 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("hwclock")
+.arg("--systohc")
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao sincronizar relogio");
+if status14.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("adicionando espelho brasileiro");
+let status15 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar espelho brasileiro");
+if status15.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("sobscrevendo arquivo .bashrc");
+let status16 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'alias i=\"paru -Sy --noconfirm --quiet\";
+alias d=\"sudo pacman -Rsc\";
+alias a=\"paru -Syyu --noconfirm --quiet\";
+alias m=\"pacman -Q\";
+alias w=\"nmtui\";
+sudo rm -rf /home/bux/.bash_history;
+sudo pacman -Scc --noconfirm --quiet;
+clear;
+sudo sleep 1;
+fastfetch;
+echo \"
+INFORMAÇÕES DE PACOTES:
+INSTALAR PACOTES (i nome-do-pacote)
+DESISTALAR PACOTES (d nome-do-pacote)
+ATUALIZAR PACOTES (a nome-do-pacote ou apenas a para todos)
+MOSTRA PACOTES INSTALADOS (m nome-do-pacote ou apenas m para todos)
+EXEMPLO: i google-chrome
+
+INFORMAÇÕES DE DRIVERS:
+CONECTAR A REDE WIFI COM OU SEM FIO (w)
+\";
+git clone https://aur.archlinux.org/paru.git && \\
+chmod 777 paru && \\
+cd paru && \\
+makepkg -si --noconfirm --quiet && \\
+cd .. && \\
+sudo rm -rf paru && \\
+paru -Sy --noconfirm --quiet nano && \\
+sudo sed -i \"22,\\\$d\" /home/bux/.bashrc' > /home/bux/.bashrc"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar espelho brasileiro");
+if status16.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
   
         else {
         eprintln!("falha na atualização");
