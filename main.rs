@@ -10,13 +10,10 @@ fn pausa_e_limpar ()       {
                              thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
                              let _ = Command::new("clear")
                              .status();
-                           }
-
-fn sem_mensagem_e_input () {
-                             .stdout(Stdio::null())                 // redirecionar mensagens para lugar nenhum.
-                             .stderr(Stdio::null())                 // redirecionar mensagens de erro para lugar nenhum.
-                             .stdin(Stdio::null())                  // redirecionar input de teclado, mouse, etc para lugar nenhum.
-                           }
+}
+// .stdout(Stdio::null()) redirecionar mensagens para lugar nenhum.
+// .stderr(Stdio::null()) redirecionar mensagens de erro para lugar nenhum.
+// .stdin(Stdio::null())  redirecionar input de teclado, mouse, etc para lugar nenhum.
 
 
 // executa formatacao
@@ -28,7 +25,9 @@ println!("adicionando espelho brasileiro");
 let status1 = Command::new("sh")
 .arg("-c")
 .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status1.success() {
@@ -52,7 +51,9 @@ Include=/etc/pacman.d/mirrorlist
 Include=/etc/pacman.d/mirrorlist
 [multilib]
 Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao sobscrever arquivo pacman.conf");
 if status2.success() {
@@ -65,7 +66,9 @@ println!("atualizando repositorios");
 let status3 = Command::new("pacman")
 .arg("-Sy")
 .arg("--noconfirm")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao atualizar repositorios");
 if status3.success() {
@@ -112,7 +115,9 @@ mkdir /mnt/home && \
 mount /dev/sda1 /mnt/boot/EFI && \
 mount /dev/sda3 /mnt/home
 fi"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao formatar 1 disco rigido valido");
 if status4.success() {
@@ -145,7 +150,9 @@ let status5 = Command::new("pacstrap")
 .arg("pavucontrol")
 .arg("grub-efi-x86_64")
 .arg("efibootmgr")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao instalar pacotes do sistema");
 if status5.success() {
@@ -158,7 +165,9 @@ println!("configurando partições no arquivo fstab");
 let status6 = Command::new("sh")
 .arg("-c")
 .arg("genfstab -U -p /mnt > /mnt/etc/fstab")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao instalar pacotes do sistema");
 if status6.success() {
@@ -173,7 +182,9 @@ let status7 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo bux > /etc/hostname"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar nome bux ao usuario root no arquivo hostname");
 if status7.success() {
@@ -188,7 +199,9 @@ let status8 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo -e 'bux\nbux' | passwd root"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar senha bux ao usuario root");
 if status8.success() {
@@ -207,7 +220,9 @@ let status9 = Command::new("arch-chroot")
 .arg("-G")
 .arg("wheel")
 .arg("bux")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar usuario normal com nome bux");
 if status9.success() {
@@ -222,7 +237,9 @@ let status10 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo -e 'bux\nbux' | passwd bux"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar senha bux ao usuario normal");
 if status10.success() {
@@ -237,7 +254,9 @@ let status11 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar caracteres portugues brasileiro");
 if status11.success() {
@@ -252,7 +271,9 @@ let status12 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo 'LANG=pt_BR.UTF-8' > /etc/locale.conf"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar caracteres portugues brasileiro");
 if status12.success() {
@@ -265,7 +286,9 @@ println!("aplicando caracteres portugues brasileiro");
 let status13 = Command::new("arch-chroot")
 .arg("/mnt")
 .arg("locale-gen")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao aplicar caracteres portugues brasileiro");
 if status13.success() {
@@ -279,7 +302,9 @@ let status14 = Command::new("arch-chroot")
 .arg("/mnt")
 .arg("hwclock")
 .arg("--systohc")
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao sincronizar relogio");
 if status14.success() {
@@ -294,7 +319,9 @@ let status15 = Command::new("arch-chroot")
 .arg("sh")
 .arg("-c")
 .arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status15.success() {
@@ -337,7 +364,9 @@ cd .. && \\
 sudo rm -rf paru && \\
 paru -Sy --noconfirm --quiet nano && \\
 sudo sed -i \"22,\\\$d\" /home/bux/.bashrc' > /home/bux/.bashrc"#)
-sem_mensagem_e_input ();
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
 .status()
 .expect("algo deu errado ao adicionar espelho brasileiro");
 if status16.success() {
