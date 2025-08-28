@@ -2,6 +2,7 @@ use std::process::{Command, Stdio};
 use std::thread;
 use std::time::Duration;
 
+// status1.expect("algo deu errado ao executar o comando").success()
 
 // atalhos para facilita
 
