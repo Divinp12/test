@@ -229,6 +229,36 @@ println!("sucesso");
 pausa_e_limpar ();
 }
 
+
+println!("adicionando caracteres portugues brasileiro");
+let status11 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar caracteres portugues brasileiro");
+if status11.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
+
+println!("adicionando idioma portugues brasileiro");
+let status12 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'LANG=pt_BR.UTF-8' > /etc/locale.conf"#)
+sem_mensagem_e_input ();
+.status()
+.expect("algo deu errado ao adicionar caracteres portugues brasileiro");
+if status12.success() {
+println!("sucesso");
+pausa_e_limpar ();
+}
+
   
         else {
         eprintln!("falha na atualização");
