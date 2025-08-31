@@ -370,5 +370,35 @@ Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::f
 Ok(_) => {println!("falha ao sobscreve arquivo .bashrc");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
-  
+
+
+println!("sobscrevendo arquivo pacman.conf")
+let status17 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo '[options]
+Architecture=auto
+CheckSpace
+ParallelDownloads=1
+SigLevel=Required DatabaseOptional
+LocalFileSigLevel=Optional
+[core]
+Include=/etc/pacman.d/mirrorlist
+[extra]
+Include=/etc/pacman.d/mirrorlist
+[multilib]
+Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status17 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sobscreve arquivo pacman.conf");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+
 }
