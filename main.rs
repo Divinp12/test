@@ -25,13 +25,11 @@ let status1 = Command::new("sh")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar espelho brasileiro");
-if status1.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status3 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao atualizar repositórios");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
   
