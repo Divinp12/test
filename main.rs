@@ -26,9 +26,9 @@ let status1 = Command::new("sh")
 .stderr(Stdio::null())
 .stdin(Stdio::null())
 .status();
-match status3 {
+match status1 {
 Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
-Ok(_) => {println!("falha ao atualizar repositórios");}
+Ok(_) => {println!("falha ao adicionar espelho brasileiro");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
@@ -51,13 +51,11 @@ Include=/etc/pacman.d/mirrorlist' > /etc/pacman.conf"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao sobscrever arquivo pacman.conf");
-if status2.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status2 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sobscrever arquivo pacman.conf");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -68,13 +66,11 @@ let status3 = Command::new("pacman")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao atualizar repositorios");
-if status3.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status3 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao atualizar repositorios");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -119,13 +115,11 @@ fi"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao formatar 1 disco rigido valido");
-if status4.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status4 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao formata 1 disco rigido valido");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -156,13 +150,11 @@ let status5 = Command::new("pacstrap")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao instalar pacotes do sistema");
-if status5.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status5 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao instala pacotes do sistema");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -173,13 +165,11 @@ let status6 = Command::new("sh")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao instalar pacotes do sistema");
-if status6.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status6 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao configura partições no arquivo fstab");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -192,13 +182,11 @@ let status7 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar nome bux ao usuario root no arquivo hostname");
-if status7.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status7 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar nome bux ao usuario root no arquivo hostname");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -211,13 +199,11 @@ let status8 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar senha bux ao usuario root");
-if status8.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status8 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar senha bux ao usuario root");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -234,13 +220,11 @@ let status9 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar usuario normal com nome bux");
-if status9.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status9 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar usuario normal com nome bux");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -253,13 +237,11 @@ let status10 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar senha bux ao usuario normal");
-if status10.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status10 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar senha bux ao usuario normal");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -272,13 +254,11 @@ let status11 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar caracteres portugues brasileiro");
-if status11.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status11 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar caracteres portugues brasileiro");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -291,13 +271,11 @@ let status12 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar caracteres portugues brasileiro");
-if status12.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status12 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar idioma portugues brasileiro");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -308,13 +286,11 @@ let status13 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao aplicar caracteres portugues brasileiro");
-if status13.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status13 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao aplica caracteres portugues brasileiro");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -326,13 +302,11 @@ let status14 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao sincronizar relogio");
-if status14.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status14 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sincroniza relogio");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -345,13 +319,11 @@ let status15 = Command::new("arch-chroot")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar espelho brasileiro");
-if status15.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status15 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar espelho brasileiro");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
@@ -392,16 +364,11 @@ sudo sed -i \"22,\\\$d\" /home/bux/.bashrc' > /home/bux/.bashrc"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
-.status()
-.expect("algo deu errado ao adicionar espelho brasileiro");
-if status16.success() {
-println!("sucesso");
-thread::sleep(Duration::from_secs(3));
-let _ = Command::new("clear")
 .status();
+match status16 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sobscreve arquivo .bashrc");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
   
-        else {
-        eprintln!("falha na atualização");
-    }
 }
