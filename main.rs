@@ -473,4 +473,81 @@ Ok(_) => {println!("falha ao escanea hardware nvidia e instala drivers nvidia");
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
+
+println!("habilitando driver wifi na inicialização do sistema")
+let status22 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("systemctl")
+.arg("enable")
+.arg("NetworkManager")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status22 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao habilita driver wifi na inicialização do sistema");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("desativando serviços inuteis na inicialização do sistema")
+let status23 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("systemctl")
+.arg("disable")
+.arg("NetworkManager-wait-online")
+.arg("systemd-networkd")
+.arg("systemd-timesyncd")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status23 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao desativa serviços inuteis na inicialização do sistema");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("gerando imagens no inicializador do sistema")
+let status24 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("mkinitcpio")
+.arg("-P")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status24 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao gera imagens no inicializador do sistema");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("sobscrevendo arquivo grub")
+let status25 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR="BUX"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=0 panic=0 mitigations=off"
+GRUB_CMDLINE_LINUX=""
+GRUB_PRELOAD_MODULES="part_gpt part_msdos"
+GRUB_GFXMODE=auto
+GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_DISABLE_RECOVERY=true' > /etc/default/grub"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status25 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sobscreve arquivo grub");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
 }
