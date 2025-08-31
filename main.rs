@@ -400,5 +400,77 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
+println!("sincronizando repositorios do pacman")
+let status18 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("pacman")
+.arg("-Sy")
+.arg("--noconfirm")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status18 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao sincroniza repositorios do pacman");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("escaneando hardware amd e instalando drivers amd")
+let status19 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"if lspci | grep -i amd; then
+pacman -Sy --noconfirm amd-ucode vulkan-radeon lib32-vulkan-radeon
+fi"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status19 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao escanea hardware amd e instala drivers amd");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("escaneando hardware intel e instalando drivers intel")
+let status20 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"if lspci | grep -i intel; then
+pacman -Sy --noconfirm intel-ucode vulkan-intel lib32-vulkan-intel
+fi"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status20 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao escanea hardware intel e instala drivers intel");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("escaneando hardware nvidia e instalando drivers nvidia")
+let status21 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"if lspci | grep -i nvidia; then
+pacman -Sy --noconfirm nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
+fi"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status21 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao escanea hardware nvidia e instala drivers nvidia");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
 
 }
