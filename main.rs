@@ -550,4 +550,106 @@ Ok(_) => {println!("falha ao sobscreve arquivo grub");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
+
+println!("configurando grub")
+let status26 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("grub-install")
+.arg("--target=x86_64-efi")
+.arg("--efi-directory=/boot/EFI")
+.arg("--bootloader-id=.")
+.arg("--recheck")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status26 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao configura grub");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("adicionando grub na inicialização")
+let status27 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("grub-mkconfig")
+.arg("-o")
+.arg("/boot/grub/grub.cfg")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status27 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar grub na inicializacao");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("adicionando usuario normal (bux) ao sudo no arquivo sudoers")
+let status28 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'bux ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status28 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar usuario normal (bux) ao sudo no arquivo sudoers");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("adicionando conexão ipv6 no sistema")
+let status29 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo '127.0.0.1 localhost.localdomain localhost
+::1 localhost.localdomain localhost
+127.0.0.1 bux.localdomain bux' > /etc/hosts"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status29 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adicionar conexão ipv6 no sistema");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("removendo linhas que começam com jogo da velha e espaços vazios")
+let status30 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sed -i '/^\s*#/d; /^\s*$/d'")
+.arg("/home/bux/.bash_profile")
+.arg("/home/bux/.bash_logout")
+.arg("/etc/environment")
+.arg("/etc/gai.conf")
+.arg("/etc/sudoers")
+.arg("/etc/sudo.conf")
+.arg("/etc/host.conf")
+.arg("/etc/healthd.conf")
+.arg("/etc/mkinitcpio.conf")
+.arg("/etc/libva.conf")
+.arg("/etc/vconsole.conf")
+.arg("/etc/fuse.conf")
+.arg("/etc/ts.conf")
+.arg("/etc/fstab")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status30 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao remove linhas que começam com jogo da velha e espaços vazios");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
 }
