@@ -652,4 +652,98 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
+println!("adicionando autostartx do kde plasma")
+let status31 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo 'startplasma-wayland > /dev/null 2>&1' > /home/bux/.bash_profile"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status31 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adiciona autostartx do kde plasma");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("adicionando autologin do tty1")
+let status32 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("sh")
+.arg("-c")
+.arg(r#"echo '[Unit]
+After=systemd-user-sessions.service plymouth-quit-wait.service
+Before=getty.target
+
+[Service]
+ExecStart=-/usr/bin/agetty --autologin bux --noclear tty1 linux
+Type=idle
+Restart=always
+RestartSec=0
+UtmpIdentifier=tty1
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+StandardInput=tty
+StandardOutput=tty
+
+[Install]
+WantedBy=multi-user.target' > /etc/systemd/system/L.service"#)
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status32 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao adiciona autologin do tty1");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("habilitando autologin na inicialização")
+let status33 = Command::new("arch-chroot")
+.arg("/mnt")
+.arg("systemctl")
+.arg("enable")
+.arg("L.service")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status33 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao habilita autologin na inicialização");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("gravando dados da memoria no disco")
+let status34 = Command::new("sync")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status34 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao grava dados da memoria no disco");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
+
+println!("reiniciando")
+let status35 = Command::new("reboot")
+.arg("-f")
+.stdout(Stdio::null())
+.stderr(Stdio::null())
+.stdin(Stdio::null())
+.status();
+match status35 {
+Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(_) => {println!("falha ao reiniciar");}
+Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
+}
+
 }
