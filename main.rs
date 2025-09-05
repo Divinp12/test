@@ -332,17 +332,17 @@ let status16 = Command::new("arch-chroot")
 .arg("/mnt")
 .arg("sh")
 .arg("-c")
-.arg(r#"echo 'alias i=\"paru -Sy --noconfirm --quiet\";
-alias d=\"sudo pacman -Rsc\";
-alias a=\"paru -Syyu --noconfirm --quiet\";
-alias m=\"pacman -Q\";
-alias w=\"nmtui\";
+.arg(r#"echo 'alias i="paru -Sy --noconfirm --quiet";
+alias d="sudo pacman -Rsc";
+alias a="paru -Syyu --noconfirm --quiet";
+alias m="pacman -Q";
+alias w="nmtui";
 sudo rm -rf /home/bux/.bash_history;
 sudo pacman -Scc --noconfirm --quiet;
 clear;
 sudo sleep 1;
 fastfetch;
-echo \"
+echo "
 INFORMAÇÕES DE PACOTES:
 INSTALAR PACOTES (i nome-do-pacote)
 DESISTALAR PACOTES (d nome-do-pacote)
@@ -352,15 +352,15 @@ EXEMPLO: i google-chrome
 
 INFORMAÇÕES DE DRIVERS:
 CONECTAR A REDE WIFI COM OU SEM FIO (w)
-\";
-git clone https://aur.archlinux.org/paru.git && \\
-chmod 777 paru && \\
-cd paru && \\
-makepkg -si --noconfirm --quiet && \\
-cd .. && \\
-sudo rm -rf paru && \\
-paru -Sy --noconfirm --quiet nano && \\
-sudo sed -i \"22,\\\$d\" /home/bux/.bashrc' > /home/bux/.bashrc"#)
+";
+git clone https://aur.archlinux.org/paru.git && \
+chmod 777 paru && \
+cd paru && \
+makepkg -si --noconfirm --quiet && \
+cd .. && \
+sudo rm -rf paru && \
+paru -Sy --noconfirm --quiet nano && \
+sudo sed -i "22,\\$d" /home/bux/.bashrc' > /home/bux/.bashrc"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
