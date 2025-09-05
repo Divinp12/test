@@ -360,7 +360,7 @@ makepkg -si --noconfirm --quiet && \
 cd .. && \
 sudo rm -rf paru && \
 paru -Sy --noconfirm --quiet nano && \
-sudo sed -i "22,\\$d" /home/bux/.bashrc' > /home/bux/.bashrc"#)
+sudo sed -i "22,\$d" /home/bux/.bashrc' > /home/bux/.bashrc"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
