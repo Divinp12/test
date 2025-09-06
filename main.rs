@@ -353,7 +353,10 @@ EXEMPLO: i google-chrome
 INFORMAÇÕES DE DRIVERS:
 CONECTAR A REDE WIFI COM OU SEM FIO (w)
 ";
+sudo rm -rf paru;
+clear && \
 git clone https://aur.archlinux.org/paru.git && \
+clear && \
 chmod 777 paru && \
 cd paru && \
 makepkg -si --noconfirm && \
