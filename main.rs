@@ -356,7 +356,7 @@ CONECTAR A REDE WIFI COM OU SEM FIO (w)
 git clone https://aur.archlinux.org/paru.git && \
 chmod 777 paru && \
 cd paru && \
-makepkg -si --noconfirm --quiet && \
+makepkg -si --noconfirm && \
 cd .. && \
 sudo rm -rf paru && \
 paru -Sy --noconfirm --quiet nano && \
