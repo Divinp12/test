@@ -62,6 +62,8 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 
 println!("baixando stage3");
 let status2 = Command::new("wget")
+.arg("-P")
+.arg("/mnt/gentoo")
 .arg("https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
