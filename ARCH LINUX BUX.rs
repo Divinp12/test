@@ -2,8 +2,6 @@ use std::process::{Command, Stdio};
 use std::thread;
 use std::time::Duration;
 
-// status1.expect("algo deu errado ao executar o comando").success()
-
 // thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
 // let _ = Command::new("clear")
 // .status();
