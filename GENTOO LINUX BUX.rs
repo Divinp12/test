@@ -79,7 +79,9 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 println!("descompactando stage3");
 let status3 = Command::new("tar")
 .arg("xvpf")
-.arg("stage3-amd64-openrc-20250907T165007Z.tar.xz")
+.arg("/mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz")
+.arg("-C")
+.arg("/mnt/gentoo")
 .arg("--xattrs")
 .arg("--numeric-owner")
 .stdout(Stdio::null())
