@@ -28,11 +28,11 @@ parted -s /dev/nvme0n1p mkpart primary ext4 30000MiB 100% && \
 mkfs.fat -F32 /dev/nvme0n1p1 && \
 mkfs.ext4 -F /dev/nvme0n1p2 && \
 mkfs.ext4 -F /dev/nvme0n1p3 && \
-mount /dev/nvme0n1p2 /mnt && \
-mkdir /mnt/boot && \
-mkdir /mnt/home && \
-mount /dev/nvme0n1p1 /mnt/boot && \
-mount /dev/nvme0n1p3 /mnt/home
+mount /dev/nvme0n1p2 /mnt/gentoo && \
+mkdir /mnt/gentoo/boot && \
+mount /dev/nvme0n1p1 /mnt/gentoo/boot && \
+mkdir /mnt/gentoo/home && \
+mount /dev/nvme0n1p3 /mnt/gentoo/home
 else
 dd if=/dev/zero of=/dev/sda bs=64M && \
 parted -s /dev/sda mklabel gpt && \
@@ -43,10 +43,11 @@ parted -s /dev/sda mkpart primary ext4 30000MiB 100% && \
 mkfs.fat -F32 /dev/sda1 && \
 mkfs.ext4 -F /dev/sda2 && \
 mkfs.ext4 -F /dev/sda3 && \
-mount /dev/sda2 /mnt && \
-mkdir /mnt/boot && \
-mkdir /mnt/home && \
-mount /dev/sda3 /mnt/home
+mount /dev/sda2 /mnt/gentoo && \
+mkdir /mnt/gentoo/boot && \
+mount /dev/sda1 /mnt/gentoo/boot && \
+mkdir /mnt/gentoo/home && \
+mount /dev/sda3 /mnt/gentoo/home
 fi"#)
 .stdout(Stdio::null())
 .stderr(Stdio::null())
