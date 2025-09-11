@@ -60,16 +60,15 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
 
 
-println!("adicionando espelho brasileiro");
-let status2 = Command::new("sh")
-.arg("-c")
-.arg(r#"echo 'Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"#)
+println!("baixando stage3");
+let status2 = Command::new("wget")
+.arg("https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
 .status();
 match status2 {
 Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
-Ok(_) => {println!("falha ao adicionar espelho brasileiro");}
+Ok(_) => {println!("falha ao baixa stage3");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
