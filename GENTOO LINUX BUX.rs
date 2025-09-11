@@ -75,8 +75,11 @@ Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 
 
 println!("descompactando stage3");
-let status3 = Command::new("wget")
-.arg("https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz")
+let status3 = Command::new("tar")
+.arg("xvpf")
+.arg("stage3-amd64-openrc-20250907T165007Z.tar.xz")
+.arg("--xattrs")
+.arg("--numeric-owner")
 .stdout(Stdio::null())
 .stderr(Stdio::null())
 .stdin(Stdio::null())
