@@ -93,3 +93,5 @@ Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::f
 Ok(_) => {println!("falha ao descompacta stage3");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
+
+}
