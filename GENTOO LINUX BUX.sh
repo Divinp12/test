@@ -102,12 +102,12 @@ echo '/dev/sda2 / ext4 defaults, noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2
 ' >> /etc/fstab && \
 echo 'hostname=\'bux\'' > /etc/conf.d/hostname && \
-echo -e 'bux\nbux' | passwd root
-useradd -m -g users -G wheel bux
-echo -e 'bux\nbux' | passwd bux
+echo -e 'bux\nbux' | passwd root && \
+useradd -m -g users -G wheel bux && \
+echo -e 'bux\nbux' | passwd bux && \
 echo '127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux' > /etc/hosts
-emerge dhcpcd
+127.0.0.1 bux.localdomain bux' > /etc/hosts && \
+emerge dhcpcd && \
 rc-update add dhcpcd default
 "
