@@ -95,7 +95,7 @@ sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' /usr/src/lin
 sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
-sudo make -j$(nproc) && \
-sudo make modules_install -j$(nproc) && \
-sudo make install -j$(nproc);
+sudo make -j$(nproc) -C /usr/src/linux*/ && \
+sudo make modules_install -j$(nproc) -C /usr/src/linux*/ && \
+sudo make install -j$(nproc) -C /usr/src/linux*/ && \
 "
