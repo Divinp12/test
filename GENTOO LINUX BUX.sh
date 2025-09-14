@@ -98,4 +98,8 @@ sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
 sudo make -j$(nproc) -C /usr/src/linux*/ && \
 sudo make modules_install -j$(nproc) -C /usr/src/linux*/ && \
 sudo make install -j$(nproc) -C /usr/src/linux*/ && \
+echo '/dev/sda2 / ext4 defaults, noatime 0 1
+/dev/sda3 /home ext4 defaults,noatime 0 2
+' >> /etc/fstab
+echo 'hostname=\'bux\'' > /etc/conf.d/hostname
 "
