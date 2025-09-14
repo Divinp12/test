@@ -23,4 +23,5 @@ mount -t proc /proc /mnt/gentoo/proc/ && \
 mount --rbind /sys /mnt/gentoo/sys && \
 mount --rbind /dev /mnt/gentoo/dev && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && \
-emerge-webrsync"
+emerge-webrsync && \
+emerge --sync"
