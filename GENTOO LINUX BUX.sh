@@ -37,4 +37,5 @@ emerge sys-kernel/gentoo-sources && \
 echo '/dev/sda1 /boot vfat defaults 0 1' > /etc/fstab && \
 make clean -j$(nproc) -C /usr/src/linux*/ && \
 make mrproper -j$(nproc) -C /usr/src/linux*/ && \
+make defconfig -j$(nproc) -C /usr/src/linux*/ && \
 "
