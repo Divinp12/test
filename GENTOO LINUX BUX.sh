@@ -43,6 +43,9 @@ echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
 locale-gen && \
 env-update && \
 source /etc/profile && \
+echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/package.license && \
+emerge -q sys-kernel/linux-firmware && \
+emerge sys-firmware/sof-firmware && \
 emerge sys-kernel/gentoo-sources && \
 echo '/dev/sda1 /boot vfat defaults 0 1' > /etc/fstab && \
 make clean -j$(nproc) -C /usr/src/linux*/ && \
