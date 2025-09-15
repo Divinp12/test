@@ -16,9 +16,14 @@ mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home && \
 wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz && \
 tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner && \
-echo 'USE="bindist -gnome"
+echo 'COMMON_FLAGS="-O2 -pipe -march=native"
+CFLAGS="-O2 -pipe -march=native"
+CXXFLAGS="-O2 -pipe -march=native"
+FCFLAGS="-O2 -pipe -march=native"
+FFLAGS="-O2 -pipe -march=native"
+USE="bindist -gnome -kde -plasma -grub"
 MAKEOPTS="-j2"
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' >> /mnt/gentoo/etc/portage/make.conf && \
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
 cp -L /etc/resolv.conf /mnt/gentoo/etc/ && \
 mount -t proc /proc /mnt/gentoo/proc/ && \
 mount --rbind /sys /mnt/gentoo/sys && \
@@ -26,7 +31,7 @@ mount --rbind /dev /mnt/gentoo/dev && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && \
 emerge-webrsync && \
 emerge --sync && \
-eselect profile set 7 && \
+eselect profile set 4 && \
 cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 echo 'Sao_Paulo' > /etc/timezone && \
 echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
