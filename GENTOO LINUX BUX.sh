@@ -24,10 +24,14 @@ FFLAGS="-O2 -pipe -march=native"
 USE="bindist -gnome -kde -plasma -grub"
 MAKEOPTS="-j2"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
-cp -L /etc/resolv.conf /mnt/gentoo/etc/ && \
-mount -t proc /proc /mnt/gentoo/proc/ && \
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
+mount --types proc /proc /mnt/gentoo/proc/ && \
 mount --rbind /sys /mnt/gentoo/sys && \
+mount --make-rslave /mnt/gentoo/sys && \
 mount --rbind /dev /mnt/gentoo/dev && \
+mount --make-rslave /mnt/gentoo/dev && \
+mount --bind /run /mnt/gentoo/run && \
+mount --make-slave /mnt/gentoo/run && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && \
 emerge-webrsync && \
 emerge --sync && \
