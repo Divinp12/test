@@ -2,7 +2,7 @@
 
 clear && sleep 2 && \
 dd if=/dev/zero of=/dev/sda bs=64M && \
-sleep 2
+sleep 2 && \
 parted -s /dev/sda mklabel gpt && \
 sleep 2 && \
 parted -s /dev/sda mkpart ESP fat32 1MiB 500MiB && \
@@ -148,7 +148,7 @@ sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' /usr/src/lin
 sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
-"
+" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make -j$(nproc) -C /usr/src/linux*/" && \
 sleep 2 && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make modules_install -j$(nproc) -C /usr/src/linux*/" && \
