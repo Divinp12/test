@@ -47,7 +47,6 @@ echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/p
 emerge -q sys-kernel/linux-firmware && \
 emerge sys-firmware/sof-firmware && \
 emerge sys-kernel/gentoo-sources && \
-echo '/dev/sda1 /boot vfat defaults 0 1' > /etc/fstab && \
 make clean -j$(nproc) -C /usr/src/linux*/ && \
 make mrproper -j$(nproc) -C /usr/src/linux*/ && \
 make defconfig -j$(nproc) -C /usr/src/linux*/ && \
@@ -111,9 +110,9 @@ sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
 make -j$(nproc) -C /usr/src/linux*/ && \
 make modules_install -j$(nproc) -C /usr/src/linux*/ && \
 make install -j$(nproc) -C /usr/src/linux*/ && \
-echo '/dev/sda2 / ext4 defaults, noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2
-' >> /etc/fstab && \
+echo '/dev/sda1 /boot vfat defaults 0 1
+/dev/sda2 / ext4 defaults, noatime 0 1
+/dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab && \
 echo 'hostname=\'bux\'' > /etc/conf.d/hostname && \
 echo -e 'bux\nbux' | passwd root && \
 useradd -m -g users -G wheel bux && \
