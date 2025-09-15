@@ -34,8 +34,9 @@ mount --bind /run /mnt/gentoo/run && \
 mount --make-slave /mnt/gentoo/run && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && \
 emerge-webrsync && \
-emerge --sync && \
 eselect profile set 4 && \
+emerge --sync --quiet && \
+emerge --verbose --update --deep --changed-use @world && \
 cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 echo 'Sao_Paulo' > /etc/timezone && \
 echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
