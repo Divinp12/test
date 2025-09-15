@@ -32,24 +32,23 @@ mount --rbind /dev /mnt/gentoo/dev && \
 mount --make-rslave /mnt/gentoo/dev && \
 mount --bind /run /mnt/gentoo/run && \
 mount --make-slave /mnt/gentoo/run && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge-webrsync" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && eselect profile set 4" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge --sync --quiet" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge --verbose --update --deep --changed-use @world" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo 'Sao_Paulo' > /etc/timezone" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && locale-gen" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && env-update" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/package.license" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge -q sys-kernel/linux-firmware" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge sys-firmware/sof-firmware" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge sys-kernel/gentoo-sources" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make clean -j$(nproc) -C /usr/src/linux*/" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make mrproper -j$(nproc) -C /usr/src/linux*/" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make defconfig -j$(nproc) -C /usr/src/linux*/" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && \
-emerge-webrsync && \
-eselect profile set 4 && \
-emerge --sync --quiet && \
-emerge --verbose --update --deep --changed-use @world && \
-cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
-echo 'Sao_Paulo' > /etc/timezone && \
-echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
-locale-gen && \
-env-update && \
-source /etc/profile && \
-echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/package.license && \
-emerge -q sys-kernel/linux-firmware && \
-emerge sys-firmware/sof-firmware && \
-emerge sys-kernel/gentoo-sources && \
-make clean -j$(nproc) -C /usr/src/linux*/ && \
-make mrproper -j$(nproc) -C /usr/src/linux*/ && \
-make defconfig -j$(nproc) -C /usr/src/linux*/ && \
 sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZRAM.*$/CONFIG_ZRAM=n/' /usr/src/linux*/.config;
@@ -107,19 +106,19 @@ sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' /usr/src/lin
 sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
-make -j$(nproc) -C /usr/src/linux*/ && \
-make modules_install -j$(nproc) -C /usr/src/linux*/ && \
-make install -j$(nproc) -C /usr/src/linux*/ && \
-echo '/dev/sda1 /boot vfat defaults 0 1
-/dev/sda2 / ext4 defaults, noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab && \
-echo 'hostname=\"bux\"' > /etc/conf.d/hostname && \
-echo -e 'bux\nbux' | passwd root && \
-useradd -m -g users -G wheel bux && \
-echo -e 'bux\nbux' | passwd bux && \
-echo '127.0.0.1 localhost.localdomain localhost
-::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux' > /etc/hosts && \
-emerge dhcpcd && \
-rc-update add dhcpcd default
 "
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make -j$(nproc) -C /usr/src/linux*/" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make modules_install -j$(nproc) -C /usr/src/linux*/" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && make install -j$(nproc) -C /usr/src/linux*/" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo '/dev/sda1 /boot vfat defaults 0 1
+/dev/sda2 / ext4 defaults, noatime 0 1
+/dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo 'hostname=\"bux\"' > /etc/conf.d/hostname" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo -e 'bux\nbux' | passwd root" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && useradd -m -g users -G wheel bux" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo -e 'bux\nbux' | passwd bux" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo '127.0.0.1 localhost.localdomain localhost
+::1 localhost.localdomain localhost
+127.0.0.1 bux.localdomain bux' > /etc/hosts" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge dhcpcd" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && rc-update add dhcpcd default"
