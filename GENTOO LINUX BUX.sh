@@ -38,7 +38,7 @@ CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
-USE="-gnome -kde -plasma -grub -gtk-doc -gtk -gtk2 -gtk3 -gtk4 -oss -pipewire -X -sudo -debug -truetype -firewall -cups"
+USE="-gnome -kde -plasma -grub -gtk-doc -gtk -gtk2 -gtk3 -gtk4 -qt -qt2 -qt3 -qt4 -qt5 -qt6 -oss -pipewire -X -sudo -debug -truetype -firewall -cups -bluetooth"
 MAKEOPTS="-j2"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
 sleep 2 && \
