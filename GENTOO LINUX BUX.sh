@@ -1,6 +1,5 @@
 #!/bin/bash
 
-clear;
 dd if=/dev/zero of=/dev/sda bs=64M && \
 parted -s /dev/sda mklabel gpt && \
 parted -s /dev/sda mkpart ESP fat32 1MiB 500MiB && \
@@ -44,13 +43,13 @@ echo 'Sao_Paulo' > /etc/timezone && \
 echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
 locale-gen && \
 env-update && \
-echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/package.license && \
+echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' >> /etc/portage/package.license && \
 emerge -q sys-kernel/linux-firmware && \
 emerge sys-firmware/sof-firmware && \
 emerge sys-kernel/gentoo-sources && \
-make clean -C /usr/src/linux*/ && \
-make mrproper -C /usr/src/linux*/ && \
-make defconfig -C /usr/src/linux*/ && \
+make clean -j16 -C /usr/src/linux*/ && \
+make mrproper -j16 -C /usr/src/linux*/ && \
+make defconfig -j16 -C /usr/src/linux*/ && \
 sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZRAM.*$/CONFIG_ZRAM=n/' /usr/src/linux*/.config;
@@ -108,9 +107,9 @@ sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' /usr/src/lin
 sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
-make -C /usr/src/linux*/ && \
-make modules_install -C /usr/src/linux*/ && \
-make install -C /usr/src/linux*/ && \
+make -j16 -C /usr/src/linux*/ && \
+make modules_install -j16 -C /usr/src/linux*/ && \
+make install -j16 -C /usr/src/linux*/ && \
 echo '/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults, noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab && \
