@@ -35,7 +35,7 @@ mount --bind /run /mnt/gentoo/run && \
 mount --make-slave /mnt/gentoo/run && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge-webrsync" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && eselect profile set 4" && \
-chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge --sync --quiet" && \
+chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge --sync" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && emerge --verbose --update --deep --changed-use @world" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime" && \
 chroot /mnt/gentoo /bin/bash -c "source /etc/profile && echo 'Sao_Paulo' > /etc/timezone" && \
