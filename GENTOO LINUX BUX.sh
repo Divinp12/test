@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dd if=/dev/zero of=/dev/sda bs=64M && \
+wipefs -a /dev/sda && \
 parted -s /dev/sda mklabel gpt && \
 parted -s /dev/sda mkpart ESP fat32 1MiB 500MiB && \
 parted -s /dev/sda set 1 esp on && \
@@ -21,7 +21,7 @@ CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
-USE="systemd -grub -oss -pipewire -sudo -firewall"
+USE=""
 MAKEOPTS="-j2"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
@@ -43,9 +43,6 @@ echo 'Sao_Paulo' > /etc/timezone && \
 echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
 locale-gen && \
 env-update && \
-echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' >> /etc/portage/package.license && \
-emerge -q sys-kernel/linux-firmware && \
-emerge sys-firmware/sof-firmware && \
 emerge sys-kernel/gentoo-sources && \
 make clean -j16 -C /usr/src/linux*/ && \
 make mrproper -j16 -C /usr/src/linux*/ && \
