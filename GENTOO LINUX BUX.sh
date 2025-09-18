@@ -88,6 +88,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta dev novamente";
 if mount --make-rslave /mnt/gentoo/dev; then
 echo "PASSOU"
 else
@@ -95,6 +96,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta run";
 if mount --bind /run /mnt/gentoo/run; then
 echo "PASSOU"
 else
@@ -102,6 +104,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta run novamente"
 if mount --make-slave /mnt/gentoo/run; then
 echo "PASSOU"
 else
@@ -109,7 +112,11 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "entrando no ambiente chroot"
 chroot /mnt/gentoo /bin/bash -c '
+echo "PASSOU";
+
+echo "adicionando perfil de configuração";
 if source /etc/profile; then
 echo "PASSOU"
 else
@@ -323,9 +330,9 @@ echo "FALHOU" && exit
 fi;
 
 
-if echo '127.0.0.1 localhost.localdomain localhost
+if echo "127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux' > /etc/hosts; then
+127.0.0.1 bux.localdomain bux" > /etc/hosts; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
