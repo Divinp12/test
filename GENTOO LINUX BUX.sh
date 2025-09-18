@@ -17,6 +17,7 @@ mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home
 
 
+echo "baixando stage3";
 if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz; then
 echo "PASSOU"
 else
@@ -24,6 +25,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "extraindo stage3";
 if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner; then
 echo "PASSOU"
 else
