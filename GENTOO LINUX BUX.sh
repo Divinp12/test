@@ -33,6 +33,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "sobscrevendo arquivo make.conf";
 if echo 'COMMON_FLAGS="-O2 -pipe -march=native"
 CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
@@ -47,6 +48,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "copiando arquivo resolv.conf e colando no diretorio /etc";
 if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
 echo "PASSOU"
 else
@@ -54,6 +56,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta proc";
 if mount --types proc /proc /mnt/gentoo/proc/; then
 echo "PASSOU"
 else
@@ -61,6 +64,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta sys";
 if mount --rbind /sys /mnt/gentoo/sys; then
 echo "PASSOU"
 else
@@ -68,6 +72,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta sys novamente";
 if mount --make-rslave /mnt/gentoo/sys; then
 echo "PASSOU"
 else
@@ -75,6 +80,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando pasta dev";
 if mount --rbind /dev /mnt/gentoo/dev; then
 echo "PASSOU"
 else
@@ -132,25 +138,74 @@ echo "FALHOU" && exit
 fi;
 
 
-emerge --verbose --update --deep --changed-use @world && \
+if emerge --verbose --update --deep --changed-use @world; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 
-echo 'Sao_Paulo' > /etc/timezone && \
+if cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
 
-locale-gen && \
+if echo "Sao_Paulo" > /etc/timezone; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-env-update && \
 
-emerge sys-kernel/gentoo-sources && \
+if echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-make clean -j16 -C /usr/src/linux*/ && \
 
-make mrproper -j16 -C /usr/src/linux*/ && \
+if locale-gen; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-make defconfig -j16 -C /usr/src/linux*/ && \
+
+if env-update; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if emerge sys-kernel/gentoo-sources; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if make clean -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if make mrproper -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if make defconfig -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
 sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' /usr/src/linux*/.config;
@@ -210,28 +265,82 @@ sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
 
-make -j16 -C /usr/src/linux*/ && \
+if make -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-make modules_install -j16 -C /usr/src/linux*/ && \
 
-make install -j16 -C /usr/src/linux*/ && \
+if make modules_install -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-echo '/dev/sda1 /boot vfat defaults 0 1
+
+if make install -j16 -C /usr/src/linux*/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults, noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab && \
+/dev/sda3 /home ext4 defaults,noatime 0 2" >> /etc/fstab; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-echo 'hostname=\"bux\"' > /etc/conf.d/hostname && \
 
-echo -e 'bux\nbux' | passwd root && \
+if echo "hostname=bux" > /etc/conf.d/hostname; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-useradd -m -g users -G wheel bux && \
 
-echo -e 'bux\nbux' | passwd bux && \
+if echo -e "bux\nbux" | passwd root; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-echo '127.0.0.1 localhost.localdomain localhost
+
+if useradd -m -g users -G wheel bux; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if echo -e "bux\nbux" | passwd bux; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if echo '127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux' > /etc/hosts && \
+127.0.0.1 bux.localdomain bux' > /etc/hosts; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-emerge dhcpcd && \
 
-rc-update add dhcpcd default'
+if emerge dhcpcd; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if rc-update add dhcpcd default; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;'
