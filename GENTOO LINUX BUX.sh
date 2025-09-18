@@ -16,43 +16,119 @@ mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home
 
-wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz && \
 
-tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner && \
+if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-echo 'COMMON_FLAGS="-O2 -pipe -march=native"
+
+if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if echo 'COMMON_FLAGS="-O2 -pipe -march=native"
 CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
 USE=""
 MAKEOPTS="-j2"
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
 
-mount --types proc /proc /mnt/gentoo/proc/ && \
+if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-mount --rbind /sys /mnt/gentoo/sys && \
 
-mount --make-rslave /mnt/gentoo/sys && \
+if mount --types proc /proc /mnt/gentoo/proc/; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-mount --rbind /dev /mnt/gentoo/dev && \
 
-mount --make-rslave /mnt/gentoo/dev && \
+if mount --rbind /sys /mnt/gentoo/sys; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-mount --bind /run /mnt/gentoo/run && \
 
-mount --make-slave /mnt/gentoo/run && \
+if mount --make-rslave /mnt/gentoo/sys; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-chroot /mnt/gentoo /bin/bash -c "
-source /etc/profile && \
 
-emerge-webrsync && \
+if mount --rbind /dev /mnt/gentoo/dev; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
 
-eselect profile set 4 && \
 
-emerge --sync && \
+if mount --make-rslave /mnt/gentoo/dev; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if mount --bind /run /mnt/gentoo/run; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if mount --make-slave /mnt/gentoo/run; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if emerge-webrsync; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if eselect profile set 4; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if emerge --sync; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
 
 emerge --verbose --update --deep --changed-use @world && \
 
@@ -156,4 +232,4 @@ echo '127.0.0.1 localhost.localdomain localhost
 
 emerge dhcpcd && \
 
-rc-update add dhcpcd default"
+rc-update add dhcpcd default'
