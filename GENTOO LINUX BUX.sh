@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "formatando 1 disco valido";
 wipefs -a /dev/sda && \
 parted -s /dev/sda mklabel gpt && \
 parted -s /dev/sda mkpart ESP fat32 1MiB 500MiB && \
