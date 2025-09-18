@@ -14,9 +14,12 @@ mkdir /mnt/gentoo/boot && \
 mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
-mount /dev/sda3 /mnt/gentoo/home && \
+mount /dev/sda3 /mnt/gentoo/home
+
 wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz && \
+
 tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner && \
+
 echo 'COMMON_FLAGS="-O2 -pipe -march=native"
 CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
@@ -25,29 +28,52 @@ FFLAGS="-O2 -pipe -march=native"
 USE=""
 MAKEOPTS="-j2"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf && \
+
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
+
 mount --types proc /proc /mnt/gentoo/proc/ && \
+
 mount --rbind /sys /mnt/gentoo/sys && \
+
 mount --make-rslave /mnt/gentoo/sys && \
+
 mount --rbind /dev /mnt/gentoo/dev && \
+
 mount --make-rslave /mnt/gentoo/dev && \
+
 mount --bind /run /mnt/gentoo/run && \
+
 mount --make-slave /mnt/gentoo/run && \
+
 chroot /mnt/gentoo /bin/bash -c "
 source /etc/profile && \
+
 emerge-webrsync && \
+
 eselect profile set 4 && \
+
 emerge --sync && \
+
 emerge --verbose --update --deep --changed-use @world && \
+
 cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
+
 echo 'Sao_Paulo' > /etc/timezone && \
+
 echo 'pt_BR.UTF-8 UTF-8' > /etc/locale.gen && \
+
 locale-gen && \
+
 env-update && \
+
 emerge sys-kernel/gentoo-sources && \
+
 make clean -j16 -C /usr/src/linux*/ && \
+
 make mrproper -j16 -C /usr/src/linux*/ && \
+
 make defconfig -j16 -C /usr/src/linux*/ && \
+
 sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZRAM.*$/CONFIG_ZRAM=n/' /usr/src/linux*/.config;
@@ -105,18 +131,29 @@ sed -i 's/^.*CONFIG_DEBUG_MAPLE_TREE.*$/CONFIG_DEBUG_MAPLE_TREE=n/' /usr/src/lin
 sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' /usr/src/linux*/.config;
+
 make -j16 -C /usr/src/linux*/ && \
+
 make modules_install -j16 -C /usr/src/linux*/ && \
+
 make install -j16 -C /usr/src/linux*/ && \
+
 echo '/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults, noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2' >> /etc/fstab && \
+
 echo 'hostname=\"bux\"' > /etc/conf.d/hostname && \
+
 echo -e 'bux\nbux' | passwd root && \
+
 useradd -m -g users -G wheel bux && \
+
 echo -e 'bux\nbux' | passwd bux && \
+
 echo '127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
 127.0.0.1 bux.localdomain bux' > /etc/hosts && \
+
 emerge dhcpcd && \
+
 rc-update add dhcpcd default"
