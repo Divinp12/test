@@ -18,7 +18,7 @@ mount /dev/sda3 /mnt/gentoo/home
 
 
 echo "baixando stage3";
-if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz; then
+if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -26,7 +26,7 @@ fi;
 
 
 echo "extraindo stage3";
-if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner; then
+if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -39,7 +39,7 @@ CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
 USE=""
-MAKEOPTS="-j2"
+MAKEOPTS="-j16"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo "PASSOU"
 else
@@ -111,21 +111,21 @@ echo "FALHOU" && exit
 fi;
 
 
-if emerge-webrsync; then
+if emerge-webrsync > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
 fi;
 
 
-if eselect profile set 4; then
+if eselect profile set 4 > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
 fi;
 
 
-if emerge --sync; then
+if emerge --sync --quiet > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
