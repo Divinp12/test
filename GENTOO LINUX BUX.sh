@@ -16,7 +16,8 @@ mkdir /mnt/gentoo/boot && \
 mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
-mount /dev/sda3 /mnt/gentoo/home
+mount /dev/sda3 /mnt/gentoo/home && \
+echo "PASSOU";
 
 
 echo "baixando stage3";
@@ -126,6 +127,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "sincronizando arvore de ebuilds do gentoo via web";
 if emerge-webrsync > /dev/null 2>&1; then
 echo "PASSOU"
 else
@@ -133,6 +135,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "selecionando perfil do portage";
 if eselect profile set 4 > /dev/null 2>&1; then
 echo "PASSOU"
 else
@@ -140,6 +143,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "sincronizando repositorios do portage";
 if emerge --sync --quiet > /dev/null 2>&1; then
 echo "PASSOU"
 else
