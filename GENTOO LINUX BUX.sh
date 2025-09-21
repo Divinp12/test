@@ -222,8 +222,8 @@ else
 echo "FALHOU" && exit
 fi;
 
-sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' /usr/src/linux*/.config;
-sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' /usr/src/linux*/.config;
+sed -i "s/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/" /usr/src/linux*/.config;
+sed -i "s/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/" /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_ZRAM.*$/CONFIG_ZRAM=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_CPU_MITIGATIONS.*$/CONFIG_CPU_MITIGATIONS=n/' /usr/src/linux*/.config;
 sed -i 's/^.*CONFIG_MITIGATION_PAGE_TABLE_ISOLATION.*$/CONFIG_MITIGATION_PAGE_TABLE_ISOLATION=n/' /usr/src/linux*/.config;
@@ -310,7 +310,7 @@ echo "FALHOU" && exit
 fi;
 
 
-if echo "hostname=bux" > /etc/conf.d/hostname; then
+if echo "hostname="bux"" > /etc/conf.d/hostname; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
