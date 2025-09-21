@@ -42,6 +42,7 @@ CFLAGS="-O2 -pipe -march=native"
 CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
+RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 USE=""
 LC_MESSAGES=C.utf8
 MAKEOPTS="-j16"
