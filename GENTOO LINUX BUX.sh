@@ -43,7 +43,7 @@ CXXFLAGS="-O2 -pipe -march=native"
 FCFLAGS="-O2 -pipe -march=native"
 FFLAGS="-O2 -pipe -march=native"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
-USE=""
+USE="-* pulseaudio alsa"
 LC_MESSAGES=C.utf8
 MAKEOPTS="-j16"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
