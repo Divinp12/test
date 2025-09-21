@@ -316,7 +316,7 @@ fi;
 
 if echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults, noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2" >> /etc/fstab; then
+/dev/sda3 /home ext4 defaults,noatime 0 2" > /etc/fstab; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
