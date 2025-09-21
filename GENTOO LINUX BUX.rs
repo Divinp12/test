@@ -1,10 +1,11 @@
 use std::process::{Command, Stdio};
-use std::thread;
-use std::time::Duration;
 
-// thread::sleep(Duration::from_secs(3)); // pausa em 3 segundos. Para muda a duracao da pausa altere o numero depois de from_secs(
-// let _ = Command::new("clear")
-// .status();
+// habilitar pausa
+// use std::thread;
+// use std::time::Duration;
+
+// thread::sleep(Duration::from_secs(NÚMERO DE SEGUNDOS))
+
 
 // .stdout(Stdio::null()) redirecionar mensagens para lugar nenhum.
 // .stderr(Stdio::null()) redirecionar mensagens de erro para lugar nenhum.
@@ -54,7 +55,7 @@ fi"#)
 .stdin(Stdio::null())
 .status();
 match status1 {
-Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(status) if status.success() => {println!("sucesso");.status();}
 Ok(_) => {println!("falha ao formata 1 disco rigido valido");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
@@ -70,7 +71,7 @@ let status2 = Command::new("wget")
 .stdin(Stdio::null())
 .status();
 match status2 {
-Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(status) if status.success() => {println!("sucesso");.status();}
 Ok(_) => {println!("falha ao baixa stage3");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
@@ -89,7 +90,7 @@ let status3 = Command::new("tar")
 .stdin(Stdio::null())
 .status();
 match status3 {
-Ok(status) if status.success() => {println!("sucesso");thread::sleep(Duration::from_secs(3));let _ = Command::new("clear").status();}
+Ok(status) if status.success() => {println!("sucesso");.status();}
 Ok(_) => {println!("falha ao descompacta stage3");}
 Err(e) => {eprintln!("erro ao executar o comando: {}", e);}
 }
