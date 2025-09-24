@@ -98,6 +98,8 @@ sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_BOOTPARAM.*$/CONFIG_SECURITY_SELINUX_B
 sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_DEVELOP.*$/CONFIG_SECURITY_SELINUX_DEVELOP=n/' .config;
 sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_AVC_STATS.*$/CONFIG_SECURITY_SELINUX_AVC_STATS=n/' .config;
 
+#DESATIVAR XEN
+sudo sed -i 's/^.*CONFIG_XEN.*$/CONFIG_XEN=n/' .config;
 
 sudo make -j$(nproc) && \
 sudo make modules_install -j$(nproc) && \
