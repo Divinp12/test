@@ -91,6 +91,14 @@ sudo sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' .config;
 #DESATIVAR AUDIT
 sudo sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' .config;
 
+#DESATIVAR SELINUX
+sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX.*$/CONFIG_SECURITY_SELINUX=n/' .config;
+sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_DEBUG.*$/CONFIG_SECURITY_SELINUX_DEBUG=n/' .config;
+sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_BOOTPARAM.*$/CONFIG_SECURITY_SELINUX_BOOTPARAM=n/' .config;
+sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_DEVELOP.*$/CONFIG_SECURITY_SELINUX_DEVELOP=n/' .config;
+sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_AVC_STATS.*$/CONFIG_SECURITY_SELINUX_AVC_STATS=n/' .config;
+
+
 sudo make -j$(nproc) && \
 sudo make modules_install -j$(nproc) && \
 sudo make install -j$(nproc);
