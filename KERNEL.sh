@@ -101,6 +101,10 @@ sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_AVC_STATS.*$/CONFIG_SECURITY_SELINUX_A
 #DESATIVAR XEN
 sudo sed -i 's/^.*CONFIG_XEN.*$/CONFIG_XEN=n/' .config;
 
+#DESATIVAR NETFILTER
+sudo sed -i 's/^.*CONFIG_NETFILTER.*$/CONFIG_NETFILTER=n/' .config;
+sudo sed -i 's/^.*CONFIG_NETFILTER_ADVANCED.*$/CONFIG_NETFILTER_ADVANCED=n/' .config;
+
 sudo make -j$(nproc) && \
 sudo make modules_install -j$(nproc) && \
 sudo make install -j$(nproc);
