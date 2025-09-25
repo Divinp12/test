@@ -101,6 +101,25 @@ sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_AVC_STATS.*$/CONFIG_SECURITY_SELINUX_A
 #DESATIVAR XEN
 sudo sed -i 's/^.*CONFIG_XEN.*$/CONFIG_XEN=n/' .config;
 
+#DESATIVAR DRIVERS DE LEDS
+sudo sed -i 's/^.*CONFIG_LEDS_APU.*$/CONFIG_LEDS_APU=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_AW200XX.*$/CONFIG_LEDS_AW200XX=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_LM3530.*$/CONFIG_LEDS_LM3530=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_LM3532.*$/CONFIG_LEDS_LM3532=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_LM3642.*$/CONFIG_LEDS_LM3642=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_PCA9532.*$/CONFIG_LEDS_PCA9532=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_LP3944.*$/CONFIG_LEDS_LP3944=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_PCA955X.*$/CONFIG_LEDS_PCA955X=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_PCA963X.*$/CONFIG_LEDS_PCA963X=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_PCA995X.*$/CONFIG_LEDS_PCA995X=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_BD2606MVV.*$/CONFIG_LEDS_BD2606MVV=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_BD2802.*$/CONFIG_LEDS_BD2802=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_INTEL_SS4200.*$/CONFIG_LEDS_INTEL_SS4200=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_TCA6507.*$/CONFIG_LEDS_TCA6507=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_TLC591XX.*$/CONFIG_LEDS_TLC591XX=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_LM355x.*$/CONFIG_LEDS_LM355x=n/' .config;
+sudo sed -i 's/^.*CONFIG_LEDS_IS31FL319X.*$/CONFIG_LEDS_IS31FL319X=n/' .config;
+
 sudo make -j$(nproc) && \
 sudo make modules_install -j$(nproc) && \
 sudo make install -j$(nproc);
