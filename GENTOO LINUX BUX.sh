@@ -169,6 +169,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "atualizando pacotes";
 if emerge --verbose --update --deep --changed-use @world; then
 echo "PASSOU"
 else
@@ -176,13 +177,15 @@ echo "FALHOU" && exit
 fi;
 
 
-if echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' >> /etc/portage/package.license; then
+echo "adicionando licença do pacote linux-firmware";
+if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" >> /etc/portage/package.license; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
 fi;
 
 
+echo "instalando pacote linux-firmware";
 if emerge -q sys-kernel/linux-firmware; then
 echo "PASSOU"
 else
@@ -190,6 +193,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "instalando pacote sof-firmware";
 if emerge sys-firmware/sof-firmware; then
 echo "PASSOU"
 else
