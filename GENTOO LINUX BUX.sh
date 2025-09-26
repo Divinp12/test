@@ -176,6 +176,27 @@ echo "FALHOU" && exit
 fi;
 
 
+if echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' >> /etc/portage/package.license; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if emerge -q sys-kernel/linux-firmware; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+if emerge sys-firmware/sof-firmware; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 if cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; then
 echo "PASSOU"
 else
