@@ -37,11 +37,11 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-O2 -pipe -march=native"
-CFLAGS="-O2 -pipe -march=native"
-CXXFLAGS="-O2 -pipe -march=native"
-FCFLAGS="-O2 -pipe -march=native"
-FFLAGS="-O2 -pipe -march=native"
+if echo 'COMMON_FLAGS="-Ofast -flto -march=native -pipe"
+CFLAGS="-Ofast -flto -march=native -pipe"
+CXXFLAGS="-Ofast -flto -march=native -pipe"
+FCFLAGS="-Ofast -flto -march=native -pipe"
+FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 USE="-systemd -gnome"
 LC_MESSAGES=C.utf8
