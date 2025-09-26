@@ -117,6 +117,22 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando pasta repos.conf no diretorio /mnt/gentoo/etc/portage";
+if mkdir --parents /mnt/gentoo/etc/portage/repos.conf; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "copiando arquivo repos.conf e colando em /mnt/gentoo/etc/portage/repos.conf";
+if cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "entrando no ambiente chroot"
 chroot /mnt/gentoo /bin/bash -c '
 echo "PASSOU";
