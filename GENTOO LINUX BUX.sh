@@ -43,7 +43,7 @@ CXXFLAGS="-Ofast -flto -march=native -pipe"
 FCFLAGS="-Ofast -flto -march=native -pipe"
 FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
-USE="-systemd -gnome -kde"
+USE="-systemd -gnome -kde -oss -pipeware -dvd"
 LC_MESSAGES=C.utf8
 MAKEOPTS="-j16"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
