@@ -146,7 +146,7 @@ fi;
 
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
-if emerge-webrsync > /dev/null 2>&1; then
+if emerge-webrsync --quiet > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -170,7 +170,7 @@ fi;
 
 
 echo "atualizando pacotes";
-if emerge --verbose --update --deep --changed-use @world; then
+if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -186,7 +186,7 @@ fi;
 
 
 echo "instalando pacote linux-firmware";
-if emerge -q sys-kernel/linux-firmware; then
+if emerge --quiet sys-kernel/linux-firmware; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -194,7 +194,7 @@ fi;
 
 
 echo "instalando pacote sof-firmware";
-if emerge sys-firmware/sof-firmware; then
+if emerge --quiet sys-firmware/sof-firmware; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -236,7 +236,7 @@ echo "FALHOU" && exit
 fi;
 
 
-if emerge sys-kernel/gentoo-sources; then
+if emerge --quiet sys-kernel/gentoo-sources; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -427,7 +427,7 @@ echo "FALHOU" && exit
 fi;
 
 
-if emerge dhcpcd; then
+if emerge --quiet dhcpcd; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
