@@ -37,15 +37,16 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-Ofast -flto -march=native -floop-nest-optimize -pipe"
-CFLAGS="-Ofast -flto -march=native -floop-nest-optimize -pipe"
-CXXFLAGS="-Ofast -flto -march=native -floop-nest-optimize -pipe"
-FCFLAGS="-Ofast -flto -march=native -floop-nest-optimize -pipe"
-FFLAGS="-Ofast -flto -march=native -floop-nest-optimize -pipe"
+if echo 'COMMON_FLAGS="-Ofast -flto -march=native -pipe"
+CFLAGS="-Ofast -flto -march=native -pipe"
+CXXFLAGS="-Ofast -flto -march=native -pipe"
+FCFLAGS="-Ofast -flto -march=native -pipe"
+FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
+MAKEOPTS="-j16"
+EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="-systemd -gnome -kde -oss -pipeware -dvd"
 LC_MESSAGES=C.utf8
-MAKEOPTS="-j16"
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo "PASSOU"
 else
