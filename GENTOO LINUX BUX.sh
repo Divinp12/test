@@ -155,7 +155,7 @@ fi;
 
 
 echo "selecionando perfil do portage";
-if eselect profile set 7 > /dev/null 2>&1; then
+if eselect profile set 3 > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
