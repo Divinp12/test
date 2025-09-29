@@ -155,7 +155,7 @@ fi;
 
 
 echo "selecionando perfil do portage";
-if eselect profile set 3 > /dev/null 2>&1; then
+if eselect profile set 1 > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -223,7 +223,7 @@ echo "FALHOU" && exit
 fi;
 
 
-if locale-gen; then
+if locale-gen > /dev/null 2>&1; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -383,7 +383,7 @@ fi;
 
 
 if echo "/dev/sda1 /boot vfat defaults 0 1
-/dev/sda2 / ext4 defaults, noatime 0 1
+/dev/sda2 / ext4 defaults,noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /etc/fstab; then
 echo "PASSOU"
 else
