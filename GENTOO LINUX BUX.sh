@@ -170,6 +170,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recurso mudflap no gcc"
+if echo "sys-devel/gcc -mudflap" > /etc/portage/package.use/gcc; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo "PASSOU"
