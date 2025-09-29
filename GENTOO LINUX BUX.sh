@@ -178,6 +178,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do glibc"
+if echo "sys-libs/glibc -doc -selinux" > /etc/portage/package.use/glibc; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo "PASSOU"
