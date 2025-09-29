@@ -8,9 +8,9 @@ parted -s /dev/sda set 1 esp on && \
 parted -s /dev/sda mkpart primary ext4 500MiB 30000MiB && \
 parted -s /dev/sda mkpart primary ext4 30000MiB 100% && \
 partprobe && \
-mkfs.fat -F32 /dev/sda1 && \
-mkfs.ext4 -F /dev/sda2 && \
-mkfs.ext4 -F /dev/sda3 && \
+mkfs.fat -F32 /dev/sda1 > /dev/null 2>&1 && \
+mkfs.ext4 -F /dev/sda2 > /dev/null 2>&1 && \
+mkfs.ext4 -F /dev/sda3 > /dev/null 2>&1 && \
 mount /dev/sda2 /mnt/gentoo && \
 mkdir /mnt/gentoo/boot && \
 mkdir /mnt/gentoo/boot/EFI && \
