@@ -194,6 +194,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do pam";
+if echo "sys-libs/pam -doc -selinux -nls" > /etc/portage/package.use/pam; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo "PASSOU"
