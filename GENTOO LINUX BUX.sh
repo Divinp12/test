@@ -170,7 +170,15 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "desativando recursos obsoletos ou pouco usados do gcc"
+echo "desativando recursos obsoletos ou pouco usados do bash";
+if echo "app-shells/bash -mem-scramble -nls -doc" > /etc/portage/package.use/bash"; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "desativando recursos obsoletos ou pouco usados do gcc";
 if echo "sys-devel/gcc -mudflap -doc -nls -gcj" > /etc/portage/package.use/gcc; then
 echo "PASSOU"
 else
@@ -178,7 +186,7 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "desativando recursos obsoletos ou pouco usados do glibc"
+echo "desativando recursos obsoletos ou pouco usados do glibc";
 if echo "sys-libs/glibc -doc -selinux" > /etc/portage/package.use/glibc; then
 echo "PASSOU"
 else
