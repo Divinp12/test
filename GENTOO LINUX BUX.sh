@@ -187,7 +187,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do glibc";
-if echo "sys-libs/glibc -doc -nscd -audit -debug" > /etc/portage/package.use/glibc; then
+if echo "sys-libs/glibc -doc -nls -nscd -audit -debug" > /etc/portage/package.use/glibc; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
