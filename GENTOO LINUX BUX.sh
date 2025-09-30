@@ -178,6 +178,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do file";
+if echo "sys-apps/file -doc -debug -nls" > /etc/portage/package.use/file; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "desativando recursos obsoletos ou pouco usados do gcc";
 if echo "sys-devel/gcc -mudflap -doc -nls -gcj -debug" > /etc/portage/package.use/gcc; then
 echo "PASSOU"
