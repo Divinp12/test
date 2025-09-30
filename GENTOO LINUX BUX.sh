@@ -187,7 +187,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do glibc";
-if echo "sys-libs/glibc -doc -selinux" > /etc/portage/package.use/glibc; then
+if echo "sys-libs/glibc -doc -nscd -audit" > /etc/portage/package.use/glibc; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -195,7 +195,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do pam";
-if echo "sys-libs/pam -doc -selinux -nls" > /etc/portage/package.use/pam; then
+if echo "sys-libs/pam -doc -nls" > /etc/portage/package.use/pam; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
