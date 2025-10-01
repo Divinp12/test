@@ -210,6 +210,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do ncurses";
+if echo "sys-libs/ncurses -doc -debug -nls" > /etc/portage/package.use/ncurses; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "desativando recursos obsoletos ou pouco usados do pam";
 if echo "sys-libs/pam -doc -nls -debug" > /etc/portage/package.use/pam; then
 echo "PASSOU"
