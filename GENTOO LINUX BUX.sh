@@ -171,7 +171,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -net -pfs -mem-scramble -nls -doc -debug" > /etc/portage/package.use/bash"; then
+if echo "app-shells/bash -net -pfs -mem-scramble -nls -doc -debug" > /etc/portage/package.use/bash; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -227,7 +227,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do readline";
-echo "sys-libs/readline -doc -debug -nls" > /etc/portage/package.use/readline; then
+if echo "sys-libs/readline -doc -debug -nls" > /etc/portage/package.use/readline; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
