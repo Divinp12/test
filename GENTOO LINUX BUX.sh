@@ -178,6 +178,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do coreutils";
+if echo "sys-apps/coreutils -doc -debug -nls" > /etc/portage/package.use/coreutils; then
+echo "PASSOU"
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "desativando recursos obsoletos ou pouco usados do file";
 if echo "sys-apps/file -doc -debug -nls" > /etc/portage/package.use/file; then
 echo "PASSOU"
