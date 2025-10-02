@@ -45,7 +45,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j16"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-systemd -gnome -kde -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -doc -debug -test -selinux -telemetry"
+USE="-systemd -gnome -kde -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -doc -debug -test -selinux -telemetry -ntfs"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo "PASSOU"
