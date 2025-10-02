@@ -195,7 +195,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do gcc";
-if echo "sys-devel/gcc -mudflap -doc -nls -gcj -debug -test" > /etc/portage/package.use/gcc; then
+if echo "sys-devel/gcc -mudflap -libada -gcj -d -doc -nls -debug -test" > /etc/portage/package.use/gcc; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
