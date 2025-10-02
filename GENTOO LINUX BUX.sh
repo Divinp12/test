@@ -45,7 +45,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j16"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-systemd -gnome -kde -oss -pipeware -dvd -cdrom -doc -debug -test"
+USE="-systemd -gnome -kde -oss -pipeware -dvd -cdrom -doc -debug -test -selinux"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo "PASSOU"
@@ -171,7 +171,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -net -pfs -mem-scramble -plugins -nls -doc -debug -test" > /etc/portage/package.use/bash; then
+if echo "app-shells/bash -net -pfs -mem-scramble -plugins -nls -doc -debug -test -selinux" > /etc/portage/package.use/bash; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -179,7 +179,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do coreutils";
-if echo "sys-apps/coreutils -doc -debug -nls -test" > /etc/portage/package.use/coreutils; then
+if echo "sys-apps/coreutils -doc -debug -nls -test -selinux" > /etc/portage/package.use/coreutils; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -187,7 +187,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do file";
-if echo "sys-apps/file -doc -debug -nls -test" > /etc/portage/package.use/file; then
+if echo "sys-apps/file -doc -debug -nls -test -selinux" > /etc/portage/package.use/file; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -195,7 +195,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do gcc";
-if echo "sys-devel/gcc -mudflap -libada -gcj -d -doc -nls -debug -test" > /etc/portage/package.use/gcc; then
+if echo "sys-devel/gcc -mudflap -libada -gcj -d -doc -nls -debug -test -selinux" > /etc/portage/package.use/gcc; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -203,7 +203,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do glibc";
-if echo "sys-libs/glibc -doc -nls -nscd -audit -debug -test" > /etc/portage/package.use/glibc; then
+if echo "sys-libs/glibc -doc -nls -nscd -audit -debug -test -selinux" > /etc/portage/package.use/glibc; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -211,7 +211,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do ncurses";
-if echo "sys-libs/ncurses -doc -debug -nls -test" > /etc/portage/package.use/ncurses; then
+if echo "sys-libs/ncurses -doc -debug -nls -test -selinux" > /etc/portage/package.use/ncurses; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -219,7 +219,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do pam";
-if echo "sys-libs/pam -doc -nls -debug -test" > /etc/portage/package.use/pam; then
+if echo "sys-libs/pam -doc -nls -debug -test -selinux" > /etc/portage/package.use/pam; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
@@ -227,7 +227,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do readline";
-if echo "sys-libs/readline -doc -debug -nls -test" > /etc/portage/package.use/readline; then
+if echo "sys-libs/readline -doc -debug -nls -test -selinux" > /etc/portage/package.use/readline; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
