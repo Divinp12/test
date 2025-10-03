@@ -178,8 +178,9 @@ sys-apps/file -doc -debug -nls -test -selinux
 sys-devel/gcc -doc -mudflap -libada -ada -gcj -d -nls -debug -test -selinux
 sys-devel/gettext -doc -debug -test -selinux
 sys-libs/glibc -doc -nls -nscd -audit -debug -test -selinux
-app-crypt/gpgme -doc -debug -test -selinux
-dev-libs/libffi -doc -debug -test -selinux
+app-crypt/gpgme -doc -debug -test -selinux -examples
+dev-libs/libffi -doc -debug -test -selinux -examples
+dev-libs/libxml2 -doc -debug -test -selinux -examples
 sys-libs/ncurses -doc -debug -nls -test -selinux
 sys-libs/pam -doc -nls -debug -test -selinux
 sys-libs/readline -doc -debug -nls -test -selinux" > /etc/portage/package.use/base; then
