@@ -176,6 +176,7 @@ sys-devel/binutils -doc -nls -debug -test -selinux -plugins
 sys-apps/coreutils -doc -debug -nls -test -selinux
 sys-apps/file -doc -debug -nls -test -selinux
 sys-devel/gcc -doc -mudflap -libada -ada -gcj -d -nls -debug -test -selinux
+sys-devel/gettext -doc -debug -test -selinux
 sys-libs/glibc -doc -nls -nscd -audit -debug -test -selinux
 sys-libs/ncurses -doc -debug -nls -test -selinux
 sys-libs/pam -doc -nls -debug -test -selinux
