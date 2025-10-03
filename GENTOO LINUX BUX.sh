@@ -172,6 +172,7 @@ fi;
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
 if echo "app-shells/bash -doc -net -examples -pfs -mem-scramble -plugins -nls -debug -test -selinux
+sys-devel/binutils -doc -nls -debug -test -selinux -plugins
 sys-apps/coreutils -doc -debug -nls -test -selinux
 sys-apps/file -doc -debug -nls -test -selinux
 sys-devel/gcc -doc -mudflap -libada -ada -gcj -d -nls -debug -test -selinux
