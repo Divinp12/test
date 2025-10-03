@@ -171,7 +171,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -net -pfs -mem-scramble -plugins -nls -doc -debug -test -selinux" > /etc/portage/package.use/bash; then
+if echo "app-shells/bash -net -examples -pfs -mem-scramble -plugins -nls -doc -debug -test -selinux" > /etc/portage/package.use/bash; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
