@@ -177,7 +177,7 @@ sys-apps/coreutils -doc -debug -nls -test -selinux
 sys-apps/file -doc -debug -nls -test -selinux
 sys-devel/gcc -doc -default-stack-clash-protection -systemtap -hardened -libgdiagnostics -cet -ssp -libssp -pie -jit -mudflap -ada -libada -gcj -d -nls -debug -test -selinux
 sys-devel/gettext -doc -debug -test -selinux
-sys-libs/glibc -doc -nls -nscd -audit -debug -test -selinux
+sys-libs/glibc -doc -nls -debug -test -selinux -nscd -audit -ssp -systemtap -static-pie -cet
 app-crypt/gpgme -doc -debug -test -selinux -examples
 dev-libs/libffi -doc -debug -test -selinux -examples
 dev-libs/libxml2 -doc -debug -test -selinux -examples
