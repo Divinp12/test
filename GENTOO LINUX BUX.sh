@@ -175,7 +175,7 @@ if echo "app-shells/bash -doc -net -examples -pfs -mem-scramble -plugins -nls -d
 sys-devel/binutils -doc -nls -debug -test -selinux -plugins
 sys-apps/coreutils -doc -debug -nls -test -selinux
 sys-apps/file -doc -debug -nls -test -selinux
-sys-devel/gcc -doc -ssp -libssp -pie -jit -mudflap -ada -libada -gcj -d -nls -debug -test -selinux
+sys-devel/gcc -doc -cet -ssp -libssp -pie -jit -mudflap -ada -libada -gcj -d -nls -debug -test -selinux
 sys-devel/gettext -doc -debug -test -selinux
 sys-libs/glibc -doc -nls -nscd -audit -debug -test -selinux
 app-crypt/gpgme -doc -debug -test -selinux -examples
