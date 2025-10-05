@@ -45,7 +45,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -audit -telemetry -ntfs -xfs -btrfs -xen"
+USE="-X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo "PASSOU"
@@ -171,19 +171,15 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -doc -net -examples -pfs -mem-scramble -plugins -nls -debug -test -selinux
-sys-devel/binutils -doc -nls -debug -test -selinux -plugins
-sys-apps/coreutils -doc -debug -nls -test -selinux
-sys-apps/file -doc -debug -nls -test -selinux
-sys-devel/gcc -doc -default-stack-clash-protection -systemtap -hardened -libgdiagnostics -cet -ssp -libssp -pie -jit -mudflap -ada -libada -gcj -d -nls -debug -test -selinux
-sys-devel/gettext -doc -debug -test -selinux
-sys-libs/glibc -doc -nls -debug -test -selinux -nscd -audit -ssp -systemtap -static-pie -cet
-app-crypt/gpgme -doc -debug -test -selinux -examples
-dev-libs/libffi -doc -debug -test -selinux -examples
-dev-libs/libxml2 -doc -debug -test -selinux -examples
-sys-libs/ncurses -doc -debug -nls -test -selinux
-sys-libs/pam -doc -nls -debug -test -selinux
-sys-libs/readline -doc -debug -nls -test -selinux" > /etc/portage/package.use/base; then
+if echo "app-shells/bash -doc -net -pfs -mem-scramble -nls
+sys-devel/binutils -nls
+sys-apps/coreutils -nls
+sys-apps/file -nls
+sys-devel/gcc -nls
+sys-libs/glibc -nls
+sys-libs/ncurses -nls
+sys-libs/pam -nls
+sys-libs/readline -nls" > /etc/portage/package.use/base; then
 echo "PASSOU"
 else
 echo "FALHOU" && exit
