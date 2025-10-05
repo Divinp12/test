@@ -171,7 +171,8 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -doc -net -pfs -mem-scramble -nls
+if echo "*/* -X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm
+app-shells/bash -doc -net -pfs -mem-scramble -nls
 sys-devel/binutils -nls
 sys-apps/coreutils -nls
 sys-apps/file -nls
