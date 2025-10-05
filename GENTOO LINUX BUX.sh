@@ -187,6 +187,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "instalando gcc"
+if emerge --quiet sys-devel/gcc; then
+echo " "
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo " "
