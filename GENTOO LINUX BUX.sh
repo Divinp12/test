@@ -79,6 +79,30 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando fuso horario brasileiro";
+if cp /mnt/gentoo/usr/share/zoneinfo/America/Sao_Paulo /mnt/gentoo/etc/localtime; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando identificador de fuso horario brasileiro";
+if echo "America/Sao_Paulo" > /mnt/gentoo/etc/timezone; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando idioma e caracteres brasileiro";
+if echo "pt_BR.UTF-8 UTF-8" > /mnt/gentoo/etc/locale.gen; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "copiando arquivo resolv.conf e colando no diretorio /etc";
 if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
 echo ""
@@ -233,30 +257,6 @@ fi;
 
 echo "instalando pacote sof-firmware";
 if emerge --quiet sys-firmware/sof-firmware; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando fuso horario brasileiro";
-if cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando identificador de fuso horario brasileiro";
-if echo "America/Sao_Paulo" > /etc/timezone; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando idioma e caracteres brasileiro";
-if echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen; then
 echo ""
 else
 echo "FALHOU" && exit
