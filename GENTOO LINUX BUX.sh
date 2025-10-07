@@ -187,7 +187,15 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "instalando gcc"
+echo "instalando glibc";
+if emerge --quiet sys-libs/glibc; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "instalando gcc";
 if emerge --quiet sys-devel/gcc; then
 echo ""
 else
