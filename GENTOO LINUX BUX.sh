@@ -395,21 +395,23 @@ sudo sed -i "s/^.*CONFIG_LEDS_LM355x.*$/CONFIG_LEDS_LM355x=n/" .config;
 sudo sed -i "s/^.*CONFIG_LEDS_IS31FL319X.*$/CONFIG_LEDS_IS31FL319X=n/" .config;
 
 echo "compilando kernel customizavel";
-if make -j16 -C /usr/src/linux*/; then
+if make -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
-if make modules_install -j16 -C /usr/src/linux*/; then
+echo "instalando modulos do kernel customizavel";
+if make modules_install -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
-if make install -j16 -C /usr/src/linux*/; then
+echo "instalando kernel customizavel";
+if make install -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
