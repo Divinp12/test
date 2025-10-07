@@ -72,7 +72,7 @@ sys-devel/gcc -nls
 sys-libs/glibc -nls
 sys-libs/ncurses -nls
 sys-libs/pam -nls
-sys-libs/readline -nls" > /etc/portage/package.use/base; then
+sys-libs/readline -nls" > /mnt/gentoo/etc/portage/package.use/base; then
 echo ""
 else
 echo "FALHOU" && exit
