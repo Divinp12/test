@@ -37,7 +37,7 @@ fi;
 
 
 echo "deletando stage3";
-if rm -rf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz; then
+if rm -rf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
