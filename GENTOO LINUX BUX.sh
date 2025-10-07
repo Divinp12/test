@@ -418,6 +418,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando partições em fstab";
 if echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults,noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /etc/fstab; then
@@ -427,6 +428,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando nome bux ao usuario root";
 if echo "hostname="bux"" > /etc/conf.d/hostname; then
 echo ""
 else
@@ -434,6 +436,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando senha bux ao usuario root";
 if echo -e "bux\nbux" | passwd root; then
 echo ""
 else
@@ -441,6 +444,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando usuario normal com nome bux";
 if useradd -m -g users -G wheel bux; then
 echo ""
 else
@@ -448,6 +452,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando senha bux ao usuario normal";
 if echo -e "bux\nbux" | passwd bux; then
 echo ""
 else
@@ -455,6 +460,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando suporte ipv6";
 if echo "127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
 127.0.0.1 bux.localdomain bux" > /etc/hosts; then
@@ -464,6 +470,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "instalando pacote de suporte DHCP";
 if emerge --quiet dhcpcd; then
 echo ""
 else
@@ -471,6 +478,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando suporte DHCP na inicializacao";
 if rc-update add dhcpcd default; then
 echo ""
 else
