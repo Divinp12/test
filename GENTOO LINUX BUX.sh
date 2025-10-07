@@ -103,6 +103,16 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando suporte ipv6";
+if echo "127.0.0.1 localhost.localdomain localhost
+::1 localhost.localdomain localhost
+127.0.0.1 bux.localdomain bux" > /mnt/gentoo/etc/hosts; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "copiando arquivo resolv.conf e colando no diretorio /etc";
 if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
 echo ""
@@ -466,16 +476,6 @@ fi;
 
 echo "adicionando senha bux ao usuario normal";
 if echo -e "bux\nbux" | passwd bux; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando suporte ipv6";
-if echo "127.0.0.1 localhost.localdomain localhost
-::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux" > /etc/hosts; then
 echo ""
 else
 echo "FALHOU" && exit
