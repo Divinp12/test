@@ -187,14 +187,6 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "instalando glibc";
-if emerge --quiet sys-libs/glibc; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "instalando gcc";
 if emerge --quiet sys-devel/gcc; then
 echo ""
@@ -284,14 +276,14 @@ fi;
 
 
 echo "limpando kernel customizavel";
-if make clean -j16 -C /usr/src/linux*/; then
+if make clean -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 echo "limpando profundamente kernel customizavel";
-if make mrproper -j16 -C /usr/src/linux*/; then
+if make mrproper -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -299,7 +291,7 @@ fi;
 
 
 echo "adicionando arquivo de configuração (.config)";
-if make defconfig -j16 -C /usr/src/linux*/; then
+if make defconfig -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
