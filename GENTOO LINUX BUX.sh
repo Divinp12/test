@@ -36,6 +36,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "deletando stage3";
+if rm -rf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "sobscrevendo arquivo make.conf";
 if echo 'COMMON_FLAGS="-Ofast -flto -march=native -pipe"
 CFLAGS="-Ofast -flto -march=native -pipe"
