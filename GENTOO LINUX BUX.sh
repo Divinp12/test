@@ -17,12 +17,12 @@ mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home && \
-echo " ";
+echo "";
 
 
 echo "baixando stage3";
 if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -30,7 +30,7 @@ fi;
 
 echo "extraindo stage3";
 if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -48,7 +48,7 @@ EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="-X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -56,7 +56,7 @@ fi;
 
 echo "copiando arquivo resolv.conf e colando no diretorio /etc";
 if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -64,7 +64,7 @@ fi;
 
 echo "montando pasta proc";
 if mount --types proc /proc /mnt/gentoo/proc/; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -72,7 +72,7 @@ fi;
 
 echo "montando pasta sys";
 if mount --rbind /sys /mnt/gentoo/sys; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -80,7 +80,7 @@ fi;
 
 echo "montando pasta sys novamente";
 if mount --make-rslave /mnt/gentoo/sys; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -88,7 +88,7 @@ fi;
 
 echo "montando pasta dev";
 if mount --rbind /dev /mnt/gentoo/dev; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -96,7 +96,7 @@ fi;
 
 echo "montando pasta dev novamente";
 if mount --make-rslave /mnt/gentoo/dev; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -104,7 +104,7 @@ fi;
 
 echo "montando pasta run";
 if mount --bind /run /mnt/gentoo/run; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -112,7 +112,7 @@ fi;
 
 echo "montando pasta run novamente"
 if mount --make-slave /mnt/gentoo/run; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -120,7 +120,7 @@ fi;
 
 echo "criando pasta repos.conf no diretorio /mnt/gentoo/etc/portage";
 if mkdir --parents /mnt/gentoo/etc/portage/repos.conf; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -128,7 +128,7 @@ fi;
 
 echo "copiando arquivo repos.conf e colando em /mnt/gentoo/etc/portage/repos.conf";
 if cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -136,11 +136,11 @@ fi;
 
 echo "entrando no ambiente chroot"
 chroot /mnt/gentoo /bin/bash -c '
-echo " ";
+echo "";
 
 echo "adicionando perfil de configuração";
 if source /etc/profile; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -148,7 +148,7 @@ fi;
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
 if emerge-webrsync --quiet > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -156,7 +156,7 @@ fi;
 
 echo "selecionando perfil do portage";
 if eselect profile set 1 > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -164,7 +164,7 @@ fi;
 
 echo "sincronizando repositorios do portage";
 if emerge --sync --quiet > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -181,7 +181,7 @@ sys-libs/glibc -nls
 sys-libs/ncurses -nls
 sys-libs/pam -nls
 sys-libs/readline -nls" > /etc/portage/package.use/base; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -189,7 +189,7 @@ fi;
 
 echo "instalando gcc"
 if emerge --quiet sys-devel/gcc; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -197,7 +197,7 @@ fi;
 
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -205,7 +205,7 @@ fi;
 
 echo "adicionando licença do pacote linux-firmware";
 if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /etc/portage/package.license; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -213,7 +213,7 @@ fi;
 
 echo "instalando pacote linux-firmware";
 if emerge --quiet sys-kernel/linux-firmware; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -221,70 +221,70 @@ fi;
 
 echo "instalando pacote sof-firmware";
 if emerge --quiet sys-firmware/sof-firmware; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if echo "Sao_Paulo" > /etc/timezone; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if locale-gen > /dev/null 2>&1; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if env-update; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if emerge --quiet sys-kernel/gentoo-sources; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if make clean -j16 -C /usr/src/linux*/; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if make mrproper -j16 -C /usr/src/linux*/; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if make defconfig -j16 -C /usr/src/linux*/; then
-echo " "
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -387,21 +387,21 @@ sudo sed -i "s/^.*CONFIG_LEDS_LM355x.*$/CONFIG_LEDS_LM355x=n/" .config;
 sudo sed -i "s/^.*CONFIG_LEDS_IS31FL319X.*$/CONFIG_LEDS_IS31FL319X=n/" .config;
 
 if make -j16 -C /usr/src/linux*/; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if make modules_install -j16 -C /usr/src/linux*/; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if make install -j16 -C /usr/src/linux*/; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -410,35 +410,35 @@ fi;
 if echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults,noatime 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /etc/fstab; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if echo "hostname="bux"" > /etc/conf.d/hostname; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if echo -e "bux\nbux" | passwd root; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if useradd -m -g users -G wheel bux; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if echo -e "bux\nbux" | passwd bux; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
@@ -447,21 +447,21 @@ fi;
 if echo "127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
 127.0.0.1 bux.localdomain bux" > /etc/hosts; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if emerge --quiet dhcpcd; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;
 
 
 if rc-update add dhcpcd default; then
-echo "PASSOU"
+echo ""
 else
 echo "FALHOU" && exit
 fi;'
