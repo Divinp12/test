@@ -243,6 +243,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando idioma e caracteres brasileiro";
 if echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen; then
 echo ""
 else
@@ -250,6 +251,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "aplicando mudanças de idiomas e caracteres brasileiro";
 if locale-gen > /dev/null 2>&1; then
 echo ""
 else
