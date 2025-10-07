@@ -62,6 +62,23 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "desativando recursos obsoletos ou pouco usados do bash";
+if echo "*/* -X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm
+app-shells/bash -nls
+sys-devel/binutils -nls
+sys-apps/coreutils -nls
+sys-apps/file -nls
+sys-devel/gcc -nls
+sys-libs/glibc -nls
+sys-libs/ncurses -nls
+sys-libs/pam -nls
+sys-libs/readline -nls" > /etc/portage/package.use/base; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "copiando arquivo resolv.conf e colando no diretorio /etc";
 if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
 echo ""
@@ -172,23 +189,6 @@ fi;
 
 echo "sincronizando repositorios do portage";
 if emerge --sync --quiet > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "*/* -X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm
-app-shells/bash -net -pfs -mem-scramble -nls
-sys-devel/binutils -nls
-sys-apps/coreutils -nls
-sys-apps/file -nls
-sys-devel/gcc -nls
-sys-libs/glibc -nls
-sys-libs/ncurses -nls
-sys-libs/pam -nls
-sys-libs/readline -nls" > /etc/portage/package.use/base; then
 echo ""
 else
 echo "FALHOU" && exit
