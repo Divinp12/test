@@ -235,7 +235,8 @@ echo "FALHOU" && exit
 fi;
 
 
-if echo "Sao_Paulo" > /etc/timezone; then
+echo "adicionando identificador de fuso horario brasileiro";
+if echo "America/Sao_Paulo" > /etc/timezone; then
 echo ""
 else
 echo "FALHOU" && exit
