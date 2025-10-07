@@ -187,8 +187,12 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "instalando gcc";
-if emerge --quiet sys-devel/gcc; then
+echo "instalando pacotes essenciais";
+if emerge --quiet \
+sys-devel/gcc \
+sys-libs/glibc \
+app-shells/bash \
+sys-apps/coreutils; then
 echo ""
 else
 echo "FALHOU" && exit
