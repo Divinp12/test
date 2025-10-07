@@ -21,7 +21,7 @@ echo "";
 
 
 echo "baixando stage3";
-if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20250907T165007Z/stage3-amd64-openrc-20250907T165007Z.tar.xz > /dev/null 2>&1; then
+if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251005T161859Z/stage3-amd64-openrc-20251005T161859Z.tar.xz > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -29,7 +29,7 @@ fi;
 
 
 echo "extraindo stage3";
-if tar xvpf /mnt/gentoo/stage3-amd64-openrc-20250907T165007Z.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
+if tar xvpf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
