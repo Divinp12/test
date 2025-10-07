@@ -259,6 +259,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "atualizando variáveis de ambiente globais";
 if env-update; then
 echo ""
 else
@@ -266,6 +267,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "instalando kernel customizavel";
 if emerge --quiet sys-kernel/gentoo-sources; then
 echo ""
 else
@@ -273,6 +275,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "limpando kernel customizavel";
 if make clean -j16 -C /usr/src/linux*/; then
 echo ""
 else
