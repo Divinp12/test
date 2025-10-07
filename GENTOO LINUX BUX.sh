@@ -227,6 +227,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando fuso horario brasileiro";
 if cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; then
 echo ""
 else
