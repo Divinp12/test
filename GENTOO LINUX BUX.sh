@@ -282,7 +282,7 @@ else
 echo "FALHOU" && exit
 fi;
 
-
+echo "limpando profundamente kernel customizavel";
 if make mrproper -j16 -C /usr/src/linux*/; then
 echo ""
 else
@@ -290,6 +290,7 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando arquivo de configuração (.config)";
 if make defconfig -j16 -C /usr/src/linux*/; then
 echo ""
 else
@@ -393,6 +394,7 @@ sudo sed -i "s/^.*CONFIG_LEDS_TLC591XX.*$/CONFIG_LEDS_TLC591XX=n/" .config;
 sudo sed -i "s/^.*CONFIG_LEDS_LM355x.*$/CONFIG_LEDS_LM355x=n/" .config;
 sudo sed -i "s/^.*CONFIG_LEDS_IS31FL319X.*$/CONFIG_LEDS_IS31FL319X=n/" .config;
 
+echo "compilando kernel customizavel";
 if make -j16 -C /usr/src/linux*/; then
 echo ""
 else
