@@ -63,12 +63,11 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "*/* -X -systemd -gnome
-app-shells/bash -nls
+if echo "app-shells/bash -nls -examples -plugins
 sys-devel/binutils -nls
 sys-apps/coreutils -nls
 sys-apps/file -nls
-sys-devel/gcc -nls
+sys-devel/gcc -nls -doc -ada -cobol -jit -debug -test
 sys-libs/glibc -nls
 sys-libs/ncurses -nls
 sys-libs/pam -nls
