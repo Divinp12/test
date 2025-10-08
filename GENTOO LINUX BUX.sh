@@ -53,7 +53,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm"
+USE="-X -systemd -gnome"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -63,7 +63,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "*/* -X -systemd -gnome -kde -plasma -gtk-doc -oss -pipeware -dvd -dvdr -cdrom -cdr -bluray -doc -debug -test -selinux -examples -plugins -audit -telemetry -ntfs -xfs -btrfs -xen -bluetooth -cups -secureboot -tpm
+if echo "*/* -X -systemd -gnome
 app-shells/bash -nls
 sys-devel/binutils -nls
 sys-apps/coreutils -nls
@@ -230,11 +230,7 @@ fi;
 
 
 echo "instalando pacotes essenciais";
-if emerge --quiet \
-sys-devel/gcc \
-sys-libs/glibc \
-app-shells/bash \
-sys-apps/coreutils; then
+if emerge --quiet sys-devel/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
