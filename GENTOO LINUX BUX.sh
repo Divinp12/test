@@ -67,7 +67,7 @@ if echo "app-shells/bash -nls -examples -plugins
 sys-devel/binutils -nls
 sys-apps/coreutils -nls
 sys-apps/file -nls
-sys-devel/gcc -nls -doc -ada -cobol -jit -debug -test
+sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test
 sys-libs/glibc -nls
 sys-libs/ncurses -nls
 sys-libs/pam -nls
