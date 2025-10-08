@@ -29,7 +29,7 @@ fi;
 
 
 echo "extraindo stage3";
-if tar xvpf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
+if tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -37,7 +37,7 @@ fi;
 
 
 echo "deletando stage3";
-if rm -rf /mnt/gentoo/stage3-amd64-openrc-*.tar.xz > /dev/null 2>&1; then
+if rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
