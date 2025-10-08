@@ -68,7 +68,7 @@ sys-devel/binutils -nls
 sys-apps/coreutils -nls
 sys-apps/file -nls
 sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test
-sys-libs/glibc -nls -doc -ssp -audit -cet -debug -nscd -selinux -static-pie -systemd -test
+sys-libs/glibc -doc -ssp -audit -cet -debug -nscd -selinux -static-pie -systemd -test
 sys-libs/ncurses -nls
 sys-libs/pam -nls
 sys-libs/readline -nls" > /mnt/gentoo/etc/portage/package.use/base; then
