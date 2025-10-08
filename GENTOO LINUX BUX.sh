@@ -53,7 +53,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-X -systemd -gnome"
+USE="-X"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
