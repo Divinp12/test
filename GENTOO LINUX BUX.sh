@@ -64,7 +64,7 @@ fi;
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
 if echo "app-shells/bash -nls -examples -plugins -net
-sys-devel/binutils -nls
+sys-devel/binutils -nls -cet -doc -test
 sys-apps/coreutils -nls
 sys-apps/file -nls
 sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test
