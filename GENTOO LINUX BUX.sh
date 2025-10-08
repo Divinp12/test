@@ -65,13 +65,8 @@ fi;
 echo "desativando recursos obsoletos ou pouco usados do bash";
 if echo "app-shells/bash -nls -examples -plugins -net
 sys-devel/binutils -nls -cet -doc -test
-sys-apps/coreutils -nls
-sys-apps/file -nls
 sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test
-sys-libs/glibc -doc -ssp -audit -cet -debug -nscd -selinux -static-pie -systemd -test
-sys-libs/ncurses -nls
-sys-libs/pam -nls
-sys-libs/readline -nls" > /mnt/gentoo/etc/portage/package.use/base; then
+sys-libs/glibc -doc -ssp -audit -cet -debug -nscd -selinux -static-pie -systemd -test" > /mnt/gentoo/etc/portage/package.use/base; then
 echo ""
 else
 echo "FALHOU" && exit
