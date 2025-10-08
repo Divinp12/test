@@ -63,7 +63,7 @@ fi;
 
 
 echo "desativando recursos obsoletos ou pouco usados do bash";
-if echo "app-shells/bash -nls -examples -plugins
+if echo "app-shells/bash -nls -examples -plugins -net
 sys-devel/binutils -nls
 sys-apps/coreutils -nls
 sys-apps/file -nls
