@@ -65,9 +65,7 @@ fi;
 
 echo "desativando recursos obsoletos ou pouco usados em pacotes";
 if echo "app-shells/bash -nls -examples -plugins -net
-sys-devel/binutils -nls -cet -doc -test
-sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test -d -mudflap -fortran -go
-sys-libs/glibc -doc -ssp -audit -cet -debug -nscd -selinux -static-pie -systemd -test" > /mnt/gentoo/etc/portage/package.use/base; then
+sys-devel/binutils -nls -cet -doc -test" > /mnt/gentoo/etc/portage/package.use/base; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -226,6 +224,14 @@ fi;
 
 echo "instalando pacote gcc";
 if emerge --quiet --getbinpkg sys-devel/gcc; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "instalando pacote glibc";
+if emerge --quiet --getbinpkg sys-libs/glibc; then
 echo ""
 else
 echo "FALHOU" && exit
