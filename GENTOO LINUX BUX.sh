@@ -53,6 +53,7 @@ FFLAGS="-Ofast -flto -march=native -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
+FEATURES="getbinpkg"
 USE="-X"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
@@ -62,7 +63,7 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "desativando recursos obsoletos ou pouco usados do bash";
+echo "desativando recursos obsoletos ou pouco usados em pacotes";
 if echo "app-shells/bash -nls -examples -plugins -net
 sys-devel/binutils -nls -cet -doc -test
 sys-devel/gcc -nls -doc -ada -cobol -jit -ssp -libssp -default-stack-clash-protection -cet -pie -debug -test -d -mudflap -fortran -go
@@ -223,8 +224,8 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "instalando pacotes essenciais";
-if emerge --quiet sys-devel/gcc; then
+echo "instalando pacote gcc";
+if emerge --quiet --getbinpkg sys-devel/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
