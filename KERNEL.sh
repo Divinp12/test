@@ -87,7 +87,12 @@ sudo sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' .config;
 
 #DESATIVAR HYPERV
 sudo sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' .config;
-CONFIG_HYPERVISOR_GUEST=y
+sudo sed -i 's/^.*CONFIG_HYPERVISOR_GUEST.*$/CONFIG_HYPERVISOR_GUEST=n/' .config;
+sudo sed -i 's/^.*CONFIG_HYPERV_VTL_MODE.*$/CONFIG_HYPERV_VTL_MODE=n/' .config;
+sudo sed -i 's/^.*CONFIG_HYPERV_TIMER.*$/CONFIG_HYPERV_TIMER=n/' .config;
+sudo sed -i 's/^.*CONFIG_HYPERV_UTILS.*$/CONFIG_HYPERV_UTILS=n/' .config;
+sudo sed -i 's/^.*CONFIG_HYPERV_BALLOON.*$/CONFIG_HYPERV_BALLOON=n/' .config;
+sudo sed -i 's/^.*CONFIG_MSHV_ROOT.*$/CONFIG_MSHV_ROOT=n/' .config;
 
 #DESATIVAR AUDIT
 sudo sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' .config;
