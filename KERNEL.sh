@@ -100,6 +100,18 @@ sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX_AVC_STATS.*$/CONFIG_SECURITY_SELINUX_A
 
 #DESATIVAR XEN
 sudo sed -i 's/^.*CONFIG_XEN.*$/CONFIG_XEN=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PV.*$/CONFIG_XEN_PV=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_512GB.*$/CONFIG_XEN_512GB=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PV_SMP.*$/CONFIG_XEN_PV_SMP=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PV_DOM0.*$/CONFIG_XEN_PV_DOM0=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PVHVM.*$/CONFIG_XEN_PVHVM=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PVHVM_SMP.*$/CONFIG_XEN_PVHVM_SMP=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PVHVM_GUEST.*$/CONFIG_XEN_PVHVM_GUEST=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_SAVE_RESTORE.*$/CONFIG_XEN_SAVE_RESTORE=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_DEBUG_FS.*$/CONFIG_XEN_DEBUG_FS=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PVH.*$/CONFIG_XEN_PVH=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_DOM0.*$/CONFIG_XEN_DOM0=n/' .config;
+sudo sed -i 's/^.*CONFIG_XEN_PV_MSR_SAFE.*$/CONFIG_XEN_PV_MSR_SAFE=n/' .config;
 
 #DESATIVAR DRIVERS DE LEDS
 sudo sed -i 's/^.*CONFIG_LEDS_APU.*$/CONFIG_LEDS_APU=n/' .config;
