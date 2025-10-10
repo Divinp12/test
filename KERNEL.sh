@@ -87,6 +87,7 @@ sudo sed -i 's/^.*CONFIG_KASAN.*$/CONFIG_KASAN=n/' .config;
 
 #DESATIVAR HYPERV
 sudo sed -i 's/^.*CONFIG_HYPERV.*$/CONFIG_HYPERV=n/' .config;
+CONFIG_HYPERVISOR_GUEST=y
 
 #DESATIVAR AUDIT
 sudo sed -i 's/^.*CONFIG_AUDIT.*$/CONFIG_AUDIT=n/' .config;
