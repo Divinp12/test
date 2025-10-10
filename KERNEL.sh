@@ -87,6 +87,12 @@ CONFIG_XFS_ONLINE_REPAIR=y
 sudo sed -i 's/^.*CONFIG_GFS2_FS.*$/CONFIG_GFS2_FS=n/' .config;
 
 sudo sed -i 's/^.*CONFIG_BTRFS_FS.*$/CONFIG_BTRFS_FS=n/' .config;
+CONFIG_BTRFS_FS_POSIX_ACL=y
+CONFIG_BTRFS_FS_RUN_SANITY_TESTS is not set
+CONFIG_BTRFS_DEBUG is not set
+CONFIG_BTRFS_ASSERT is not set
+CONFIG_BTRFS_EXPERIMENTAL is not set
+CONFIG_BTRFS_FS_REF_VERIFY is not set
 
 sudo sed -i 's/^.*CONFIG_NILFS2_FS.*$/CONFIG_NILFS2_FS=n/' .config;
 
