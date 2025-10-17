@@ -62,14 +62,6 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "desativando recursos obsoletos ou pouco usados em pacotes";
-if echo "*/* -X -bluetooth -doc" > /mnt/gentoo/etc/portage/package.use/base; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "adicionando fuso horario brasileiro";
 if cp /mnt/gentoo/usr/share/zoneinfo/America/Sao_Paulo /mnt/gentoo/etc/localtime; then
 echo ""
