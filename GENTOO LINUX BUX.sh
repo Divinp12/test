@@ -188,6 +188,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "aplicando mudanças de idiomas e caracteres brasileiro";
+if locale-gen > /dev/null 2>&1; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "sincronizando arvore de ebuilds do gentoo via web";
 if emerge-webrsync --quiet > /dev/null 2>&1; then
 echo ""
@@ -238,14 +246,6 @@ fi;
 
 echo "instalando pacote sof-firmware";
 if emerge --quiet sys-firmware/sof-firmware; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "aplicando mudanças de idiomas e caracteres brasileiro";
-if locale-gen > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
