@@ -213,15 +213,12 @@ fi;
 
 
 echo "instalando pacote gcc";
-if emerge --quiet sys-devel/gcc; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "instalando pacote glibc";
-if emerge --quiet sys-libs/glibc; then
+if emerge --quiet \
+sys-devel/gcc \
+sys-libs/glibc \
+app-shells/bash \
+sys-apps/coreutils
+; then
 echo ""
 else
 echo "FALHOU" && exit
