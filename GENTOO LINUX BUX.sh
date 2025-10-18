@@ -46,10 +46,10 @@ fi;
 
 echo "sobscrevendo arquivo make.conf";
 if echo 'COMMON_FLAGS="-Ofast -flto -march=native -mtune=native -pipe"
-CFLAGS="-Ofast -flto -march=native -pipe"
-CXXFLAGS="-Ofast -flto -march=native -pipe"
-FCFLAGS="-Ofast -flto -march=native -pipe"
-FFLAGS="-Ofast -flto -march=native -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
