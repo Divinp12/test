@@ -45,7 +45,7 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-Ofast -flto -march=native -mtune=native -fno-pie -no-pie -fno-stack-protector -fno-stack-protector-strong -fomit-frame-pointer -fno-ident -g0 -pipe"
+if echo 'COMMON_FLAGS="-Ofast -flto -march=native -mtune=native -fno-pie -no-pie -fno-stack-protector -fno-stack-protector-strong -fomit-frame-pointer -fno-ident -fno-unwind-tables -fno-asynchronous-unwind-tables -g0 -pipe"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
