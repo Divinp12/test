@@ -45,7 +45,7 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-Ofast -flto -march=native -pipe"
+if echo 'COMMON_FLAGS="-Ofast -flto -march=native -mtune=native -pipe"
 CFLAGS="-Ofast -flto -march=native -pipe"
 CXXFLAGS="-Ofast -flto -march=native -pipe"
 FCFLAGS="-Ofast -flto -march=native -pipe"
