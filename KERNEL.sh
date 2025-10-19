@@ -1,12 +1,12 @@
 #!/bin/bash
 
-sudo pacman -Sy --noconfirm --quiet bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.2.tar.xz && \
-sudo tar -xvf linux-6.*.tar.xz && \
-cd linux-6.15.2 && \
-sudo make clean -j$(nproc) && \
-sudo make mrproper -j$(nproc) && \
-sudo make defconfig -j$(nproc);
+sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.4.tar.xz && \
+sudo tar -xvf linux-6.17.4.tar.xz && \
+cd linux-6.17.4 && \
+sudo make clean -j64 && \
+sudo make mrproper -j64 && \
+sudo make defconfig -j64;
 
 #DESATIVAR SWAP
 sudo sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' .config;
