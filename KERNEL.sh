@@ -311,7 +311,7 @@ sudo sed -i 's/^.*CONFIG_BT_HCIBTUSB.*$/CONFIG_BT_HCIBTUSB=n/' .config;
 sudo make -j64 && \
 sudo make modules_install -j64 && \
 sudo make install -j64 && \
-sudo cp arch/x86/boot/bzImage /boot/vmlinuz-custom && \
-sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-custom.img && \
+sudo cp arch/x86/boot/bzImage /boot/vmlinuz-6.17.4 && \
+sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.17.4.img && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg
