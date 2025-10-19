@@ -2,7 +2,7 @@
 
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
 wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.4.tar.xz && \
-sudo tar -xvf linux-6.17.4.tar.xz && \
+sudo tar -xvpf linux-6.17.4.tar.xz --xattrs-include='*.*' --numeric-owner && \
 cd linux-6.17.4 && \
 sudo make clean -j64 && \
 sudo make mrproper -j64 && \
@@ -308,6 +308,10 @@ sudo sed -i 's/^.*CONFIG_BT_HCIBTUSB.*$/CONFIG_BT_HCIBTUSB=n/' .config;
 #CONFIG_BT_NXPUART=m
 #CONFIG_BT_INTEL_PCIE=m
 
-sudo make -j$(nproc) && \
-sudo make modules_install -j$(nproc) && \
-sudo make install -j$(nproc);
+sudo make -j64 && \
+sudo make modules_install -j64 && \
+sudo make install -j64 && \
+sudo cp arch/x86/boot/bzImage /boot/vmlinuz-custom && \
+sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-custom.img && \
+sudo mkinitcpio -P && \
+sudo grub-mkconfig -o /boot/grub/grub.cfg
