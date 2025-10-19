@@ -247,12 +247,12 @@ sudo sed -i 's/^.*CONFIG_LEDS_LM355x.*$/CONFIG_LEDS_LM355x=n/' .config;
 sudo sed -i 's/^.*CONFIG_LEDS_IS31FL319X.*$/CONFIG_LEDS_IS31FL319X=n/' .config;
 
 # DESATIVAR SUPORTE BLUETOOTH
-#CONFIG_BT=m
-#CONFIG_BT_BREDR=y
-#CONFIG_BT_RFCOMM=m
-#CONFIG_BT_RFCOMM_TTY=y
-#CONFIG_BT_BNEP=m
-#CONFIG_BT_BNEP_MC_FILTER=y
+sudo sed -i 's/^.*CONFIG_BT.*$/CONFIG_BT=n/' .config;
+sudo sed -i 's/^.*CONFIG_BT_BREDR.*$/CONFIG_BT_BREDR=n/' .config;
+sudo sed -i 's/^.*CONFIG_BT_RFCOMM.*$/CONFIG_BT_RFCOMM=n/' .config;
+sudo sed -i 's/^.*CONFIG_BT_RFCOMM_TTY.*$/CONFIG_BT_RFCOMM_TTY=n/' .config;
+sudo sed -i 's/^.*CONFIG_BT_BNEP.*$/CONFIG_BT_BNEP=n/' .config;
+sudo sed -i 's/^.*CONFIG_BT_BNEP_MC_FILTER.*$/CONFIG_BT_BNEP_MC_FILTER=n/' .config;
 #CONFIG_BT_BNEP_PROTO_FILTER=y
 #CONFIG_BT_HIDP=m
 #CONFIG_BT_LE=y
