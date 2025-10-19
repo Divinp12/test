@@ -1,9 +1,9 @@
 #!/bin/bash
 
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.4.tar.xz && \
-sudo tar -xvpf linux-6.17.4.tar.xz --xattrs-include='*.*' --numeric-owner && \
-cd linux-6.17.4 && \
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
+sudo tar -xvpf linux-6.12.54.tar.xz --xattrs-include='*.*' --numeric-owner && \
+cd linux-6.12.54 && \
 sudo make clean -j64 && \
 sudo make mrproper -j64 && \
 sudo make defconfig -j64;
@@ -311,7 +311,7 @@ sudo sed -i 's/^.*CONFIG_BT_HCIBTUSB.*$/CONFIG_BT_HCIBTUSB=n/' .config;
 sudo make -j64 && \
 sudo make modules_install -j64 && \
 sudo make install -j64 && \
-sudo cp arch/x86/boot/bzImage /boot/vmlinuz-6.17.4 && \
-sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.17.4.img && \
+sudo cp arch/x86/boot/bzImage /boot/vmlinuz-6.12.54 && \
+sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.12.54.img && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg
