@@ -9,7 +9,7 @@ sudo make mrproper -j64 && \
 sudo make defconfig -j64;
 
 #DESATIVAR SWAP
-sudo sed -i 's/^.*CONFIG_SWAP.*$/CONFIG_SWAP=n/' .config;
+sudo sed -i 's/^.*CONFIG_SWAP.*$/#/' .config;
 
 #DESATIVAR ZSWAP
 sudo sed -i 's/^.*CONFIG_ZSWAP.*$/CONFIG_ZSWAP=n/' .config;
