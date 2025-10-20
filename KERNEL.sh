@@ -389,13 +389,11 @@ sudo sed -i 's/^.*CONFIG_BT_VIRTIO.*$/CONFIG_BT_VIRTIO=n/' .config;
 sudo sed -i 's/^.*CONFIG_BT_NXPUART.*$/CONFIG_BT_NXPUART=n/' .config;
 sudo sed -i 's/^.*CONFIG_BT_INTEL_PCIE.*$/CONFIG_BT_INTEL_PCIE=n/' .config;
 
-CD-ROM/DVD Filesystems
-#
-CONFIG_ISO9660_FS=m
-CONFIG_JOLIET=y
-CONFIG_ZISOFS=y
-CONFIG_UDF_FS=m
-# end of CD-ROM/DVD Filesystems
+# SISTEMA DE ARQUIVOS CD-ROM E DVD
+sudo sed -i 's/^.*CONFIG_ISO9660_FS.*$/CONFIG_ISO9660_FS=n/' .config;
+sudo sed -i 's/^.*CONFIG_JOLIET.*$/CONFIG_JOLIET=n/' .config;
+sudo sed -i 's/^.*CONFIG_ZISOFS.*$/CONFIG_ZISOFS=n/' .config;
+sudo sed -i 's/^.*CONFIG_UDF_FS.*$/CONFIG_UDF_FS=n/' .config;
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
