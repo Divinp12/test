@@ -94,44 +94,22 @@ CONFIG_MEN_A21_WDT=m
 CONFIG_XEN_WDT=m
 
 #DESATIVAR SUSPENSAO
-sudo sed -i 's/^.*CONFIG_SUSPEND.*$/CONFIG_SUSPEND=n/' .config;
-sudo sed -i 's/^.*CONFIG_SUSPEND_FREEZER.*$/CONFIG_SUSPEND_FREEZER=n/' .config;
+sudo sed -i 's/^.*CONFIG_SUSPEND.*$/#/' .config;
 
 #DESATIVAR HIBERNACAO
-sudo sed -i 's/^.*CONFIG_HIBERNATE_CALLBACKS.*$/CONFIG_HIBERNATE_CALLBACKS=n/' .config;
-sudo sed -i 's/^.*CONFIG_HIBERNATION.*$/CONFIG_HIBERNATION=n/' .config;
-sudo sed -i 's/^.*CONFIG_HIBERNATION_SNAPSHOT_DEV.*$/CONFIG_HIBERNATION_SNAPSHOT_DEV=n/' .config;
-sudo sed -i 's/^.*CONFIG_HIBERNATION_COMP_LZO.*$/CONFIG_HIBERNATION_COMP_LZO=n/' .config;
+sudo sed -i 's/^.*CONFIG_HIBERNATE.*$/#/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT2
-sudo sed -i 's/^.*CONFIG_EXT2_FS.*$/CONFIG_EXT2_FS=n/' .config;
+sudo sed -i 's/^.*CONFIG_EXT2.*$/#/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT3
-sudo sed -i 's/^.*CONFIG_EXT3_FS.*$/CONFIG_EXT3_FS=n/' .config;
+sudo sed -i 's/^.*CONFIG_EXT3.*$/#/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS JFS
-sudo sed -i 's/^.*CONFIG_JFS_FS.*$/CONFIG_JFS_FS=n/' .config;
-sudo sed -i 's/^.*CONFIG_JFS_POSIX_ACL.*$/CONFIG_JFS_POSIX_ACL=n/' .config;
-sudo sed -i 's/^.*CONFIG_JFS_SECURITY.*$/CONFIG_JFS_SECURITY=n/' .config;
-sudo sed -i 's/^.*CONFIG_JFS_DEBUG.*$/CONFIG_JFS_DEBUG=n/' .config;
-sudo sed -i 's/^.*CONFIG_JFS_STATISTICS.*$/CONFIG_JFS_STATISTICS=n/' .config;
+sudo sed -i 's/^.*CONFIG_JFS.*$/#/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS XFS
-sudo sed -i 's/^.*CONFIG_XFS_FS.*$/CONFIG_XFS_FS=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_SUPPORT_V4.*$/CONFIG_XFS_SUPPORT_V4=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_SUPPORT_ASCII_CI.*$/CONFIG_XFS_SUPPORT_ASCII_CI=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_QUOTA.*$/CONFIG_XFS_QUOTA=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_POSIX_ACL.*$/CONFIG_XFS_POSIX_ACL=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_RT.*$/CONFIG_XFS_RT=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_DRAIN_INTENTS.*$/CONFIG_XFS_DRAIN_INTENTS=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_LIVE_HOOKS.*$/CONFIG_XFS_LIVE_HOOKS=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_MEMORY_BUFS.*$/CONFIG_XFS_MEMORY_BUFS=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_BTREE_IN_MEM.*$/CONFIG_XFS_BTREE_IN_MEM=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_ONLINE_SCRUB.*$/CONFIG_XFS_ONLINE_SCRUB=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_ONLINE_SCRUB_STATS.*$/CONFIG_XFS_ONLINE_SCRUB_STATS=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_ONLINE_REPAIR.*$/CONFIG_XFS_ONLINE_REPAIR=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_WARN.*$/CONFIG_XFS_WARN=n/' .config;
-sudo sed -i 's/^.*CONFIG_XFS_DEBUG.*$/CONFIG_XFS_DEBUG=n/' .config;
+sudo sed -i 's/^.*CONFIG_XFS.*$/#/' .config;
 
 sudo sed -i 's/^.*CONFIG_GFS2_FS.*$/CONFIG_GFS2_FS=n/' .config;
 
