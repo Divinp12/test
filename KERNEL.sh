@@ -22,7 +22,7 @@ sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' con
 sudo sed -Ei '/CONFIG_CPU_MITIGATIONS/ s/.*(CONFIG_CPU_MITIGATIONS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR WATCHDOG
-sudo sed -i 's/^.*CONFIG_WATCHDOG.*$/#/' .config;
+sudo sed -Ei '/CONFIG_WATCHDOG/ s/.*(CONFIG_WATCHDOG[A-Z0-9_]*).*/\1=n/' config;
 #CONFIG_SOFT_WATCHDOG=m
 # CONFIG_SOFT_WATCHDOG_PRETIMEOUT is not set
 #CONFIG_CROS_EC_WATCHDOG=m
@@ -92,7 +92,7 @@ sudo sed -i 's/^.*CONFIG_WATCHDOG.*$/#/' .config;
 #CONFIG_XEN_WDT=m
 
 #DESATIVAR SUSPENSAO
-sudo sed -i 's/^.*CONFIG_SUSPEND.*$/#/' .config;
+sudo sed -Ei '/CONFIG_SUSPEND/ s/.*(CONFIG_SUSPEND[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR HIBERNACAO
 sudo sed -i 's/^.*CONFIG_HIBERNATE.*$/#/' .config;
