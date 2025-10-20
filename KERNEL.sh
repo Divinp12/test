@@ -9,17 +9,18 @@ sudo make mrproper -j64 && \
 sudo make defconfig -j64;
 
 #DESATIVAR SWAP
-sudo sed -i 's/^.*CONFIG_SWAP.*$/#/' .config;
+sudo sed -Ei '/CONFIG_SWAP/ s/.*(CONFIG_SWAP[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR ZSWAP
-sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR ZRAM
-sudo sed -i 's/^.*CONFIG_ZRAM.*$/#/' .config;
+sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR MITIGATIONS
 sudo sed -i 's/^.*CONFIG_CPU_MITIGATIONS.*$/#/' .config;
 sudo sed -i 's/^.*CONFIG_MITIGATION.*$/#/' .config;
+sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR WATCHDOG
 sudo sed -i 's/^.*CONFIG_WATCHDOG.*$/#/' .config;
