@@ -12,7 +12,7 @@ sudo make defconfig -j64;
 sudo sed -i 's/^.*CONFIG_SWAP.*$/#/' .config;
 
 #DESATIVAR ZSWAP
-sudo sed -i 's/^.*CONFIG_ZSWAP.*$/#/' .config;
+sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR ZRAM
 sudo sed -i 's/^.*CONFIG_ZRAM.*$/#/' .config;
