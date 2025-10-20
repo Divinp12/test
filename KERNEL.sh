@@ -18,9 +18,8 @@ sudo sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR MITIGATIONS
-sudo sed -i 's/^.*CONFIG_CPU_MITIGATIONS.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_MITIGATION.*$/#/' .config;
-sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_CPU_MITIGATIONS/ s/.*(CONFIG_CPU_MITIGATIONS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR WATCHDOG
 sudo sed -i 's/^.*CONFIG_WATCHDOG.*$/#/' .config;
