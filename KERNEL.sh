@@ -152,16 +152,14 @@ sudo sed -Ei '/CONFIG_SWIOTLB_XEN/ s/.*(CONFIG_SWIOTLB_XEN[A-Z0-9_]*).*/\1=n/' c
 #DESATIVAR DRIVERS DE LEDS
 sudo sed -Ei '/CONFIG_LEDS/ s/.*(CONFIG_LEDS[A-Z0-9_]*).*/\1=n/' config;
 
-
 # DESATIVAR SUPORTE BLUETOOTH
 sudo sed -Ei '/CONFIG_BT/ s/.*(CONFIG_BT[A-Z0-9_]*).*/\1=n/' config;
 
-
 # SISTEMA DE ARQUIVOS CD-ROM E DVD
-sudo sed -i 's/^.*CONFIG_ISO9660_FS.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_JOLIET.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_ZISOFS.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_UDF_FS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_ISO9660_FS/ s/.*(CONFIG_ISO9660_FS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_JOLIET/ s/.*(CONFIG_JOLIET[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_ZISOFS/ s/.*(CONFIG_ZISOFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' config;
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
