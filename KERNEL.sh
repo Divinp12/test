@@ -100,7 +100,7 @@ sudo sed -Ei '/CONFIG_HIBERNATE/ s/.*(CONFIG_HIBERNATE[A-Z0-9_]*).*/\1=n/' confi
 sudo sed -Ei '/CONFIG_EXT2/ s/.*(CONFIG_EXT2[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT3
-sudo sed -i 's/^.*CONFIG_EXT3.*$/#/' .config;
+sudo sed -Ei '/CONFIG_EXT3/ s/.*(CONFIG_EXT3[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS JFS
 sudo sed -i 's/^.*CONFIG_JFS.*$/#/' .config;
