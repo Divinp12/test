@@ -389,6 +389,14 @@ sudo sed -i 's/^.*CONFIG_BT_VIRTIO.*$/CONFIG_BT_VIRTIO=n/' .config;
 sudo sed -i 's/^.*CONFIG_BT_NXPUART.*$/CONFIG_BT_NXPUART=n/' .config;
 sudo sed -i 's/^.*CONFIG_BT_INTEL_PCIE.*$/CONFIG_BT_INTEL_PCIE=n/' .config;
 
+CD-ROM/DVD Filesystems
+#
+CONFIG_ISO9660_FS=m
+CONFIG_JOLIET=y
+CONFIG_ZISOFS=y
+CONFIG_UDF_FS=m
+# end of CD-ROM/DVD Filesystems
+
 sudo make -j64 && \
 sudo make modules_install -j64 && \
 sudo make install -j64 && \
