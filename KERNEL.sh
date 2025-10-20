@@ -89,13 +89,12 @@ sudo sed -Ei '/CONFIG_WATCHDOG/ s/.*(CONFIG_WATCHDOG[A-Z0-9_]*).*/\1=n/' config;
 #CONFIG_NIC7018_WDT=m
 #CONFIG_SIEMENS_SIMATIC_IPC_WDT=m
 #CONFIG_MEN_A21_WDT=m
-#CONFIG_XEN_WDT=m
 
 #DESATIVAR SUSPENSAO
 sudo sed -Ei '/CONFIG_SUSPEND/ s/.*(CONFIG_SUSPEND[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR HIBERNACAO
-sudo sed -i 's/^.*CONFIG_HIBERNATE.*$/#/' .config;
+sudo sed -Ei '/CONFIG_HIBERNATE/ s/.*(CONFIG_HIBERNATE[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT2
 sudo sed -i 's/^.*CONFIG_EXT2.*$/#/' .config;
