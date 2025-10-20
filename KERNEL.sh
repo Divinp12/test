@@ -97,7 +97,7 @@ sudo sed -Ei '/CONFIG_SUSPEND/ s/.*(CONFIG_SUSPEND[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_HIBERNATE/ s/.*(CONFIG_HIBERNATE[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT2
-sudo sed -i 's/^.*CONFIG_EXT2.*$/#/' .config;
+sudo sed -Ei '/CONFIG_EXT2/ s/.*(CONFIG_EXT2[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT3
 sudo sed -i 's/^.*CONFIG_EXT3.*$/#/' .config;
