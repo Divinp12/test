@@ -103,7 +103,7 @@ sudo sed -Ei '/CONFIG_EXT2/ s/.*(CONFIG_EXT2[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_EXT3/ s/.*(CONFIG_EXT3[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS JFS
-sudo sed -i 's/^.*CONFIG_JFS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_JFS/ s/.*(CONFIG_JFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS XFS
 sudo sed -i 's/^.*CONFIG_XFS.*$/#/' .config;
