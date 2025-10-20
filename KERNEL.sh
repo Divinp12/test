@@ -106,54 +106,56 @@ sudo sed -Ei '/CONFIG_EXT3/ s/.*(CONFIG_EXT3[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_JFS/ s/.*(CONFIG_JFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS XFS
-sudo sed -i 's/^.*CONFIG_XFS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_XFS/ s/.*(CONFIG_XFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS GFS2
-sudo sed -i 's/^.*CONFIG_GFS2.*$/#/' .config;
+sudo sed -Ei '/CONFIG_GFS2/ s/.*(CONFIG_GFS2[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS BTRFS
-sudo sed -i 's/^.*CONFIG_BTRFS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_BTRFS/ s/.*(CONFIG_BTRFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS NILFS2
-sudo sed -i 's/^.*CONFIG_NILFS2.*$/#/' .config;
+sudo sed -Ei '/CONFIG_NILFS2/ s/.*(CONFIG_NILFS2[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS F2FS
-sudo sed -i 's/^.*CONFIG_F2FS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_F2FS/ s/.*(CONFIG_F2FS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS BCACHEFS
-sudo sed -i 's/^.*CONFIG_BCACHEFS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_BCACHEFS/ s/.*(CONFIG_BCACHEFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR FORMATO DE ARQUIVOS NTFS
-sudo sed -i 's/^.*CONFIG_NTFS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_NTFS/ s/.*(CONFIG_NTFS[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR RANDOMIZAÇÃO DE MEMORIA
-sudo sed -i 's/^.*CONFIG_RANDOMIZE.*$/#/' .config;
+sudo sed -Ei '/CONFIG_RANDOMIZE/ s/.*(CONFIG_RANDOMIZE[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR DEBUG
-sudo sed -i 's/^.*CONFIG_DEBUG.*$/#/' .config;
+sudo sed -Ei '/CONFIG_DEBUG/ s/.*(CONFIG_DEBUG[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR KASAN
-sudo sed -i 's/^.*CONFIG_KASAN.*$/#/' .config;
+sudo sed -Ei '/CONFIG_KASAN/ s/.*(CONFIG_KASAN[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR HYPERV
-sudo sed -i 's/^.*CONFIG_HYPERV.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_MSHV_ROOT.*$/#/' .config;
+sudo sed -Ei '/CONFIG_HYPERV/ s/.*(CONFIG_HYPERV[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_MSHV_ROOT/ s/.*(CONFIG_MSHV_ROOT[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR AUDIT
-sudo sed -i 's/^.*CONFIG_AUDIT.*$/#/' .config;
+sudo sed -Ei '/CONFIG_AUDIT/ s/.*(CONFIG_AUDIT[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR SELINUX
-sudo sed -i 's/^.*CONFIG_SECURITY_SELINUX.*$/#/' .config;
+sudo sed -Ei '/CONFIG_SECURITY_SELINUX/ s/.*(CONFIG_SECURITY_SELINUX[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR XEN
-sudo sed -i 's/^.*CONFIG_XEN.*$/#/' .config;
-sudo sed -i 's/^.*CONFIG_SWIOTLB_XEN.*$/#/' .config;
+sudo sed -Ei '/CONFIG_XEN/ s/.*(CONFIG_XEN[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_SWIOTLB_XEN/ s/.*(CONFIG_SWIOTLB_XEN[A-Z0-9_]*).*/\1=n/' config;
 
 #DESATIVAR DRIVERS DE LEDS
-sudo sed -i 's/^.*CONFIG_LEDS.*$/#/' .config;
+sudo sed -Ei '/CONFIG_LEDS/ s/.*(CONFIG_LEDS[A-Z0-9_]*).*/\1=n/' config;
+
 
 # DESATIVAR SUPORTE BLUETOOTH
-sudo sed -i 's/^.*CONFIG_BT.*$/#/' .config;
+sudo sed -Ei '/CONFIG_BT/ s/.*(CONFIG_BT[A-Z0-9_]*).*/\1=n/' config;
+
 
 # SISTEMA DE ARQUIVOS CD-ROM E DVD
 sudo sed -i 's/^.*CONFIG_ISO9660_FS.*$/#/' .config;
