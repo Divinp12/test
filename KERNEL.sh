@@ -155,11 +155,15 @@ sudo sed -Ei '/CONFIG_LEDS/ s/.*(CONFIG_LEDS[A-Z0-9_]*).*/\1=n/' config;
 # DESATIVAR SUPORTE BLUETOOTH
 sudo sed -Ei '/CONFIG_BT/ s/.*(CONFIG_BT[A-Z0-9_]*).*/\1=n/' config;
 
-# SISTEMA DE ARQUIVOS CD-ROM E DVD
+# DESATIVAR SISTEMA DE ARQUIVOS CD-ROM E DVD
 sudo sed -Ei '/CONFIG_ISO9660_FS/ s/.*(CONFIG_ISO9660_FS[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_JOLIET/ s/.*(CONFIG_JOLIET[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_ZISOFS/ s/.*(CONFIG_ZISOFS[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' config;
+
+# DESATIVAR TOUCHSCREEN
+sudo sed -Ei '/CONFIG_INPUT_TOUCHSCREEN/ s/.*(CONFIG_INPUT_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_TOUCHSCREEN/ s/.*(CONFIG_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
