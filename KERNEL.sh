@@ -22,8 +22,8 @@ sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' .co
 sudo sed -Ei '/CONFIG_CPU_MITIGATIONS/ s/.*(CONFIG_CPU_MITIGATIONS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR WATCHDOG
-sudo sed -Ei '/CONFIG_WATCHDOG/ s/.*(CONFIG_WATCHDOG[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_SOFT_WATCHDOG/ s/.*(CONFIG_SOFT_WATCHDOG[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_WATCHDOG/ s/.*(CONFIG_WATCHDOG[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_SOFT_WATCHDOG/ s/.*(CONFIG_SOFT_WATCHDOG[A-Z0-9_]*).*/\1=n/' .config;
 #CONFIG_CROS_EC_WATCHDOG=m
 #CONFIG_DA9052_WATCHDOG=m
 #CONFIG_DA9055_WATCHDOG=m
@@ -90,79 +90,79 @@ sudo sed -Ei '/CONFIG_SOFT_WATCHDOG/ s/.*(CONFIG_SOFT_WATCHDOG[A-Z0-9_]*).*/\1=n
 #CONFIG_MEN_A21_WDT=m
 
 #DESATIVAR SUSPENSAO
-sudo sed -Ei '/CONFIG_SUSPEND/ s/.*(CONFIG_SUSPEND[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_SUSPEND/ s/.*(CONFIG_SUSPEND[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR HIBERNACAO
-sudo sed -Ei '/CONFIG_HIBERNATE/ s/.*(CONFIG_HIBERNATE[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_HIBERNATE/ s/.*(CONFIG_HIBERNATE[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT2
-sudo sed -Ei '/CONFIG_EXT2/ s/.*(CONFIG_EXT2[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_EXT2/ s/.*(CONFIG_EXT2[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS EXT3
-sudo sed -Ei '/CONFIG_EXT3/ s/.*(CONFIG_EXT3[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_EXT3/ s/.*(CONFIG_EXT3[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS JFS
-sudo sed -Ei '/CONFIG_JFS/ s/.*(CONFIG_JFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_JFS/ s/.*(CONFIG_JFS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS XFS
-sudo sed -Ei '/CONFIG_XFS/ s/.*(CONFIG_XFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_XFS/ s/.*(CONFIG_XFS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS GFS2
-sudo sed -Ei '/CONFIG_GFS2/ s/.*(CONFIG_GFS2[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_GFS2/ s/.*(CONFIG_GFS2[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS BTRFS
-sudo sed -Ei '/CONFIG_BTRFS/ s/.*(CONFIG_BTRFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_BTRFS/ s/.*(CONFIG_BTRFS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS NILFS2
-sudo sed -Ei '/CONFIG_NILFS2/ s/.*(CONFIG_NILFS2[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_NILFS2/ s/.*(CONFIG_NILFS2[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS F2FS
-sudo sed -Ei '/CONFIG_F2FS/ s/.*(CONFIG_F2FS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_F2FS/ s/.*(CONFIG_F2FS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS BCACHEFS
-sudo sed -Ei '/CONFIG_BCACHEFS/ s/.*(CONFIG_BCACHEFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_BCACHEFS/ s/.*(CONFIG_BCACHEFS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR FORMATO DE ARQUIVOS NTFS
-sudo sed -Ei '/CONFIG_NTFS/ s/.*(CONFIG_NTFS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_NTFS/ s/.*(CONFIG_NTFS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR RANDOMIZAÇÃO DE MEMORIA
-sudo sed -Ei '/CONFIG_RANDOMIZE/ s/.*(CONFIG_RANDOMIZE[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_RANDOMIZE/ s/.*(CONFIG_RANDOMIZE[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR DEBUG
-sudo sed -Ei '/CONFIG_DEBUG/ s/.*(CONFIG_DEBUG[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_DEBUG/ s/.*(CONFIG_DEBUG[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR KASAN
-sudo sed -Ei '/CONFIG_KASAN/ s/.*(CONFIG_KASAN[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_KASAN/ s/.*(CONFIG_KASAN[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR HYPERV
-sudo sed -Ei '/CONFIG_HYPERV/ s/.*(CONFIG_HYPERV[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_MSHV_ROOT/ s/.*(CONFIG_MSHV_ROOT[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_HYPERV/ s/.*(CONFIG_HYPERV[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_MSHV_ROOT/ s/.*(CONFIG_MSHV_ROOT[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR AUDIT
-sudo sed -Ei '/CONFIG_AUDIT/ s/.*(CONFIG_AUDIT[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_AUDIT/ s/.*(CONFIG_AUDIT[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR SELINUX
-sudo sed -Ei '/CONFIG_SECURITY_SELINUX/ s/.*(CONFIG_SECURITY_SELINUX[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_SECURITY_SELINUX/ s/.*(CONFIG_SECURITY_SELINUX[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR XEN
-sudo sed -Ei '/CONFIG_XEN/ s/.*(CONFIG_XEN[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_SWIOTLB_XEN/ s/.*(CONFIG_SWIOTLB_XEN[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_XEN/ s/.*(CONFIG_XEN[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_SWIOTLB_XEN/ s/.*(CONFIG_SWIOTLB_XEN[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR DRIVERS DE LEDS
-sudo sed -Ei '/CONFIG_LEDS/ s/.*(CONFIG_LEDS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_LEDS/ s/.*(CONFIG_LEDS[A-Z0-9_]*).*/\1=n/' .config;
 
 # DESATIVAR SUPORTE BLUETOOTH
-sudo sed -Ei '/CONFIG_BT/ s/.*(CONFIG_BT[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_BT/ s/.*(CONFIG_BT[A-Z0-9_]*).*/\1=n/' .config;
 
 # DESATIVAR SISTEMA DE ARQUIVOS CD-ROM E DVD
-sudo sed -Ei '/CONFIG_ISO9660_FS/ s/.*(CONFIG_ISO9660_FS[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_JOLIET/ s/.*(CONFIG_JOLIET[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_ZISOFS/ s/.*(CONFIG_ZISOFS[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_ISO9660_FS/ s/.*(CONFIG_ISO9660_FS[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_JOLIET/ s/.*(CONFIG_JOLIET[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_ZISOFS/ s/.*(CONFIG_ZISOFS[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' .config;
 
 # DESATIVAR TOUCHSCREEN
-sudo sed -Ei '/CONFIG_INPUT_TOUCHSCREEN/ s/.*(CONFIG_INPUT_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_TOUCHSCREEN/ s/.*(CONFIG_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_INPUT_TOUCHSCREEN/ s/.*(CONFIG_INPUT_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_TOUCHSCREEN/ s/.*(CONFIG_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' .config;
 
 # Light sensors
 #
