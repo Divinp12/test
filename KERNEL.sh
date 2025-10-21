@@ -9,17 +9,17 @@ sudo make mrproper -j64 && \
 sudo make defconfig -j64;
 
 #DESATIVAR SWAP
-sudo sed -Ei '/CONFIG_SWAP/ s/.*(CONFIG_SWAP[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_SWAP/ s/.*(CONFIG_SWAP[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR ZSWAP
-sudo sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_ZSWAP/ s/.*(CONFIG_ZSWAP[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR ZRAM
-sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR MITIGATIONS
-sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' config;
-sudo sed -Ei '/CONFIG_CPU_MITIGATIONS/ s/.*(CONFIG_CPU_MITIGATIONS[A-Z0-9_]*).*/\1=n/' config;
+sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' .config;
+sudo sed -Ei '/CONFIG_CPU_MITIGATIONS/ s/.*(CONFIG_CPU_MITIGATIONS[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR WATCHDOG
 sudo sed -Ei '/CONFIG_WATCHDOG/ s/.*(CONFIG_WATCHDOG[A-Z0-9_]*).*/\1=n/' config;
