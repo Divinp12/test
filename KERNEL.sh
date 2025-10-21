@@ -165,6 +165,36 @@ sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_INPUT_TOUCHSCREEN/ s/.*(CONFIG_INPUT_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
 sudo sed -Ei '/CONFIG_TOUCHSCREEN/ s/.*(CONFIG_TOUCHSCREEN[A-Z0-9_]*).*/\1=n/' config;
 
+
+# Lightning sensors
+#
+CONFIG_AS3935=m
+# end of Lightning sensors
+
+#
+# Proximity and distance sensors
+#
+CONFIG_CROS_EC_MKBP_PROXIMITY=m
+CONFIG_D3323AA=m
+CONFIG_HX9023S=m
+CONFIG_IRSD200=m
+CONFIG_ISL29501=m
+CONFIG_LIDAR_LITE_V2=m
+CONFIG_MB1232=m
+CONFIG_PING=m
+CONFIG_RFD77402=m
+CONFIG_SRF04=m
+CONFIG_SX_COMMON=m
+CONFIG_SX9310=m
+CONFIG_SX9324=m
+CONFIG_SX9360=m
+CONFIG_SX9500=m
+CONFIG_SRF08=m
+CONFIG_VCNL3020=m
+CONFIG_VL53L0X_I2C=m
+CONFIG_AW96103=m
+# end of Proximity and distance sensors
+
 sudo make -j64 && \
 sudo make modules_install -j64 && \
 sudo make install -j64 && \
