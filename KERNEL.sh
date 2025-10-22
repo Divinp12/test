@@ -24,10 +24,25 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSMALLOC)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSMALLOC_STAT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_LZ4HC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_ZSTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_DEFLATE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_842)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_BACKEND_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_LZORLE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_LZ4HC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_ZSTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_DEFLATE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_DEF_COMP_842)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_WRITEBACK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_TRACK_ENTRY_ACTIME)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_MEMORY_TRACKING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZRAM_MULTI_COMP)(=.*| is not set)?$/\2=n/' \
 .config
-
-#DESATIVAR ZRAM
-sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' .config;
 
 #DESATIVAR MITIGATIONS
 sudo sed -Ei '/CONFIG_MITIGATION/ s/.*(CONFIG_MITIGATION[A-Z0-9_]*).*/\1=n/' .config;
