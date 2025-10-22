@@ -44,10 +44,10 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZRAM_MULTI_COMP)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_CPU_MITIGATIONS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_PAGE_TABLE_ISOLATION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_RETPOLINE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_RETHUNK)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_MITIGATION_RETPOLINE=y
-CONFIG_MITIGATION_RETHUNK=y
 CONFIG_MITIGATION_UNRET_ENTRY=y
 CONFIG_MITIGATION_CALL_DEPTH_TRACKING=y
 CONFIG_MITIGATION_IBPB_ENTRY=y
