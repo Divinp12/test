@@ -46,15 +46,15 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_MITIGATION_PAGE_TABLE_ISOLATION)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_RETPOLINE)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_RETHUNK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_UNRET_ENTRY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_CALL_DEPTH_TRACKING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_IBPB_ENTRY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_IBRS_ENTRY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SRSO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SLS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_GDS)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_MITIGATION_UNRET_ENTRY=y
-CONFIG_MITIGATION_CALL_DEPTH_TRACKING=y
-CONFIG_MITIGATION_IBPB_ENTRY=y
-CONFIG_MITIGATION_IBRS_ENTRY=y
-CONFIG_MITIGATION_SRSO=y
-CONFIG_MITIGATION_SLS=y
-CONFIG_MITIGATION_GDS=y
 CONFIG_MITIGATION_RFDS=y
 CONFIG_MITIGATION_SPECTRE_BHI=y
 CONFIG_MITIGATION_MDS=y
