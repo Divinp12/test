@@ -7,7 +7,7 @@ cd linux-6.12.54 && \
 sudo make clean -j64 && \
 sudo make mrproper -j64 && \
 sudo make defconfig -j64;
-
+#-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 
 sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZPOOL)(=.*| is not set)?$/\2=n/' \
@@ -58,33 +58,29 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_MITIGATION_MDS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_TAA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_MMIO_STALE_DATA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_L1TF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_RETBLEED)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SPECTRE_V1)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SPECTRE_V2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SRBDS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SSB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_ITS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_TSA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_VMSCAPE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SUSPEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SUSPEND_FREEZER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ARCH_HIBERNATION_HEADER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HIBERNATE_CALLBACKS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HIBERNATION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HIBERNATION_SNAPSHOT_DEV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HIBERNATION_COMP_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HIBERNATION_COMP_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_WATCHDOG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_WATCHDOG_CORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_WATCHDOG_NOWAYOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_MITIGATION_L1TF=y
-CONFIG_MITIGATION_RETBLEED=y
-CONFIG_MITIGATION_SPECTRE_V1=y
-CONFIG_MITIGATION_SPECTRE_V2=y
-CONFIG_MITIGATION_SRBDS=y
-CONFIG_MITIGATION_SSB=y
-CONFIG_MITIGATION_ITS=y
-CONFIG_MITIGATION_TSA=y
-CONFIG_MITIGATION_VMSCAPE=y
-
-CONFIG_ARCH_HIBERNATION_HEADER=y
-CONFIG_SUSPEND=y
-CONFIG_SUSPEND_FREEZER=y
-CONFIG_HIBERNATE_CALLBACKS=y
-CONFIG_HIBERNATION=y
-CONFIG_HIBERNATION_SNAPSHOT_DEV=y
-CONFIG_HIBERNATION_COMP_LZO=y
-# CONFIG_HIBERNATION_COMP_LZ4 is not set
-CONFIG_HIBERNATION_DEF_COMP="lzo"
-
-CONFIG_WATCHDOG=y
-CONFIG_WATCHDOG_CORE=y
-# CONFIG_WATCHDOG_NOWAYOUT is not set
-CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED=y
-CONFIG_WATCHDOG_OPEN_TIMEOUT=0
 CONFIG_WATCHDOG_SYSFS=y
 # CONFIG_WATCHDOG_HRTIMER_PRETIMEOUT is not set
 
