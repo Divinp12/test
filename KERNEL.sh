@@ -8,6 +8,13 @@ sudo make clean -j64 && \
 sudo make mrproper -j64 && \
 sudo make defconfig -j64;
 
+
+sed -i -E \
+-e 's/^(# ?)?(CONFIG_SWAP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP)(=.*| is not set)?$/\2=n/' \
+.config
+
+
 #DESATIVAR SWAP
 sudo sed -Ei '/CONFIG_SWAP/ s/.*(CONFIG_SWAP[A-Z0-9_]*).*/\1=n/' .config;
 
