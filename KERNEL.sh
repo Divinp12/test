@@ -244,21 +244,22 @@ CONFIG_NTFS3_LZX_XPRESS=y
 CONFIG_NTFS3_FS_POSIX_ACL=y
 CONFIG_NTFS_FS=m
 
-#DESATIVAR RANDOMIZAÇÃO DE MEMORIA
-sudo sed -Ei '/CONFIG_RANDOMIZE/ s/.*(CONFIG_RANDOMIZE[A-Z0-9_]*).*/\1=n/' .config;
+CONFIG_RANDOMIZE_BASE=y
+CONFIG_RANDOMIZE_MEMORY=y
 
-#DESATIVAR DEBUG
-sudo sed -Ei '/CONFIG_DEBUG/ s/.*(CONFIG_DEBUG[A-Z0-9_]*).*/\1=n/' .config;
+# CONFIG_KASAN is not set
 
-#DESATIVAR KASAN
-sudo sed -Ei '/CONFIG_KASAN/ s/.*(CONFIG_KASAN[A-Z0-9_]*).*/\1=n/' .config;
+## Microsoft Hyper-V guest support
+#
+CONFIG_HYPERV=m
+# CONFIG_HYPERV_VTL_MODE is not set
+CONFIG_HYPERV_TIMER=y
+CONFIG_HYPERV_UTILS=m
+CONFIG_HYPERV_BALLOON=m
+CONFIG_MSHV_ROOT=m
+# end of Microsoft Hyper-V guest support
 
-#DESATIVAR HYPERV
-sudo sed -Ei '/CONFIG_HYPERV/ s/.*(CONFIG_HYPERV[A-Z0-9_]*).*/\1=n/' .config;
-sudo sed -Ei '/CONFIG_MSHV_ROOT/ s/.*(CONFIG_MSHV_ROOT[A-Z0-9_]*).*/\1=n/' .config;
-
-#DESATIVAR AUDIT
-sudo sed -Ei '/CONFIG_AUDIT/ s/.*(CONFIG_AUDIT[A-Z0-9_]*).*/\1=n/' .config;
+#CONFIG_AUDIT=y
 
 #DESATIVAR SELINUX
 sudo sed -Ei '/CONFIG_SECURITY_SELINUX/ s/.*(CONFIG_SECURITY_SELINUX[A-Z0-9_]*).*/\1=n/' .config;
