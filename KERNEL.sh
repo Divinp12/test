@@ -53,10 +53,10 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_MITIGATION_SRSO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_SLS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MITIGATION_GDS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_RFDS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MITIGATION_SPECTRE_BHI)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_MITIGATION_RFDS=y
-CONFIG_MITIGATION_SPECTRE_BHI=y
 CONFIG_MITIGATION_MDS=y
 CONFIG_MITIGATION_TAA=y
 CONFIG_MITIGATION_MMIO_STALE_DATA=y
