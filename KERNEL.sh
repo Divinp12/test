@@ -15,17 +15,16 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZSWAP)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSWAP_DEFAULT_ON)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSWAP_SHRINKER_DEFAULT_ON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_DEFLATE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_842)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZ4HC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_COMPRESSOR_DEFAULT_ZSTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSMALLOC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZSMALLOC_STAT)(=.*| is not set)?$/\2=n/' \
 .config
-
-# CONFIG_ZSWAP_COMPRESSOR_DEFAULT_DEFLATE is not set
-# CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZO is not set
-# CONFIG_ZSWAP_COMPRESSOR_DEFAULT_842 is not set
-# CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZ4 is not set
-# CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZ4HC is not set
-CONFIG_ZSWAP_COMPRESSOR_DEFAULT_ZSTD=y
-CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC=y
-CONFIG_ZSMALLOC=y
-CONFIG_ZSMALLOC_STAT=y
 
 #DESATIVAR ZRAM
 sudo sed -Ei '/CONFIG_ZRAM/ s/.*(CONFIG_ZRAM[A-Z0-9_]*).*/\1=n/' .config;
