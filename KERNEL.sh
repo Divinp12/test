@@ -414,34 +414,30 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_BT_HCIUART_RTL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_BT_HCIUART_QCA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_BT_HCIUART_AG6XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_MRVL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_AML)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBCM203X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBCM4377)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBPA10X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBFUSB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIDTL1)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBT3C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBLUECARD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIVHCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MRVL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MRVL_SDIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_ATH3K)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MTKSDIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MTKUART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIRSI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_VIRTIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_NXPUART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_INTEL_PCIE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ISO9660_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_JOLIET)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZISOFS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_UDF_FS)(=.*| is not set)?$/\2=n/' \
 .config
-
-CONFIG_BT_HCIUART_MRVL=y
-CONFIG_BT_HCIUART_AML=y
-CONFIG_BT_HCIBCM203X=m
-CONFIG_BT_HCIBCM4377=m
-CONFIG_BT_HCIBPA10X=m
-CONFIG_BT_HCIBFUSB=m
-CONFIG_BT_HCIDTL1=m
-CONFIG_BT_HCIBT3C=m
-CONFIG_BT_HCIBLUECARD=m
-CONFIG_BT_HCIVHCI=m
-CONFIG_BT_MRVL=m
-CONFIG_BT_MRVL_SDIO=m
-CONFIG_BT_ATH3K=m
-CONFIG_BT_MTKSDIO=m
-CONFIG_BT_MTKUART=m
-CONFIG_BT_HCIRSI=m
-CONFIG_BT_VIRTIO=m
-CONFIG_BT_NXPUART=m
-CONFIG_BT_INTEL_PCIE=m
-# end of Bluetooth device drivers
-
-# DESATIVAR SISTEMA DE ARQUIVOS CD-ROM E DVD
-sudo sed -Ei '/CONFIG_ISO9660_FS/ s/.*(CONFIG_ISO9660_FS[A-Z0-9_]*).*/\1=n/' .config;
-sudo sed -Ei '/CONFIG_JOLIET/ s/.*(CONFIG_JOLIET[A-Z0-9_]*).*/\1=n/' .config;
-sudo sed -Ei '/CONFIG_ZISOFS/ s/.*(CONFIG_ZISOFS[A-Z0-9_]*).*/\1=n/' .config;
-sudo sed -Ei '/CONFIG_UDF_FS/ s/.*(CONFIG_UDF_FS[A-Z0-9_]*).*/\1=n/' .config;
 
 CONFIG_INPUT_TOUCHSCREEN=y
 CONFIG_TOUCHSCREEN_88PM860X=m
