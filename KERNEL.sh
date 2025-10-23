@@ -525,42 +525,32 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC200X_CORE)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2004)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2005)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2007)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2007_IIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_PCAP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_RM_TS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_SILEAD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_SIS_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ST1232)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_STMFTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_SUR40)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_SURFACE3_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_SX8654)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TPS6507X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ZET6223)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ZFORCE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_COLIBRI_VF50)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ROHM_BU21023)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_IQS5XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_IQS7211)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ZINITIX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HIMAX_HX83112B)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AFE4403)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_TOUCHSCREEN_TSC2007=m
-CONFIG_TOUCHSCREEN_TSC2007_IIO=y
-CONFIG_TOUCHSCREEN_PCAP=m
-CONFIG_TOUCHSCREEN_RM_TS=m
-CONFIG_TOUCHSCREEN_SILEAD=m
-CONFIG_TOUCHSCREEN_SIS_I2C=m
-CONFIG_TOUCHSCREEN_ST1232=m
-CONFIG_TOUCHSCREEN_STMFTS=m
-CONFIG_TOUCHSCREEN_SUR40=m
-CONFIG_TOUCHSCREEN_SURFACE3_SPI=m
-CONFIG_TOUCHSCREEN_SX8654=m
-CONFIG_TOUCHSCREEN_TPS6507X=m
-CONFIG_TOUCHSCREEN_ZET6223=m
-CONFIG_TOUCHSCREEN_ZFORCE=m
-CONFIG_TOUCHSCREEN_COLIBRI_VF50=m
-CONFIG_TOUCHSCREEN_ROHM_BU21023=m
-CONFIG_TOUCHSCREEN_IQS5XX=m
-CONFIG_TOUCHSCREEN_IQS7211=m
-CONFIG_TOUCHSCREEN_ZINITIX=m
-CONFIG_TOUCHSCREEN_HIMAX_HX83112B=m
-
-
-# Health Sensors
-#
-
-#
-# Heart Rate Monitors
-#
-CONFIG_AFE4403=m
 CONFIG_AFE4404=m
 CONFIG_MAX30100=m
 CONFIG_MAX30102=m
-# end of Heart Rate Monitors
-# end of Health Sensors
 
 #
 # Humidity sensors
