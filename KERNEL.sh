@@ -265,84 +265,75 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_XEN_SYS_HYPERVISOR)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_XEN_XENBUS_FRONTEND)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_XEN_GNTDEV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_GNTDEV_DMABUF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_GRANT_DEV_ALLOC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_GRANT_DMA_ALLOC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SWIOTLB_XEN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PCI_STUB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PCIDEV_BACKEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVCALLS_FRONTEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVCALLS_BACKEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_SCSI_BACKEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PRIVCMD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PRIVCMD_EVENTFD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_ACPI_PROCESSOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_MCE_LOG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_HAVE_PVMMU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_EFI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_AUTO_XLATE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_ACPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_SYMS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_HAVE_VPMU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_FRONT_PGDIR_SHBUF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_UNPOPULATED_ALLOC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_GRANT_DMA_OPS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_VIRTIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_VIRTIO_FORCE_GRANT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_88PM860X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_APU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_AW200XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_CHT_WCOVE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_CROS_EC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM3530)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM3532)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM3533)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM3642)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MT6323)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA9532)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA9532_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LP3944)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LP3952)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LP50XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LP8788)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA955X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA955X_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA963X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PCA995X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_QNAP_MCU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_WM831X_STATUS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_WM8350)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_DA903X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_DA9052)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_DAC124S085)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PWM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_REGULATOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_BD2606MVV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_BD2802)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_INTEL_SS4200)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LT3593)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_ADP5520)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MC13783)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TCA6507)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TLC591XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MAX77705)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MAX8997)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM355x)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MENF21BMC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_IS31FL319X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_UPBOARD)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_XEN_GNTDEV_DMABUF=y
-CONFIG_XEN_GRANT_DEV_ALLOC=m
-CONFIG_XEN_GRANT_DMA_ALLOC=y
-CONFIG_SWIOTLB_XEN=y
-CONFIG_XEN_PCI_STUB=y
-CONFIG_XEN_PCIDEV_BACKEND=m
-CONFIG_XEN_PVCALLS_FRONTEND=m
-CONFIG_XEN_PVCALLS_BACKEND=m
-CONFIG_XEN_SCSI_BACKEND=m
-CONFIG_XEN_PRIVCMD=m
-CONFIG_XEN_PRIVCMD_EVENTFD=y
-CONFIG_XEN_ACPI_PROCESSOR=m
-CONFIG_XEN_MCE_LOG=y
-CONFIG_XEN_HAVE_PVMMU=y
-CONFIG_XEN_EFI=y
-CONFIG_XEN_AUTO_XLATE=y
-CONFIG_XEN_ACPI=y
-CONFIG_XEN_SYMS=y
-CONFIG_XEN_HAVE_VPMU=y
-CONFIG_XEN_FRONT_PGDIR_SHBUF=m
-CONFIG_XEN_UNPOPULATED_ALLOC=y
-CONFIG_XEN_GRANT_DMA_OPS=y
-CONFIG_XEN_VIRTIO=y
-# CONFIG_XEN_VIRTIO_FORCE_GRANT is not set
-# end of Xen driver support
-
-##
-# LED drivers
-#
-CONFIG_LEDS_88PM860X=m
-CONFIG_LEDS_APU=m
-CONFIG_LEDS_AW200XX=m
-CONFIG_LEDS_CHT_WCOVE=m
-CONFIG_LEDS_CROS_EC=m
-CONFIG_LEDS_LM3530=m
-CONFIG_LEDS_LM3532=m
-CONFIG_LEDS_LM3533=m
-CONFIG_LEDS_LM3642=m
-CONFIG_LEDS_MT6323=m
-CONFIG_LEDS_PCA9532=m
-CONFIG_LEDS_PCA9532_GPIO=y
-CONFIG_LEDS_GPIO=m
-CONFIG_LEDS_LP3944=m
-CONFIG_LEDS_LP3952=m
-CONFIG_LEDS_LP50XX=m
-CONFIG_LEDS_LP8788=m
-CONFIG_LEDS_PCA955X=m
-CONFIG_LEDS_PCA955X_GPIO=y
-CONFIG_LEDS_PCA963X=m
-CONFIG_LEDS_PCA995X=m
-CONFIG_LEDS_QNAP_MCU=m
-CONFIG_LEDS_WM831X_STATUS=m
-CONFIG_LEDS_WM8350=m
-CONFIG_LEDS_DA903X=m
-CONFIG_LEDS_DA9052=m
-CONFIG_LEDS_DAC124S085=m
-CONFIG_LEDS_PWM=m
-CONFIG_LEDS_REGULATOR=m
-CONFIG_LEDS_BD2606MVV=m
-CONFIG_LEDS_BD2802=m
-CONFIG_LEDS_INTEL_SS4200=m
-CONFIG_LEDS_LT3593=m
-CONFIG_LEDS_ADP5520=m
-CONFIG_LEDS_MC13783=m
-CONFIG_LEDS_TCA6507=m
-CONFIG_LEDS_TLC591XX=m
-CONFIG_LEDS_MAX77705=m
-CONFIG_LEDS_MAX8997=m
-CONFIG_LEDS_LM355x=m
-CONFIG_LEDS_MENF21BMC=m
-CONFIG_LEDS_IS31FL319X=m
-CONFIG_LEDS_UPBOARD=m
-
-#
-# LED driver for blink(1) USB RGB LED is under Special HID drivers (HID_THINGM)
-#
 CONFIG_LEDS_BLINKM=m
 CONFIG_LEDS_BLINKM_MULTICOLOR=y                                                                                                                                                     CONFIG_LEDS_MLXCPLD=m
 CONFIG_LEDS_MLXREG=m                                                                                                                                                                CONFIG_LEDS_USER=m
