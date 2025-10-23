@@ -686,7 +686,7 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_DEBUG_KERNEL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_INFO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
-.config
+.config;
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
