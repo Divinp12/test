@@ -484,34 +484,34 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MAX11801)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MMS114)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MELFAS_MIP4)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MSG2638)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MTOUCH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_NOVATEK_NVT_TS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_IMAGIS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_INEXIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_PENMOUNT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_EDT_FT5X06)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TOUCHRIGHT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TOUCHWIN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_PIXCIR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WDT87XX_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WM831X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WM97XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WM9705)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WM9712)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WM9713)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_COMPOSITE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MC13783)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_EGALAX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_PANJIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_3M)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_ITM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_ETURBO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_GUNZE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_DMC_TSC10)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_IRTOUCH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_IDEALTEK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_GENERAL_TOUCH)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -527,33 +527,6 @@ sed -i -E \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_TOUCHSCREEN_MSG2638=m
-CONFIG_TOUCHSCREEN_MTOUCH=m
-CONFIG_TOUCHSCREEN_NOVATEK_NVT_TS=m
-CONFIG_TOUCHSCREEN_IMAGIS=m
-CONFIG_TOUCHSCREEN_INEXIO=m
-CONFIG_TOUCHSCREEN_PENMOUNT=m
-CONFIG_TOUCHSCREEN_EDT_FT5X06=m
-CONFIG_TOUCHSCREEN_TOUCHRIGHT=m
-CONFIG_TOUCHSCREEN_TOUCHWIN=m
-CONFIG_TOUCHSCREEN_PIXCIR=m
-CONFIG_TOUCHSCREEN_WDT87XX_I2C=m
-CONFIG_TOUCHSCREEN_WM831X=m
-CONFIG_TOUCHSCREEN_WM97XX=m
-CONFIG_TOUCHSCREEN_WM9705=y
-CONFIG_TOUCHSCREEN_WM9712=y
-CONFIG_TOUCHSCREEN_WM9713=y
-CONFIG_TOUCHSCREEN_USB_COMPOSITE=m
-CONFIG_TOUCHSCREEN_MC13783=m
-CONFIG_TOUCHSCREEN_USB_EGALAX=y
-CONFIG_TOUCHSCREEN_USB_PANJIT=y
-CONFIG_TOUCHSCREEN_USB_3M=y
-CONFIG_TOUCHSCREEN_USB_ITM=y
-CONFIG_TOUCHSCREEN_USB_ETURBO=y
-CONFIG_TOUCHSCREEN_USB_GUNZE=y
-CONFIG_TOUCHSCREEN_USB_DMC_TSC10=y
-CONFIG_TOUCHSCREEN_USB_IRTOUCH=y
-CONFIG_TOUCHSCREEN_USB_IDEALTEK=y
 CONFIG_TOUCHSCREEN_USB_GENERAL_TOUCH=y
 CONFIG_TOUCHSCREEN_USB_GOTOP=y
 CONFIG_TOUCHSCREEN_USB_JASTEC=y
