@@ -437,55 +437,96 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_JOLIET)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZISOFS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_UDF_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INPUT_TOUCHSCREEN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_88PM860X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ADS7846)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_AD7877)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_AD7879)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_AD7879_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_AD7879_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ADC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ATMEL_MXT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ATMEL_MXT_T37)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_AUO_PIXCIR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_BU21013)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_BU21029)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CHIPONE_ICN8505)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CY8CTMA140)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CY8CTMG110)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CYTTSP_CORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CYTTSP_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CYTTSP_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_CYTTSP5)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_DA9034)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_DA9052)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_DYNAPRO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HAMPSHIRE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_EETI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_EGALAX_SERIAL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_EXC3000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_FUJITSU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_GOODIX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_GOODIX_BERLIN_CORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_GOODIX_BERLIN_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_GOODIX_BERLIN_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HIDEEP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HYCON_HY46XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HYNITRON_CSTXXX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ILI210X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ILITEK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_S6SY761)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_GUNZE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_EKTF2127)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ELAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ELO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WACOM_W8001)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_WACOM_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MAX11801)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MMS114)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_MELFAS_MIP4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_INPUT_TOUCHSCREEN=y
-CONFIG_TOUCHSCREEN_88PM860X=m
-CONFIG_TOUCHSCREEN_ADS7846=m
-CONFIG_TOUCHSCREEN_AD7877=m
-CONFIG_TOUCHSCREEN_AD7879=m
-CONFIG_TOUCHSCREEN_AD7879_I2C=m
-CONFIG_TOUCHSCREEN_AD7879_SPI=m
-CONFIG_TOUCHSCREEN_ADC=m
-CONFIG_TOUCHSCREEN_ATMEL_MXT=m
-CONFIG_TOUCHSCREEN_ATMEL_MXT_T37=y
-CONFIG_TOUCHSCREEN_AUO_PIXCIR=m
-CONFIG_TOUCHSCREEN_BU21013=m
-CONFIG_TOUCHSCREEN_BU21029=m
-CONFIG_TOUCHSCREEN_CHIPONE_ICN8505=m
-CONFIG_TOUCHSCREEN_CY8CTMA140=m
-CONFIG_TOUCHSCREEN_CY8CTMG110=m
-CONFIG_TOUCHSCREEN_CYTTSP_CORE=m
-CONFIG_TOUCHSCREEN_CYTTSP_I2C=m
-CONFIG_TOUCHSCREEN_CYTTSP_SPI=m
-CONFIG_TOUCHSCREEN_CYTTSP5=m
-CONFIG_TOUCHSCREEN_DA9034=m
-CONFIG_TOUCHSCREEN_DA9052=m
-CONFIG_TOUCHSCREEN_DYNAPRO=m
-CONFIG_TOUCHSCREEN_HAMPSHIRE=m
-CONFIG_TOUCHSCREEN_EETI=m
-CONFIG_TOUCHSCREEN_EGALAX_SERIAL=m
-CONFIG_TOUCHSCREEN_EXC3000=m
-CONFIG_TOUCHSCREEN_FUJITSU=m
-CONFIG_TOUCHSCREEN_GOODIX=m
-CONFIG_TOUCHSCREEN_GOODIX_BERLIN_CORE=m
-CONFIG_TOUCHSCREEN_GOODIX_BERLIN_I2C=m
-CONFIG_TOUCHSCREEN_GOODIX_BERLIN_SPI=m
-CONFIG_TOUCHSCREEN_HIDEEP=m
-CONFIG_TOUCHSCREEN_HYCON_HY46XX=m
-CONFIG_TOUCHSCREEN_HYNITRON_CSTXXX=m
-CONFIG_TOUCHSCREEN_ILI210X=m
-CONFIG_TOUCHSCREEN_ILITEK=m
-CONFIG_TOUCHSCREEN_S6SY761=m
-CONFIG_TOUCHSCREEN_GUNZE=m
-CONFIG_TOUCHSCREEN_EKTF2127=m
-CONFIG_TOUCHSCREEN_ELAN=m
-CONFIG_TOUCHSCREEN_ELO=m
-CONFIG_TOUCHSCREEN_WACOM_W8001=m
-CONFIG_TOUCHSCREEN_WACOM_I2C=m
-CONFIG_TOUCHSCREEN_MAX11801=m
-CONFIG_TOUCHSCREEN_MMS114=m
-CONFIG_TOUCHSCREEN_MELFAS_MIP4=m
 CONFIG_TOUCHSCREEN_MSG2638=m
 CONFIG_TOUCHSCREEN_MTOUCH=m
 CONFIG_TOUCHSCREEN_NOVATEK_NVT_TS=m
