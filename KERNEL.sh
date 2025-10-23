@@ -546,21 +546,24 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ZINITIX)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_HIMAX_HX83112B)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_AFE4403)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AFE4404)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MAX30100)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MAX30102)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AM2315)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DHT11)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ENS210)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HDC100X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HDC2010)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HDC3020)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_AFE4404=m
-CONFIG_MAX30100=m
-CONFIG_MAX30102=m
-
-#
-# Humidity sensors
-#
-CONFIG_AM2315=m
-CONFIG_DHT11=m
-CONFIG_ENS210=m
-CONFIG_HDC100X=m
-CONFIG_HDC2010=m
-CONFIG_HDC3020=m
 CONFIG_HID_SENSOR_HUMIDITY=m
 CONFIG_HTS221=m
 CONFIG_HTS221_I2C=m
