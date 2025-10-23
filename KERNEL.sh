@@ -683,7 +683,9 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_VCNL3020)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VL53L0X_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_AW96103)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_KERNEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
 .config
 
 sudo make -j64 && \
