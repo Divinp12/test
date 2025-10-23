@@ -677,15 +677,14 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_SX_COMMON)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SX9310)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SX9324)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SX9360)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SX9500)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SRF08)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VCNL3020)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VL53L0X_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AW96103)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 .config
-
-#CONFIG_SX9360=m
-#CONFIG_SX9500=m
-#CONFIG_SRF08=m
-#CONFIG_VCNL3020=m
-#CONFIG_VL53L0X_I2C=m
-#CONFIG_AW96103=m
-# end of Proximity and distance sensors
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
