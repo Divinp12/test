@@ -562,91 +562,87 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_HTU21)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SI7005)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SI7020)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ACPI_ALS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ADJD_S311)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ADUX1020)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AL3000A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AL3010)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AL3320A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_APDS9160)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_APDS9300)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_APDS9306)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_APDS9960)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AS73211)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BH1745)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BH1750)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BH1780)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CM32181)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CM3232)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CM3323)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CM3605)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CM36651)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IIO_CROS_EC_LIGHT_PROX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_GP2AP002)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_GP2AP020A00F)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IQS621_ALS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SENSORS_ISL29018)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SENSORS_ISL29028)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ISL29125)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ISL76682)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HID_SENSOR_ALS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HID_SENSOR_PROX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_JSA1212)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ROHM_BU27034)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RPR0521)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SENSORS_LM3533)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LTR390)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LTR501)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LTRF216A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LV0104CS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MAX44000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MAX44009)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NOA1305)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_OPT3001)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_OPT4001)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_OPT4060)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PA12203001)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SI1133)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SI1145)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_STK3310)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ST_UVIS25)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ST_UVIS25_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ST_UVIS25_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TCS3414)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TCS3472)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SENSORS_TSL2563)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TSL2583)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TSL2591)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TSL2772)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TSL4531)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_US5182D)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VCNL4000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VCNL4035)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VEML3235)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VEML6030)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VEML6040)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VEML6070)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VEML6075)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VL6180)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZOPT2201)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ABP060MG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ROHM_BM1390)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BMP280)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BMP280_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BMP280_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IIO_CROS_EC_BARO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DLHL60D)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DPS310)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HID_SENSOR_PRESS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HP03)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HSC030PA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HSC030PA_I2C)(=.*| is not set)?$/\2=n/' \
 .config
 
-#CONFIG_ACPI_ALS=m
-#CONFIG_ADJD_S311=m
-#CONFIG_ADUX1020=m
-#CONFIG_AL3000A=m
-#CONFIG_AL3010=m
-#CONFIG_AL3320A=m
-#CONFIG_APDS9160=m
-#CONFIG_APDS9300=m
-#CONFIG_APDS9306=m
-#CONFIG_APDS9960=m
-#CONFIG_AS73211=m
-#CONFIG_BH1745=m
-#CONFIG_BH1750=m
-#CONFIG_BH1780=m
-#CONFIG_CM32181=m
-#CONFIG_CM3232=m
-#CONFIG_CM3323=m
-#CONFIG_CM3605=m
-#CONFIG_CM36651=m
-#CONFIG_IIO_CROS_EC_LIGHT_PROX=m
-#CONFIG_GP2AP002=m
-#CONFIG_GP2AP020A00F=m
-#CONFIG_IQS621_ALS=m
-#CONFIG_SENSORS_ISL29018=m
-#CONFIG_SENSORS_ISL29028=m
-#CONFIG_ISL29125=m
-#CONFIG_ISL76682=m
-#CONFIG_HID_SENSOR_ALS=m
-#CONFIG_HID_SENSOR_PROX=m
-#CONFIG_JSA1212=m
-#CONFIG_ROHM_BU27034=m
-#CONFIG_RPR0521=m
-#CONFIG_SENSORS_LM3533=m
-#CONFIG_LTR390=m
-#CONFIG_LTR501=m
-#CONFIG_LTRF216A=m
-#CONFIG_LV0104CS=m
-#CONFIG_MAX44000=m
-#CONFIG_MAX44009=m
-#CONFIG_NOA1305=m
-#CONFIG_OPT3001=m
-#CONFIG_OPT4001=m
-#CONFIG_OPT4060=m
-#CONFIG_PA12203001=m
-#CONFIG_SI1133=m
-#CONFIG_SI1145=m
-#CONFIG_STK3310=m
-#CONFIG_ST_UVIS25=m
-#CONFIG_ST_UVIS25_I2C=m
-#CONFIG_ST_UVIS25_SPI=m
-#CONFIG_TCS3414=m
-#CONFIG_TCS3472=m
-#CONFIG_SENSORS_TSL2563=m
-#CONFIG_TSL2583=m
-#CONFIG_TSL2591=m
-#CONFIG_TSL2772=m
-#CONFIG_TSL4531=m
-#CONFIG_US5182D=m
-#CONFIG_VCNL4000=m
-#CONFIG_VCNL4035=m
-#CONFIG_VEML3235=m
-#CONFIG_VEML6030=m
-#CONFIG_VEML6040=m
-#CONFIG_VEML6070=m
-#CONFIG_VEML6075=m
-#CONFIG_VL6180=m
-#CONFIG_ZOPT2201=m
-# end of Light sensors
-
-# Pressure sensors
-#
-#CONFIG_ABP060MG=m
-#CONFIG_ROHM_BM1390=m
-#CONFIG_BMP280=m
-#CONFIG_BMP280_I2C=m
-#CONFIG_BMP280_SPI=m
-#CONFIG_IIO_CROS_EC_BARO=m
-#CONFIG_DLHL60D=m
-#CONFIG_DPS310=m
-#CONFIG_HID_SENSOR_PRESS=m
-#CONFIG_HP03=m
-#CONFIG_HSC030PA=m
-#CONFIG_HSC030PA_I2C=m
 #CONFIG_HSC030PA_SPI=m
 #CONFIG_ICP10100=m
 #CONFIG_MPL115=m
