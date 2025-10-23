@@ -641,53 +641,44 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_HP03)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_HSC030PA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_HSC030PA_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HSC030PA_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ICP10100)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPL115)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPL115_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPL115_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPL3115)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPRLS0025PA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPRLS0025PA_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MPRLS0025PA_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MS5611)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MS5611_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MS5611_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MS5637)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SDP500)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IIO_ST_PRESS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IIO_ST_PRESS_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IIO_ST_PRESS_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_T5403)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HP206C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZPA2326)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZPA2326_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZPA2326_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AS3935)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CROS_EC_MKBP_PROXIMITY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_D3323AA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HX9023S)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IRSD200)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ISL29501)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LIDAR_LITE_V2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MB1232)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RFD77402)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SRF04)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SX_COMMON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SX9310)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SX9324)(=.*| is not set)?$/\2=n/' \
 .config
 
-#CONFIG_HSC030PA_SPI=m
-#CONFIG_ICP10100=m
-#CONFIG_MPL115=m
-#CONFIG_MPL115_I2C=m
-#CONFIG_MPL115_SPI=m
-#CONFIG_MPL3115=m
-#CONFIG_MPRLS0025PA=m
-#CONFIG_MPRLS0025PA_I2C=m
-#CONFIG_MPRLS0025PA_SPI=m
-#CONFIG_MS5611=m
-#CONFIG_MS5611_I2C=m
-#CONFIG_MS5611_SPI=m
-#CONFIG_MS5637=m
-#CONFIG_SDP500=m
-#CONFIG_IIO_ST_PRESS=m
-#CONFIG_IIO_ST_PRESS_I2C=m
-#CONFIG_IIO_ST_PRESS_SPI=m
-#CONFIG_T5403=m
-#CONFIG_HP206C=m
-#CONFIG_ZPA2326=m
-#CONFIG_ZPA2326_I2C=m
-#CONFIG_ZPA2326_SPI=m
-# end of Pressure sensors
-
-# Lightning sensors
-#
-#CONFIG_AS3935=m
-# end of Lightning sensors
-
-#
-# Proximity and distance sensors
-#
-#CONFIG_CROS_EC_MKBP_PROXIMITY=m
-#CONFIG_D3323AA=m
-#CONFIG_HX9023S=m
-#CONFIG_IRSD200=m
-#CONFIG_ISL29501=m
-#CONFIG_LIDAR_LITE_V2=m
-#CONFIG_MB1232=m
-#CONFIG_PING=m
-#CONFIG_RFD77402=m
-#CONFIG_SRF04=m
-#CONFIG_SX_COMMON=m
-#CONFIG_SX9310=m
-#CONFIG_SX9324=m
 #CONFIG_SX9360=m
 #CONFIG_SX9500=m
 #CONFIG_SRF08=m
