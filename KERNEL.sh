@@ -332,114 +332,90 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_LEDS_MENF21BMC)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_LEDS_IS31FL319X)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_LEDS_UPBOARD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_BLINKM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_BLINKM_MULTICOLOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MLXREG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MLXCPLD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_USER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_NIC78BX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SPI_BYTE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TI_LMU_COMMON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM36274)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TPS6105X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_AS3645A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_LM3601X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MT6370_FLASH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_RT8515)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SGM3140)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_KTD202X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_PWM_MULTICOLOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_MT6370_RGB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGERS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_TIMER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_ONESHOT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_DISK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_MTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_HEARTBEAT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_BACKLIGHT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_CPU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_ACTIVITY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_DEFAULT_ON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_TRANSIENT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_CAMERA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_PANIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_NETDEV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_PATTERN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_TTY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_TRIGGER_INPUT_EVENTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SIEMENS_SIMATIC_IPC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SIEMENS_SIMATIC_IPC_APOLLOLAKE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SIEMENS_SIMATIC_IPC_F7188X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_LEDS_SIEMENS_SIMATIC_IPC_ELKHARTLAKE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_A11Y_BRAILLE_CONSOLE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_BREDR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_RFCOMM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_RFCOMM_TTY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_BNEP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_BNEP_MC_FILTER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_BNEP_PROTO_FILTER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HIDP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_LE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_LE_L2CAP_ECRED)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_6LOWPAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_LEDS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MSFTEXT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_AOSPEXT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_DEBUGFS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_SELFTEST)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_INTEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_BCM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_RTL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_QCA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_MTK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB_AUTOSUSPEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB_POLL_SYNC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB_BCM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB_MTK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTUSB_RTL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIBTSDIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_SERDEV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_H4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_NOKIA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_BCSP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_ATH3K)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_LL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_3WIRE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_INTEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_BCM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_RTL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_QCA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BT_HCIUART_AG6XX)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_LEDS_BLINKM=m
-CONFIG_LEDS_BLINKM_MULTICOLOR=y                                                                                                                                                     CONFIG_LEDS_MLXCPLD=m
-CONFIG_LEDS_MLXREG=m                                                                                                                                                                CONFIG_LEDS_USER=m
-CONFIG_LEDS_NIC78BX=m
-CONFIG_LEDS_SPI_BYTE=m
-CONFIG_LEDS_TI_LMU_COMMON=m
-CONFIG_LEDS_LM36274=m
-CONFIG_LEDS_TPS6105X=m
-
-#
-# Flash and Torch LED drivers
-#
-CONFIG_LEDS_AS3645A=m
-CONFIG_LEDS_LM3601X=m
-CONFIG_LEDS_MT6370_FLASH=m
-CONFIG_LEDS_RT8515=m
-CONFIG_LEDS_SGM3140=m
-
-#
-# RGB LED drivers
-#
-CONFIG_LEDS_KTD202X=m
-CONFIG_LEDS_PWM_MULTICOLOR=m
-CONFIG_LEDS_MT6370_RGB=m
-
-#
-# LED Triggers
-#
-CONFIG_LEDS_TRIGGERS=y
-CONFIG_LEDS_TRIGGER_TIMER=m
-CONFIG_LEDS_TRIGGER_ONESHOT=m
-CONFIG_LEDS_TRIGGER_DISK=y
-CONFIG_LEDS_TRIGGER_MTD=y
-CONFIG_LEDS_TRIGGER_HEARTBEAT=m
-CONFIG_LEDS_TRIGGER_BACKLIGHT=m
-CONFIG_LEDS_TRIGGER_CPU=y
-CONFIG_LEDS_TRIGGER_ACTIVITY=m
-CONFIG_LEDS_TRIGGER_GPIO=m
-CONFIG_LEDS_TRIGGER_DEFAULT_ON=m
-
-#
-# iptables trigger is under Netfilter config (LED target)
-#
-CONFIG_LEDS_TRIGGER_TRANSIENT=m
-CONFIG_LEDS_TRIGGER_CAMERA=m
-CONFIG_LEDS_TRIGGER_PANIC=y
-CONFIG_LEDS_TRIGGER_NETDEV=m
-CONFIG_LEDS_TRIGGER_PATTERN=m
-CONFIG_LEDS_TRIGGER_TTY=m
-CONFIG_LEDS_TRIGGER_INPUT_EVENTS=m
-
-#
-# Simatic LED drivers
-#
-CONFIG_LEDS_SIEMENS_SIMATIC_IPC=m
-CONFIG_LEDS_SIEMENS_SIMATIC_IPC_APOLLOLAKE=m
-CONFIG_LEDS_SIEMENS_SIMATIC_IPC_F7188X=m
-CONFIG_LEDS_SIEMENS_SIMATIC_IPC_ELKHARTLAKE=m
-CONFIG_ACCESSIBILITY=y
-CONFIG_A11Y_BRAILLE_CONSOLE=y
-
-CONFIG_BT=n
-CONFIG_BT_BREDR=y
-CONFIG_BT_RFCOMM=m
-CONFIG_BT_RFCOMM_TTY=y
-CONFIG_BT_BNEP=m
-CONFIG_BT_BNEP_MC_FILTER=y
-CONFIG_BT_BNEP_PROTO_FILTER=y
-CONFIG_BT_HIDP=m
-CONFIG_BT_LE=y
-CONFIG_BT_LE_L2CAP_ECRED=y
-CONFIG_BT_6LOWPAN=m
-CONFIG_BT_LEDS=y
-CONFIG_BT_MSFTEXT=y
-CONFIG_BT_AOSPEXT=y
-CONFIG_BT_DEBUGFS=y
-# CONFIG_BT_SELFTEST is not set
-
-#
-# Bluetooth device drivers
-#
-CONFIG_BT_INTEL=m
-CONFIG_BT_BCM=m
-CONFIG_BT_RTL=m
-CONFIG_BT_QCA=m
-CONFIG_BT_MTK=m
-CONFIG_BT_HCIBTUSB=m
-CONFIG_BT_HCIBTUSB_AUTOSUSPEND=y
-CONFIG_BT_HCIBTUSB_POLL_SYNC=y
-CONFIG_BT_HCIBTUSB_BCM=y
-CONFIG_BT_HCIBTUSB_MTK=y
-CONFIG_BT_HCIBTUSB_RTL=y
-CONFIG_BT_HCIBTSDIO=m
-CONFIG_BT_HCIUART=m
-CONFIG_BT_HCIUART_SERDEV=y
-CONFIG_BT_HCIUART_H4=y
-CONFIG_BT_HCIUART_NOKIA=m
-CONFIG_BT_HCIUART_BCSP=y
-CONFIG_BT_HCIUART_ATH3K=y
-CONFIG_BT_HCIUART_LL=y
-CONFIG_BT_HCIUART_3WIRE=y
-CONFIG_BT_HCIUART_INTEL=y
-CONFIG_BT_HCIUART_BCM=y
-CONFIG_BT_HCIUART_RTL=y
-CONFIG_BT_HCIUART_QCA=y
-CONFIG_BT_HCIUART_AG6XX=y
 CONFIG_BT_HCIUART_MRVL=y
 CONFIG_BT_HCIUART_AML=y
 CONFIG_BT_HCIBCM203X=m
