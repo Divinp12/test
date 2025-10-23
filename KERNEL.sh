@@ -512,35 +512,21 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_IRTOUCH)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_IDEALTEK)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_GENERAL_TOUCH)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_GOTOP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_JASTEC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_ELO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_E2I)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_ZYTRONIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_ETT_TC45USB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_NEXIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_USB_EASYTOUCH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TOUCHIT213)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC_SERIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC200X_CORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2004)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TOUCHSCREEN_TSC2005)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_TOUCHSCREEN_USB_GENERAL_TOUCH=y
-CONFIG_TOUCHSCREEN_USB_GOTOP=y
-CONFIG_TOUCHSCREEN_USB_JASTEC=y
-CONFIG_TOUCHSCREEN_USB_ELO=y
-CONFIG_TOUCHSCREEN_USB_E2I=y
-CONFIG_TOUCHSCREEN_USB_ZYTRONIC=y
-CONFIG_TOUCHSCREEN_USB_ETT_TC45USB=y
-CONFIG_TOUCHSCREEN_USB_NEXIO=y
-CONFIG_TOUCHSCREEN_USB_EASYTOUCH=y
-CONFIG_TOUCHSCREEN_TOUCHIT213=m
-CONFIG_TOUCHSCREEN_TSC_SERIO=m
-CONFIG_TOUCHSCREEN_TSC200X_CORE=m
-CONFIG_TOUCHSCREEN_TSC2004=m
-CONFIG_TOUCHSCREEN_TSC2005=m
 CONFIG_TOUCHSCREEN_TSC2007=m
 CONFIG_TOUCHSCREEN_TSC2007_IIO=y
 CONFIG_TOUCHSCREEN_PCAP=m
