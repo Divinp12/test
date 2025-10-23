@@ -555,26 +555,15 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_HDC100X)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_HDC2010)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_HDC3020)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HID_SENSOR_HUMIDITY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HTS221)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HTS221_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HTS221_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HTU21)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SI7005)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SI7020)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_HID_SENSOR_HUMIDITY=m
-CONFIG_HTS221=m
-CONFIG_HTS221_I2C=m
-CONFIG_HTS221_SPI=m
-CONFIG_HTU21=m
-CONFIG_SI7005=m
-CONFIG_SI7020=m
-# end of Humidity sensors
-
-# Light sensors
-#
 #CONFIG_ACPI_ALS=m
 #CONFIG_ADJD_S311=m
 #CONFIG_ADUX1020=m
