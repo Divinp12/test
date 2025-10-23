@@ -198,91 +198,75 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_F2FS_FS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_F2FS_STAT_FS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_F2FS_FS_XATTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_POSIX_ACL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_SECURITY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_CHECK_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FAULT_INJECTION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_COMPRESSION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_LZORLE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_LZ4HC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_FS_ZSTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_IOSTAT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_F2FS_UNFAIR_RWSEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_QUOTA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_ERASURE_CODING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_POSIX_ACL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_TESTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_LOCK_TIME_STATS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_NO_LATENCY_ACCT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_SIX_OPTIMISTIC_SPIN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_PATH_TRACEPOINTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_TRANS_KMALLOC_TRACE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BCACHEFS_ASYNC_OBJECT_LISTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NTFS3_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NTFS3_64BIT_CLUSTER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NTFS3_LZX_XPRESS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NTFS3_FS_POSIX_ACL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NTFS_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RANDOMIZE_BASE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RANDOMIZE_MEMORY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KASAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERV_VTL_MODE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERV_TIMER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERV_UTILS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERV_BALLOON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MSHV_ROOT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AUDIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECURITY_SELINUX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECURITY_SELINUX_BOOTPARAM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECURITY_SELINUX_DEVELOP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECURITY_SELINUX_AVC_STATS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECURITY_SELINUX_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_512GB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PV_SMP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PV_DOM0)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVHVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVHVM_SMP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVHVM_GUEST)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_SAVE_RESTORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PVH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_DOM0)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_PV_MSR_SAFE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_BALLOON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_BALLOON_MEMORY_HOTPLUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_SCRUB_PAGES_DEFAULT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_DEV_EVTCHN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_BACKEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XENFS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_COMPAT_XENFS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_SYS_HYPERVISOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_XENBUS_FRONTEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_XEN_GNTDEV)(=.*| is not set)?$/\2=n/' \
 .config
 
-CONFIG_F2FS_FS_POSIX_ACL=y
-CONFIG_F2FS_FS_SECURITY=y
-CONFIG_F2FS_CHECK_FS=y
-# CONFIG_F2FS_FAULT_INJECTION is not set
-CONFIG_F2FS_FS_COMPRESSION=y
-CONFIG_F2FS_FS_LZO=y
-CONFIG_F2FS_FS_LZORLE=y
-CONFIG_F2FS_FS_LZ4=y
-CONFIG_F2FS_FS_LZ4HC=y
-CONFIG_F2FS_FS_ZSTD=y
-CONFIG_F2FS_IOSTAT=y
-CONFIG_F2FS_UNFAIR_RWSEM=y
-CONFIG_BCACHEFS_FS=m
-CONFIG_BCACHEFS_QUOTA=y
-# CONFIG_BCACHEFS_ERASURE_CODING is not set
-CONFIG_BCACHEFS_POSIX_ACL=y
-# CONFIG_BCACHEFS_DEBUG is not set
-# CONFIG_BCACHEFS_TESTS is not set
-CONFIG_BCACHEFS_LOCK_TIME_STATS=y
-# CONFIG_BCACHEFS_NO_LATENCY_ACCT is not set
-CONFIG_BCACHEFS_SIX_OPTIMISTIC_SPIN=y
-# CONFIG_BCACHEFS_PATH_TRACEPOINTS is not set
-# CONFIG_BCACHEFS_TRANS_KMALLOC_TRACE is not set
-# CONFIG_BCACHEFS_ASYNC_OBJECT_LISTS is not set
-
-#CONFIG_NTFS3_FS=m
-# CONFIG_NTFS3_64BIT_CLUSTER is not set
-CONFIG_NTFS3_LZX_XPRESS=y
-CONFIG_NTFS3_FS_POSIX_ACL=y
-CONFIG_NTFS_FS=m
-
-CONFIG_RANDOMIZE_BASE=y
-CONFIG_RANDOMIZE_MEMORY=y
-
-# CONFIG_KASAN is not set
-
-## Microsoft Hyper-V guest support
-#
-CONFIG_HYPERV=m
-# CONFIG_HYPERV_VTL_MODE is not set
-CONFIG_HYPERV_TIMER=y
-CONFIG_HYPERV_UTILS=m
-CONFIG_HYPERV_BALLOON=m
-CONFIG_MSHV_ROOT=m
-# end of Microsoft Hyper-V guest support
-
-#CONFIG_AUDIT=y
-
-CONFIG_SECURITY_SELINUX=y
-CONFIG_SECURITY_SELINUX_BOOTPARAM=y
-CONFIG_SECURITY_SELINUX_DEVELOP=y
-CONFIG_SECURITY_SELINUX_AVC_STATS=y
-CONFIG_SECURITY_SELINUX_SIDTAB_HASH_BITS=9
-CONFIG_SECURITY_SELINUX_SID2STR_CACHE_SIZE=256
-# CONFIG_SECURITY_SELINUX_DEBUG is not set
-
-#CONFIG_XEN=y
-CONFIG_XEN_PV=y
-CONFIG_XEN_512GB=y
-CONFIG_XEN_PV_SMP=y
-CONFIG_XEN_PV_DOM0=y
-CONFIG_XEN_PVHVM=y
-CONFIG_XEN_PVHVM_SMP=y
-CONFIG_XEN_PVHVM_GUEST=y
-CONFIG_XEN_SAVE_RESTORE=y
-# CONFIG_XEN_DEBUG_FS is not set
-CONFIG_XEN_PVH=y
-CONFIG_XEN_DOM0=y
-CONFIG_XEN_PV_MSR_SAFE=y
-#
-# Xen driver support
-#
-CONFIG_XEN_BALLOON=y
-CONFIG_XEN_BALLOON_MEMORY_HOTPLUG=y
-CONFIG_XEN_MEMORY_HOTPLUG_LIMIT=512
-CONFIG_XEN_SCRUB_PAGES_DEFAULT=y
-CONFIG_XEN_DEV_EVTCHN=m
-CONFIG_XEN_BACKEND=y
-CONFIG_XENFS=m
-CONFIG_XEN_COMPAT_XENFS=y
-CONFIG_XEN_SYS_HYPERVISOR=y
-CONFIG_XEN_XENBUS_FRONTEND=y
-CONFIG_XEN_GNTDEV=m
 CONFIG_XEN_GNTDEV_DMABUF=y
 CONFIG_XEN_GRANT_DEV_ALLOC=m
 CONFIG_XEN_GRANT_DMA_ALLOC=y
