@@ -701,34 +701,33 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_VIRTIO_ANCHOR)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VIRTIO_PCI_LIB)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VIRTIO_PCI_LIB_LEGACY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_MENU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PCI_ADMIN_LEGACY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PCI_LEGACY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_VDPA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PMEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_BALLOON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_MEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_INPUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_MMIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_DMA_SHARED_BUFFER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_RTC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_RTC_PTP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_RTC_CLASS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_COMMON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_PFNCACHE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_IRQCHIP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_IRQ_ROUTING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_DIRTY_RING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_DIRTY_RING_TSO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_DIRTY_RING_ACQ_REL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_MMIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_ASYNC_PF)(=.*| is not set)?$/\2=n/' \
 .config;
 
-CONFIG_VIRTIO_MENU=y
-CONFIG_VIRTIO_PCI=y
-CONFIG_VIRTIO_PCI_ADMIN_LEGACY=y
-CONFIG_VIRTIO_PCI_LEGACY=y
-CONFIG_VIRTIO_VDPA=m
-CONFIG_VIRTIO_PMEM=m
-CONFIG_VIRTIO_BALLOON=m
-CONFIG_VIRTIO_MEM=m
-CONFIG_VIRTIO_INPUT=m
-CONFIG_VIRTIO_MMIO=m
-CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES=y
-CONFIG_VIRTIO_DMA_SHARED_BUFFER=m
-CONFIG_VIRTIO_DEBUG=y
-CONFIG_VIRTIO_RTC=m
-CONFIG_VIRTIO_RTC_PTP=y
-CONFIG_VIRTIO_RTC_CLASS=y
-
-CONFIG_KVM_COMMON=y
-CONFIG_HAVE_KVM_PFNCACHE=y
-CONFIG_HAVE_KVM_IRQCHIP=y
-CONFIG_HAVE_KVM_IRQ_ROUTING=y
-CONFIG_HAVE_KVM_DIRTY_RING=y
-CONFIG_HAVE_KVM_DIRTY_RING_TSO=y
-CONFIG_HAVE_KVM_DIRTY_RING_ACQ_REL=y
-CONFIG_KVM_MMIO=y
-CONFIG_KVM_ASYNC_PF=y
 CONFIG_HAVE_KVM_MSI=y
 CONFIG_HAVE_KVM_READONLY_MEM=y
 CONFIG_HAVE_KVM_CPU_RELAX_INTERCEPT=y
