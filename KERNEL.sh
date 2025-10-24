@@ -743,30 +743,27 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_KVM_MMU_LOCKLESS_AGING)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_KVM_GENERIC_MEMORY_ATTRIBUTES)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_KVM_PRIVATE_MEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_PRIVATE_MEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_ARCH_GMEM_PREPARE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_ARCH_GMEM_INVALIDATE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTUALIZATION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_X86)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_INTEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_X86_SGX_KVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_AMD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_AMD_SEV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_IOAPIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_SMM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_HYPERV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_XEN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_EXTERNAL_WRITE_TRACKING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HYPERVISOR_GUEST)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PARAVIRT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PARAVIRT_XXL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PARAVIRT_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PARAVIRT_SPINLOCKS)(=.*| is not set)?$/\2=n/' \
 .config;
-
-CONFIG_KVM_GENERIC_PRIVATE_MEM=y
-CONFIG_HAVE_KVM_ARCH_GMEM_PREPARE=y
-CONFIG_HAVE_KVM_ARCH_GMEM_INVALIDATE=y
-CONFIG_VIRTUALIZATION=y
-CONFIG_KVM_X86=m
-CONFIG_KVM=m
-CONFIG_KVM_INTEL=m
-CONFIG_X86_SGX_KVM=y
-CONFIG_KVM_AMD=m
-CONFIG_KVM_AMD_SEV=y
-CONFIG_KVM_IOAPIC=y
-CONFIG_KVM_SMM=y
-CONFIG_KVM_HYPERV=y
-CONFIG_KVM_XEN=y
-CONFIG_KVM_EXTERNAL_WRITE_TRACKING=y
-CONFIG_KVM_MAX_NR_VCPUS=1024
-
-CONFIG_HYPERVISOR_GUEST=y
-CONFIG_PARAVIRT=y
-CONFIG_PARAVIRT_XXL=y
-# CONFIG_PARAVIRT_DEBUG is not set
-CONFIG_PARAVIRT_SPINLOCKS=y
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
