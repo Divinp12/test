@@ -686,11 +686,23 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_DEBUG_KERNEL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_INFO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_IOTLB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_RING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_TASK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 .config;
 
-CONFIG_VHOST_IOTLB=m
-CONFIG_VHOST_RING=m
-CONFIG_VHOST_TASK=y
 CONFIG_VHOST=m
 CONFIG_VHOST_MENU=y
 CONFIG_VHOST_NET=m
