@@ -726,25 +726,25 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_HAVE_KVM_DIRTY_RING_ACQ_REL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_KVM_MMIO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_KVM_ASYNC_PF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_MSI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_READONLY_MEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_CPU_RELAX_INTERCEPT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_VFIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_PRE_FAULT_MEMORY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_COMPAT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_IRQ_BYPASS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_NO_POLL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_XFER_TO_GUEST_WORK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KVM_PM_NOTIFIER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_HARDWARE_ENABLING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_MMU_NOTIFIER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_ELIDE_TLB_FLUSH_IF_YOUNG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_MMU_LOCKLESS_AGING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_GENERIC_MEMORY_ATTRIBUTES)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KVM_PRIVATE_MEM)(=.*| is not set)?$/\2=n/' \
 .config;
 
-CONFIG_HAVE_KVM_MSI=y
-CONFIG_HAVE_KVM_READONLY_MEM=y
-CONFIG_HAVE_KVM_CPU_RELAX_INTERCEPT=y
-CONFIG_KVM_VFIO=y
-CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y
-CONFIG_KVM_GENERIC_PRE_FAULT_MEMORY=y
-CONFIG_KVM_COMPAT=y
-CONFIG_HAVE_KVM_IRQ_BYPASS=m
-CONFIG_HAVE_KVM_NO_POLL=y
-CONFIG_KVM_XFER_TO_GUEST_WORK=y
-CONFIG_HAVE_KVM_PM_NOTIFIER=y
-CONFIG_KVM_GENERIC_HARDWARE_ENABLING=y
-CONFIG_KVM_GENERIC_MMU_NOTIFIER=y
-CONFIG_KVM_ELIDE_TLB_FLUSH_IF_YOUNG=y
-CONFIG_KVM_MMU_LOCKLESS_AGING=y
-CONFIG_KVM_GENERIC_MEMORY_ATTRIBUTES=y
-CONFIG_KVM_PRIVATE_MEM=y
 CONFIG_KVM_GENERIC_PRIVATE_MEM=y
 CONFIG_HAVE_KVM_ARCH_GMEM_PREPARE=y
 CONFIG_HAVE_KVM_ARCH_GMEM_INVALIDATE=y
