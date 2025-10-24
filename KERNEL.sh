@@ -686,36 +686,23 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_DEBUG_KERNEL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_INFO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(CONFIG_VHOST_IOTLB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_RING)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_TASK)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_IOTLB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_MENU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_NET)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_SCSI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_VSOCK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_VDPA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_CROSS_ENDIAN_LEGACY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VHOST_ENABLE_FORK_OWNER_CONTROL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_ANCHOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PCI_LIB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_VIRTIO_PCI_LIB_LEGACY)(=.*| is not set)?$/\2=n/' \
 .config;
 
-CONFIG_VHOST=m
-CONFIG_VHOST_MENU=y
-CONFIG_VHOST_NET=m
-CONFIG_VHOST_SCSI=m
-CONFIG_VHOST_VSOCK=m
-CONFIG_VHOST_VDPA=m
-# CONFIG_VHOST_CROSS_ENDIAN_LEGACY is not set
-CONFIG_VHOST_ENABLE_FORK_OWNER_CONTROL=y
-
-CONFIG_VIRTIO_ANCHOR=y
-CONFIG_VIRTIO=y
-CONFIG_VIRTIO_PCI_LIB=y
-CONFIG_VIRTIO_PCI_LIB_LEGACY=y
 CONFIG_VIRTIO_MENU=y
 CONFIG_VIRTIO_PCI=y
 CONFIG_VIRTIO_PCI_ADMIN_LEGACY=y
