@@ -770,31 +770,28 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_PARAVIRT_XXL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PARAVIRT_DEBUG)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PARAVIRT_SPINLOCKS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_TRF7970A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MEI_PHY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_SIM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PORT100)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_VIRTUAL_NCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_FDP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_FDP_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN544)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN544_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN544_MEI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN533)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN533_USB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN533_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_PN532_UART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MICROREAD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MICROREAD_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MICROREAD_MEI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MRVL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MRVL_USB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MRVL_UART)(=.*| is not set)?$/\2=n/' \
 .config;
 
-#
-# Near Field Communication (NFC) devices
-#
-CONFIG_NFC_TRF7970A=m
-CONFIG_NFC_MEI_PHY=m
-CONFIG_NFC_SIM=m
-CONFIG_NFC_PORT100=m
-CONFIG_NFC_VIRTUAL_NCI=m
-CONFIG_NFC_FDP=m
-CONFIG_NFC_FDP_I2C=m
-CONFIG_NFC_PN544=m
-CONFIG_NFC_PN544_I2C=m
-CONFIG_NFC_PN544_MEI=m
-CONFIG_NFC_PN533=m
-CONFIG_NFC_PN533_USB=m
-CONFIG_NFC_PN533_I2C=m
-CONFIG_NFC_PN532_UART=m
-CONFIG_NFC_MICROREAD=m
-CONFIG_NFC_MICROREAD_I2C=m
-CONFIG_NFC_MICROREAD_MEI=m
-CONFIG_NFC_MRVL=m
-CONFIG_NFC_MRVL_USB=m
-CONFIG_NFC_MRVL_UART=m
 CONFIG_NFC_MRVL_I2C=m
 CONFIG_NFC_MRVL_SPI=m
 CONFIG_NFC_ST21NFCA=m
