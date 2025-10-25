@@ -437,6 +437,13 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_JOLIET)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZISOFS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_UDF_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INPUT_TABLET)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_USB_ACECAD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_USB_AIPTEK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_USB_HANWANG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_USB_KBTAB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_USB_PEGASUS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_TABLET_SERIAL_WACOM4)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INPUT_TOUCHSCREEN)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_88PM860X)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_TOUCHSCREEN_ADS7846)(=.*| is not set)?$/\2=n/' \
