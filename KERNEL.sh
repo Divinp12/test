@@ -790,22 +790,20 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_MRVL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_MRVL_USB)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_MRVL_UART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MRVL_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_MRVL_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST21NFCA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST21NFCA_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST_NCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST_NCI_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST_NCI_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_NXP_NCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_NXP_NCI_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_S3FWRN5)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
 .config;
-
-CONFIG_NFC_MRVL_I2C=m
-CONFIG_NFC_MRVL_SPI=m
-CONFIG_NFC_ST21NFCA=m
-CONFIG_NFC_ST21NFCA_I2C=m
-CONFIG_NFC_ST_NCI=m
-CONFIG_NFC_ST_NCI_I2C=m
-CONFIG_NFC_ST_NCI_SPI=m
-CONFIG_NFC_NXP_NCI=m
-CONFIG_NFC_NXP_NCI_I2C=m
-CONFIG_NFC_S3FWRN5=m
-CONFIG_NFC_S3FWRN5_I2C=m
-CONFIG_NFC_S3FWRN82_UART=m
-CONFIG_NFC_ST95HF=m
-# end of Near Field Communication (NFC) devices
 
 sudo make -j64 && \
 sudo make modules_install -j64 && \
