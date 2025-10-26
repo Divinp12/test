@@ -198,6 +198,22 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando diretorio /var/tmp/portage";
+if mkdir -p /var/tmp/portage; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "montando partição tmpfs temporaria do diretorio /var/tmp/portage";
+if mount -t tmpfs -o size=100%,mode=1777 tmpfs /var/tmp/portage; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "sincronizando arvore de ebuilds do gentoo via web";
 if emerge-webrsync --quiet > /dev/null 2>&1; then
 echo ""
