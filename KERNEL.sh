@@ -5,9 +5,10 @@ sudo echo "tmpfs /tmp tmpfs defaults,size=2G 0 0" >> /etc/fstab && \
 sudo mount -o remount /tmp && \
 wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
 sudo tar -xvpf /tmp/linux-6.12.54.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner && \
-sudo make clean -j64 && \
-sudo make mrproper -j64 && \
-sudo make defconfig -j64;
+sudo rm -rf /tmp/linux-6.12.54.tar.xz && \
+sudo make clean -j64 -C /tmp/linux-6.12.54 && \
+sudo make mrproper -j64 -C /tmp/linux-6.12.54 && \
+sudo make defconfig -j64 -C /tmp/linux-6.12.54;
 #-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 
 sed -i -E \
