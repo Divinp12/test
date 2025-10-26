@@ -55,6 +55,7 @@ FFLAGS="${COMMON_FLAGS}"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
+PORTAGE_TMPDIR="/var/tmp/portage"
 USE="-X -bluetooth -doc"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
