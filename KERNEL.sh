@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear && \
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
 sudo echo "tmpfs /tmp tmpfs defaults,size=6G 0 0" >> /etc/fstab && \
 sudo mount -o remount /tmp && \
