@@ -805,6 +805,9 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
 .config;
 
+CONFIG_DYNAMIC_DEBUG=y
+CONFIG_DYNAMIC_DEBUG_CORE=y
+
 sudo make -j64 && \
 sudo make modules_install -j64 && \
 sudo make install -j64 && \
