@@ -2,14 +2,18 @@
 
 clear && \
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
-sudo echo "tmpfs /tmp tmpfs defaults,size=6G 0 0" >> /etc/fstab && \
-sudo mount -o remount /tmp && \
-wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
-sudo tar -xvpf /tmp/linux-6.12.54.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
-sudo rm -rf /tmp/linux-6.12.54.tar.xz && \
-sudo make clean -j64 -C /tmp/linux-6.12.54 && \
-sudo make mrproper -j64 -C /tmp/linux-6.12.54 && \
-sudo make defconfig -j64 -C /tmp/linux-6.12.54;
+sudo echo "tmpfs /tmp/KERNEL tmpfs defaults,size=6G 0 0" >> /etc/fstab && \
+sudo mount -o remount /tmp/KERNEL && \
+sudo fallocate -l 14G /home/bux/SWAP-TEMP && \
+sudo chmod 600 /home/bux/SWAP-TEMP && \
+sudo mkswap /home/bux/SWAP-TEMP && \
+sudo swapon /home/bux/SWAP-TEMP && \
+wget -P /tmp/KERNEL https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
+sudo tar -xvpf /tmp/KERNEL/linux-6.12.54.tar.xz -C /tmp/KERNEL --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
+sudo rm -rf /tmp/KERNEL/linux-6.12.54.tar.xz && \
+sudo make clean -j64 -C /tmp/KERNEL/linux-6.12.54 && \
+sudo make mrproper -j64 -C /tmp/KERNEL/linux-6.12.54 && \
+sudo make defconfig -j64 -C /tmp/KERNEL/linux-6.12.54;
 #-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 
 sudo sed -i -E \
