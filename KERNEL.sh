@@ -807,12 +807,12 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
 .config;
 
-CONFIG_DYNAMIC_DEBUG=y
-CONFIG_DYNAMIC_DEBUG_CORE=y
+#CONFIG_DYNAMIC_DEBUG=y
+#CONFIG_DYNAMIC_DEBUG_CORE=y
 
-sudo make -j64 && \
-sudo make modules_install -j64 && \
-sudo make install -j64 && \
+sudo make -j64 -C /tmp/linux-6.12.54 && \
+sudo make modules_install -j64 -C /tmp/linux-6.12.54 && \
+sudo make install -j64 -C /tmp/linux-6.12.54 && \
 sudo mv arch/x86/boot/bzImage /boot/vmlinuz-6.12.54 && \
 sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.12.54.img && \
 sudo mkinitcpio -P && \
