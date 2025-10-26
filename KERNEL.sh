@@ -805,7 +805,7 @@ sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
-.config;
+/tmp/linux-6.12.54/.config;
 
 #CONFIG_DYNAMIC_DEBUG=y
 #CONFIG_DYNAMIC_DEBUG_CORE=y
