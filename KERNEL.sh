@@ -3,7 +3,7 @@
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
 sudo echo "tmpfs /tmp tmpfs defaults,size=2G 0 0" >> /etc/fstab && \
 sudo mount -o remount /tmp && \
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
+wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
 sudo tar -xvpf linux-6.12.54.tar.xz --xattrs-include='*.*' --numeric-owner && \
 cd linux-6.12.54 && \
 sudo make clean -j64 && \
