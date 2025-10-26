@@ -810,15 +810,16 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
-/tmp/linux-6.12.54/.config;
+/tmp/KERNEL/linux-6.12.54/.config;
 
 #CONFIG_DYNAMIC_DEBUG=y
 #CONFIG_DYNAMIC_DEBUG_CORE=y
 
-sudo make -j64 -C /tmp/linux-6.12.54 && \
-sudo make modules_install -j64 -C /tmp/linux-6.12.54 && \
-sudo make install -j64 -C /tmp/linux-6.12.54 && \
-sudo mv arch/x86/boot/bzImage /boot/vmlinuz-6.12.54 && \
+sudo make -j64 -C /tmp/KERNEL/linux-6.12.54 && \
+sudo make modules_install -j64 -C /tmp/KERNEL/linux-6.12.54 && \
+sudo make install -j64 -C /tmp/KERNEL/linux-6.12.54 && \
+sudo mv /tmp/KERNEL/linux-6.12.54/arch/x86/boot/bzImage /boot/vmlinuz-6.12.54 && \
+sudo rm -rf /tmp/KERNEL/linux-6.12.54 && \
 sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.12.54.img && \
 sudo mkinitcpio -P && \
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg;
