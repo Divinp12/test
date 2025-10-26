@@ -4,7 +4,7 @@ sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncur
 sudo echo "tmpfs /tmp tmpfs defaults,size=6G 0 0" >> /etc/fstab && \
 sudo mount -o remount /tmp && \
 wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
-sudo tar -xvpf /tmp/linux-6.12.54.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner && \
+sudo tar -xvpf /tmp/linux-6.12.54.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
 sudo rm -rf /tmp/linux-6.12.54.tar.xz && \
 sudo make clean -j64 -C /tmp/linux-6.12.54 && \
 sudo make mrproper -j64 -C /tmp/linux-6.12.54 && \
