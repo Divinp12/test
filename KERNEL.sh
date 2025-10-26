@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
-sudo echo "tmpfs /tmp tmpfs defaults,size=4G 0 0" >> /etc/fstab && \
+sudo echo "tmpfs /tmp tmpfs defaults,size=6G 0 0" >> /etc/fstab && \
 sudo mount -o remount /tmp && \
 wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.54.tar.xz && \
 sudo tar -xvpf /tmp/linux-6.12.54.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner && \
@@ -11,7 +11,7 @@ sudo make mrproper -j64 -C /tmp/linux-6.12.54 && \
 sudo make defconfig -j64 -C /tmp/linux-6.12.54;
 #-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 
-sed -i -E \
+sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZPOOL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SWAP)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSWAP)(=.*| is not set)?$/\2=n/' \
