@@ -87,7 +87,12 @@ echo "FALHOU" && exit
 fi;
 
 
-mkdir -p /mnt/gentoo/etc/portage/package.provided
+echo "adicionando pasta package.provided no diretorio /mnt/gentoo/etc/portage";
+if mkdir -p /mnt/gentoo/etc/portage/package.provided; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
