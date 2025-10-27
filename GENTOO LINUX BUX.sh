@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear && \
 echo "formatando 1 disco valido";
 wipefs -a /dev/sda > /dev/null 2>&1 && \
 parted -s /dev/sda mklabel gpt && \
@@ -65,6 +66,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando pasta package.mask no diretorio /mnt/gentoo/etc/portage";
+if mkdir -p /mnt/gentoo/etc/portage/package.mask; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
 if echo "app-shells/fish
 app-shells/zsh
@@ -76,6 +85,9 @@ echo ""
 else
 echo "FALHOU" && exit
 fi;
+
+
+mkdir -p /mnt/gentoo/etc/portage/package.provided
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
