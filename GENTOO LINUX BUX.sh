@@ -240,7 +240,15 @@ fi;
 
 
 echo "montando partição tmpfs temporaria do diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,mode=1777 tmpfs /var/tmp/portage; then
+if echo "tmpfs /var/tmp/portage tmpfs defaults,size=100% 0 0" >> /etc/fstab; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "montando partição tmpfs";
+if mount -o remount /var/tmp/portage; then
 echo ""
 else
 echo "FALHOU" && exit
