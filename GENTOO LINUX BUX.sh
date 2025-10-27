@@ -21,7 +21,7 @@ echo "";
 
 
 echo "baixando stage3";
-if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251005T161859Z/stage3-amd64-openrc-20251005T161859Z.tar.xz > /dev/null 2>&1; then
+if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251026T170339Z/stage3-amd64-openrc-20251026T170339Z.tar.xz > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
