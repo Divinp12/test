@@ -65,7 +65,7 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "bloqueando instalação e atualização de pacotes não usados";
+echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
 if echo "kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
@@ -75,7 +75,7 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "ignorar verificação de pacotes não usados";
+echo "adicionando ignoração de verificação de pacotes não usados";
 if echo "kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
