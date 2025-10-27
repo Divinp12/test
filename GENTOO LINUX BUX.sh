@@ -66,7 +66,8 @@ fi;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-if echo "kde-plasma/plasma-meta
+if echo "app-shells/zsh
+kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
 echo ""
@@ -76,7 +77,8 @@ fi;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-if echo "kde-plasma/plasma-meta
+if echo "app-shells/zsh
+kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
 echo ""
