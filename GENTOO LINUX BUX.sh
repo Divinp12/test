@@ -316,6 +316,20 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "instalando pacotes importantes";
+if emerge --quiet \
+sys-devel/gcc \
+sys-libs/glibc \
+sys-apps/coreutils \
+sys-apps/bash \
+sys-devel/binutils \
+sys-libs/ncurses; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
 echo ""
