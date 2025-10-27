@@ -66,7 +66,8 @@ fi;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-if echo "app-shells/zsh
+if echo "app-shells/fish
+app-shells/zsh
 app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
@@ -78,7 +79,8 @@ fi;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-if echo "app-shells/zsh
+if echo "app-shells/fish
+app-shells/zsh
 app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
