@@ -320,10 +320,17 @@ echo "instalando pacotes importantes";
 if emerge --quiet \
 sys-devel/gcc \
 sys-libs/glibc \
+sys-devel/gettext \
 sys-apps/coreutils \
 sys-apps/bash \
 sys-devel/binutils \
-sys-libs/ncurses; then
+sys-libs/ncurses \
+sys-libs/readline \
+sys-apps/file \
+sys-libs/pam \
+dev-libs/libffi \
+app-crypt/gpgme \
+dev-libs/libxml2; then
 echo ""
 else
 echo "FALHOU" && exit
