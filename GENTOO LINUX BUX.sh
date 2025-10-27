@@ -199,6 +199,38 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando partição swap temporaria de 30gb";
+if fallocate -l 30G /home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "alterando permissões no swap";
+if chmod 600 /home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "formatando arquivo de partição swap";
+if mkswap /home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "ativando swap";
+if swapon /home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "adicionando diretorio /var/tmp/portage";
 if mkdir -p /var/tmp/portage; then
 echo ""
