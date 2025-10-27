@@ -56,9 +56,29 @@ RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 PORTAGE_TMPDIR="/var/tmp/portage"
-USE="-X -bluetooth -doc"
+USE="-X -bluetooth -doc -kde -plasma"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "bloqueando instalação e atualização de pacotes não usados";
+if echo "kde-plasma/plasma-meta
+kde-plasma/kde-apps-meta
+kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "ignorar verificação de pacotes não usados";
+if echo "kde-plasma/plasma-meta
+kde-plasma/kde-apps-meta
+kde-plasma/plasma-desktop" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
 echo ""
 else
 echo "FALHOU" && exit
