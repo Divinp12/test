@@ -354,28 +354,11 @@ echo "instalando pacotes importantes";
 if emerge --quiet \
 sys-devel/gcc \
 sys-libs/glibc \
-sys-devel/gettext \
-sys-apps/coreutils \
 sys-apps/bash \
-sys-devel/binutils \
-sys-libs/ncurses \
-sys-libs/readline \
-sys-apps/file \
-sys-libs/pam \
-dev-libs/libffi \
-app-crypt/gpgme \
-dev-libs/libxml2 \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
-=sys-kernel/gentoo-sources-6.17.5; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "atualizando pacotes";
-if emerge --quiet --verbose --deep --changed-use @world; then
+=sys-kernel/gentoo-sources-6.17.5 \
+@system; then
 echo ""
 else
 echo "FALHOU" && exit
