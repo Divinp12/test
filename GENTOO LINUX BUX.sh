@@ -112,6 +112,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando licença do pacote linux-firmware";
+if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /etc/portage/package.license; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
@@ -332,7 +340,9 @@ sys-apps/file \
 sys-libs/pam \
 dev-libs/libffi \
 app-crypt/gpgme \
-dev-libs/libxml2; then
+dev-libs/libxml2
+sys-kernel/linux-firmware
+sys-firmware/sof-firmware; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -341,30 +351,6 @@ fi;
 
 echo "atualizando pacotes";
 if emerge --quiet --verbose --update --deep --changed-use @world; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando licença do pacote linux-firmware";
-if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /etc/portage/package.license; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "instalando pacote linux-firmware";
-if emerge --quiet sys-kernel/linux-firmware; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "instalando pacote sof-firmware";
-if emerge --quiet sys-firmware/sof-firmware; then
 echo ""
 else
 echo "FALHOU" && exit
