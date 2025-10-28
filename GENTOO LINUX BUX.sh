@@ -354,8 +354,10 @@ echo "instalando pacotes importantes";
 if emerge --quiet \
 sys-devel/gcc \
 sys-libs/glibc \
+sys-devel/binutils \
 sys-apps/coreutils \
 app-shells/bash \
+sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.17.5 \
