@@ -362,6 +362,7 @@ sys-firmware/sof-firmware \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
+net-misc/dhcpcd \
 @system; then
 echo ""
 else
@@ -461,14 +462,6 @@ fi;
 
 echo "adicionando senha bux ao usuario normal";
 if echo -e "bux\nbux" | passwd bux; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "instalando pacote de suporte DHCP";
-if emerge --quiet dhcpcd; then
 echo ""
 else
 echo "FALHOU" && exit
