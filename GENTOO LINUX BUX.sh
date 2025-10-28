@@ -362,6 +362,7 @@ sys-firmware/sof-firmware \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
+gui-apps/wofi \
 app-misc/fastfetch \
 gui-apps/foot \
 net-misc/networkmanager \
