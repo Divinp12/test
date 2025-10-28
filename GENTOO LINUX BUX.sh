@@ -358,7 +358,8 @@ dev-libs/libffi \
 app-crypt/gpgme \
 dev-libs/libxml2
 sys-kernel/linux-firmware
-sys-firmware/sof-firmware; then
+sys-firmware/sof-firmware
+=sys-kernel/gentoo-sources-6.17.5; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -375,14 +376,6 @@ fi;
 
 echo "atualizando variáveis de ambiente globais";
 if env-update; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "instalando kernel customizavel";
-if emerge --quiet =sys-kernel/gentoo-sources-6.17.5; then
 echo ""
 else
 echo "FALHOU" && exit
