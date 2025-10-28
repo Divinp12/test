@@ -375,7 +375,7 @@ fi;
 
 
 echo "atualizando pacotes";
-if emerge --quiet --verbose --update --deep --changed-use @world; then
+if emerge --quiet --verbose --deep --changed-use @world; then
 echo ""
 else
 echo "FALHOU" && exit
