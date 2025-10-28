@@ -364,9 +364,9 @@ sys-apps/file \
 sys-libs/pam \
 dev-libs/libffi \
 app-crypt/gpgme \
-dev-libs/libxml2
-sys-kernel/linux-firmware
-sys-firmware/sof-firmware
+dev-libs/libxml2 \
+sys-kernel/linux-firmware \
+sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.17.5; then
 echo ""
 else
