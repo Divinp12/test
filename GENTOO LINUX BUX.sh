@@ -364,8 +364,10 @@ dev-libs/wayland \
 gui-wm/sway \
 app-misc/fastfetch \
 gui-apps/foot \
+net-misc/networkmanager \
 net-misc/dhcpcd \
 sys-boot/grub \
+sys-boot/efibootmgr \
 @system; then
 echo ""
 else
