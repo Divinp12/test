@@ -121,7 +121,7 @@ fi;
 
 
 echo "adicionando licença do pacote linux-firmware";
-if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license; then
+if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license/linux-firmware; then
 echo ""
 else
 echo "FALHOU" && exit
