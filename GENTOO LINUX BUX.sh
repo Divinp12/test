@@ -81,7 +81,8 @@ app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
-gnome-base/gdm" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
+gnome-base/gdm
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -103,7 +104,8 @@ app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
-gnome-base/gdm" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
+gnome-base/gdm
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
 echo ""
 else
 echo "FALHOU" && exit
