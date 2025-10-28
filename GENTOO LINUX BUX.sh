@@ -120,6 +120,22 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando pasta package.accept_keywords no diretorio /etc/portage";
+if mkdir -p /etc/portage/package.accept_keywords; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "habilitando versao 6.17.5 do pacote gentoo-sources"
+if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /etc/portage/package.accept_keywords/kernel; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
@@ -359,22 +375,6 @@ fi;
 
 echo "atualizando variáveis de ambiente globais";
 if env-update; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando pasta package.accept_keywords no diretorio /etc/portage";
-if mkdir -p /etc/portage/package.accept_keywords; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "habilitando versao 6.17.5 do pacote gentoo-sources"
-if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /etc/portage/package.accept_keywords/kernel; then
 echo ""
 else
 echo "FALHOU" && exit
