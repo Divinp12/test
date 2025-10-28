@@ -57,7 +57,7 @@ RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 PORTAGE_TMPDIR="/var/tmp/portage"
-USE="-X -bluetooth -doc -kde -plasma"
+USE="-X -bluetooth -doc -kde -plasma -systemd"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -378,7 +378,7 @@ fi;
 
 
 echo "instalando kernel customizavel";
-if emerge --quiet sys-kernel/gentoo-sources; then
+if emerge --quiet sys-kernel/gentoo-sources-6.17.5; then
 echo ""
 else
 echo "FALHOU" && exit
