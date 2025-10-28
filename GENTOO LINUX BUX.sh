@@ -379,8 +379,24 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando pasta package.accept_keywords no diretorio /etc/portage";
+if mkdir -p /etc/portage/package.accept_keywords; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "habilitando versao 6.17.5 do pacote gentoo-sources"
+if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /etc/portage/package.accept_keywords/kernel; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "instalando kernel customizavel";
-if emerge --quiet sys-kernel/gentoo-sources-6.17.5; then
+if emerge --quiet =sys-kernel/gentoo-sources-6.17.5; then
 echo ""
 else
 echo "FALHOU" && exit
