@@ -365,6 +365,8 @@ gui-wm/sway \
 gui-apps/wofi \
 app-misc/fastfetch \
 gui-apps/foot \
+media-sound/pulseaudio-daemon \
+media-sound/pavucontrol \
 net-misc/networkmanager \
 net-misc/dhcpcd \
 sys-boot/grub \
