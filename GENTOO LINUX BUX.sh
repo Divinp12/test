@@ -359,6 +359,8 @@ app-shells/bash \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.17.5 \
+dev-libs/wayland \
+gui-wm/sway \
 @system; then
 echo ""
 else
