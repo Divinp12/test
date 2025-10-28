@@ -112,6 +112,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando pasta package.license no diretorio /mnt/gentoo/etc/portage";
+if mkdir -p /mnt/gentoo/etc/portage/package.license; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "adicionando licença do pacote linux-firmware";
 if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license; then
 echo ""
