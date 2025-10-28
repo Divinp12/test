@@ -354,6 +354,7 @@ echo "instalando pacotes importantes";
 if emerge --quiet \
 sys-devel/gcc \
 sys-libs/glibc \
+sys-apps/coreutils \
 sys-apps/bash \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
