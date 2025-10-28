@@ -362,6 +362,8 @@ sys-firmware/sof-firmware \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
+app-misc/fastfetch \
+gui-apps/foot \
 net-misc/dhcpcd \
 @system; then
 echo ""
