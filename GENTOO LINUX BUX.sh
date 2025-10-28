@@ -112,6 +112,54 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "montando partição swap temporaria de 30gb";
+if fallocate -l 30G /mnt/gentoo/home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "alterando permissões no swap";
+if chmod 600 /mnt/gentoo/home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "formatando arquivo de partição swap";
+if mkswap /mnt/gentoo/home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "ativando swap";
+if swapon /mnt/gentoo/home/ST; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando diretorio /var/tmp/portage";
+if mkdir -p /mnt/gentoo/var/tmp/portage; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "montando partição tmpfs temporaria do diretorio /var/tmp/portage";
+if mount -t tmpfs -o size=100%,noatime tmpfs /mnt/gentoo/var/tmp/portage; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "adicionando fuso horario brasileiro";
 if cp /mnt/gentoo/usr/share/zoneinfo/America/Sao_Paulo /mnt/gentoo/etc/localtime; then
 echo ""
@@ -240,54 +288,6 @@ fi;
 
 echo "aplicando mudanças de idiomas e caracteres brasileiro";
 if locale-gen > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição swap temporaria de 30gb";
-if fallocate -l 30G /home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "alterando permissões no swap";
-if chmod 600 /home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "formatando arquivo de partição swap";
-if mkswap /home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "ativando swap";
-if swapon /home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando diretorio /var/tmp/portage";
-if mkdir -p /var/tmp/portage; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição tmpfs temporaria do diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,noatime tmpfs /var/tmp/portage; then
 echo ""
 else
 echo "FALHOU" && exit
