@@ -355,7 +355,7 @@ if emerge --quiet \
 sys-devel/gcc \
 sys-libs/glibc \
 sys-apps/coreutils \
-sys-apps/bash \
+app-shells/bash \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.17.5 \
