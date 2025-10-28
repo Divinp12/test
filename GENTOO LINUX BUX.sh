@@ -144,6 +144,22 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "adicionando pasta package.use no diretorio /mnt/gentoo/etc/portage";
+if mkdir -p /mnt/gentoo/etc/portage/package.use; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "criando configuração do pacote bash";
+if echo "app-shells/bash -nls -examples" > /mnt/gentoo/etc/portage/package.use/bash; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
