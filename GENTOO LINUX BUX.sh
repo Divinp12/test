@@ -365,6 +365,7 @@ gui-wm/sway \
 app-misc/fastfetch \
 gui-apps/foot \
 net-misc/dhcpcd \
+sys-boot/grub \
 @system; then
 echo ""
 else
