@@ -113,7 +113,7 @@ fi;
 
 
 echo "adicionando licença do pacote linux-firmware";
-if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /etc/portage/package.license; then
+if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -121,7 +121,7 @@ fi;
 
 
 echo "adicionando pasta package.accept_keywords no diretorio /etc/portage";
-if mkdir -p /etc/portage/package.accept_keywords; then
+if mkdir -p /mnt/gentoo/etc/portage/package.accept_keywords; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -129,7 +129,7 @@ fi;
 
 
 echo "habilitando versao 6.17.5 do pacote gentoo-sources"
-if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /etc/portage/package.accept_keywords/kernel; then
+if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /mnt/gentoo/etc/portage/package.accept_keywords/kernel; then
 echo ""
 else
 echo "FALHOU" && exit
