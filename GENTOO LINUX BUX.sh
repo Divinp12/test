@@ -357,6 +357,8 @@ sys-libs/glibc \
 sys-devel/binutils \
 sys-apps/coreutils \
 app-shells/bash \
+sys-libs/ncurses \
+sys-libs/readline \
 sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
