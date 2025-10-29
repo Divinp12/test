@@ -160,6 +160,25 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando configuração do pacote sway";
+if echo "gui-wm/sway -swaybar -wallpapers" > /mnt/gentoo/etc/portage/package.use/sway; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "criando configuração do pacote wayland";
+if echo "dev-libs/wayland -doc" > /mnt/gentoo/etc/portage/package.use/wayland; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+net-misc/networkmanager -gtk-doc -bluetooth -systemd
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
