@@ -188,7 +188,13 @@ fi;
 app-misc/fastfetch -X -gnome -xfce
 
 
+media-sound/pulseaudio-daemon -X -doc -systemd
+
+
 net-misc/networkmanager -gtk-doc -bluetooth -systemd
+
+
+sys-boot/grub -doc -nls -secureboot
 
 
 echo "montando partição swap temporaria de 30gb";
