@@ -156,7 +156,7 @@ sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection 
 
 
 echo "criando configuração do pacote bash";
-if echo "app-shells/bash -nls -examples" > /mnt/gentoo/etc/portage/package.use/bash; then
+if echo "app-shells/bash -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
 echo ""
 else
 echo "FALHOU" && exit
