@@ -217,7 +217,7 @@ fi;
 
 
 echo "criando configuração do pacote networkmanager";
-if echo "net-misc/networkmanager -gtk-doc -bluetooth -systemd" > /mnt/gentoo/etc/portage/package.use/networkmanager; then
+if echo "net-misc/networkmanager -gtk-doc -modemmanager -bluetooth -systemd" > /mnt/gentoo/etc/portage/package.use/networkmanager; then
 echo ""
 else
 echo "FALHOU" && exit
