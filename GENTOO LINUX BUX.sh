@@ -57,7 +57,7 @@ RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 PORTAGE_TMPDIR="/var/tmp/portage"
-USE="-X -bluetooth -doc -kde -plasma -systemd"
+USE="wayland -X -bluetooth -doc -kde -plasma -systemd"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -164,6 +164,9 @@ echo ""
 else
 echo "FALHOU" && exit
 fi;
+
+
+media-libs/mesa -X -debug -vmware
 
 
 echo "criando configuração do pacote sway";
