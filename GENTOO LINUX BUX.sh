@@ -152,6 +152,9 @@ echo "FALHOU" && exit
 fi;
 
 
+sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection -doc
+
+
 echo "criando configuração do pacote bash";
 if echo "app-shells/bash -nls -examples" > /mnt/gentoo/etc/portage/package.use/bash; then
 echo ""
