@@ -225,7 +225,7 @@ fi;
 
 
 echo "criando configuração do pacote grub";
-if echo "sys-boot/grub -fonts -themes -doc -nls -sdl -secureboot -truetype" > /mnt/gentoo/etc/portage/package.use/grub; then
+if echo "sys-boot/grub -fonts -themes -doc -efiemu -libzfs -nls -sdl -secureboot -truetype" > /mnt/gentoo/etc/portage/package.use/grub; then
 echo ""
 else
 echo "FALHOU" && exit
