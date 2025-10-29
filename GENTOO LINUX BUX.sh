@@ -155,6 +155,9 @@ fi;
 sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection -doc
 
 
+sys-libs/glibc -ssp -debug -doc -systemd
+
+
 echo "criando configuração do pacote bash";
 if echo "app-shells/bash -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
 echo ""
