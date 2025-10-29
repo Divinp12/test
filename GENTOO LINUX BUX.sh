@@ -177,7 +177,7 @@ fi;
 
 
 echo "criando configuração do pacote mesa";
-if echo "media-libs/mesa -X -debug -zstd -virgl -vmware -zink" > /mnt/gentoo/etc/portage/package.use/mesa; then
+if echo "media-libs/mesa +opengl +vulkan +lavapipe -X -debug -zstd -virgl -vmware -zink" > /mnt/gentoo/etc/portage/package.use/mesa; then
 echo ""
 else
 echo "FALHOU" && exit
