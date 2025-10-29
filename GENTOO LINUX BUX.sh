@@ -152,10 +152,20 @@ echo "FALHOU" && exit
 fi;
 
 
-sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection -doc
+echo "criando configuração do pacote gcc";
+if echo "sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection -doc" > /mnt/gentoo/etc/portage/package.use/gcc; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
-sys-libs/glibc -ssp -debug -doc -systemd
+echo "criando configuração do pacote glibc";
+if echo "sys-libs/glibc -ssp -debug -doc -systemd" > /mnt/gentoo/etc/portage/package.use/glibc; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
 echo "criando configuração do pacote bash";
@@ -166,7 +176,12 @@ echo "FALHOU" && exit
 fi;
 
 
-media-libs/mesa -X -debug -vmware
+echo "criando configuração do pacote mesa";
+if echo "media-libs/mesa -X -debug -vmware" > /mnt/gentoo/etc/portage/package.use/mesa; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
 echo "criando configuração do pacote sway";
@@ -185,16 +200,36 @@ echo "FALHOU" && exit
 fi;
 
 
-app-misc/fastfetch -X -gnome -xfce
+echo "criando configuração do pacote fastfetch";
+if echo "app-misc/fastfetch -X -gnome -xfce" > /mnt/gentoo/etc/portage/package.use/fastfetch; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
-media-sound/pulseaudio-daemon -X -doc -systemd
+echo "criando configuração do pacote pulseaudio";
+if echo "media-sound/pulseaudio-daemon -X -doc -systemd" > /mnt/gentoo/etc/portage/package.use/pulseaudio; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
-net-misc/networkmanager -gtk-doc -bluetooth -systemd
+echo "criando configuração do pacote networkmanager";
+if echo "net-misc/networkmanager -gtk-doc -bluetooth -systemd" > /mnt/gentoo/etc/portage/package.use/networkmanager; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
-sys-boot/grub -doc -nls -secureboot
+echo "criando configuração do pacote grub";
+if echo "sys-boot/grub -doc -nls -secureboot" > /mnt/gentoo/etc/portage/package.use/grub; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
 echo "montando partição swap temporaria de 30gb";
