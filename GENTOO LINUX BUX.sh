@@ -185,6 +185,9 @@ echo "FALHOU" && exit
 fi;
 
 
+app-misc/fastfetch -X -gnome -xfce
+
+
 net-misc/networkmanager -gtk-doc -bluetooth -systemd
 
 
