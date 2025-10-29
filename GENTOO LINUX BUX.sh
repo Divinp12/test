@@ -168,6 +168,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando configuração do pacote binutils";
+if echo "sys-devel/binutils -nls -doc -zstd" > /mnt/gentoo/etc/portage/package.use/binutils; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "criando configuração do pacote bash";
 if echo "app-shells/bash -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
 echo ""
