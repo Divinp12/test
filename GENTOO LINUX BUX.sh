@@ -161,7 +161,7 @@ fi;
 
 
 echo "criando configuração do pacote glibc";
-if echo "sys-libs/glibc -ssp -debug -doc -systemd" > /mnt/gentoo/etc/portage/package.use/glibc; then
+if echo "sys-libs/glibc -ssp -debug -doc -systemd -nscd -systemtap" > /mnt/gentoo/etc/portage/package.use/glibc; then
 echo ""
 else
 echo "FALHOU" && exit
