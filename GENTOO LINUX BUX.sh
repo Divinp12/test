@@ -240,6 +240,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando configuração do pacote freetype";
+if echo "media-libs/freetype harfbuzz -debug -doc -X" > /mnt/gentoo/etc/portage/package.use/freetype; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
