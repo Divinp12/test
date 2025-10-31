@@ -153,7 +153,7 @@ fi;
 
 
 echo "criando configuração do pacote gcc";
-if echo "sys-devel/gcc -nls -pie -ssp -ada -cobol -debug -default-stack-clash-protection -doc -zstd" > /mnt/gentoo/etc/portage/package.use/gcc; then
+if echo "sys-devel/gcc -nls -pie -ssp -libssp -ada -cobol -debug -default-stack-clash-protection -doc -zstd -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
