@@ -168,6 +168,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando configuração do pacote cmake";
+if echo "dev-build/cmake -doc -gui -ncurses -test" > /mnt/gentoo/etc/portage/package.use/cmake; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "criando configuração do pacote binutils";
 if echo "sys-devel/binutils -nls -doc -zstd" > /mnt/gentoo/etc/portage/package.use/binutils; then
 echo ""
