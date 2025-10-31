@@ -248,6 +248,22 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "criando configuração do pacote wget";
+if echo "net-misc/wget -libproxy -debug -nls" > /mnt/gentoo/etc/portage/package.use/wget; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "criando configuração do pacote curl";
+if echo "net-misc/curl -debug" > /mnt/gentoo/etc/portage/package.use/curl; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "montando partição swap temporaria de 30gb";
 if fallocate -l 30G /mnt/gentoo/home/ST; then
 echo ""
