@@ -48,18 +48,15 @@ echo "FALHOU" && exit
 fi;
 
 
-#COMMON_FLAGS="-Ofast -flto -march=native -mtune=native -fno-pie -no-pie -fno-stack-protector -fno-stack-protector-strong -fomit-frame-pointer -fno-ident -fno-unwind-tables -fno-asynchronous-unwind-tables -g0 -pipe"
-
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-O1 -pipe"
-CFLAGS="${COMMON_FLAGS}"
-CXXFLAGS="${COMMON_FLAGS}"
-FCFLAGS="${COMMON_FLAGS}"
-FFLAGS="${COMMON_FLAGS}"
+if echo 'COMMON_FLAGS="-O3 -march=native"
+CFLAGS="-O3 -march=native"
+CXXFLAGS="-O3 -march=native"
+FCFLAGS="-O3 -march=native"
+FFLAGS="-O3 -march=native"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-PORTAGE_TMPDIR="/var/tmp/portage"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -test -debug"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
@@ -269,54 +266,6 @@ fi;
 
 echo "criando configuração do pacote curl";
 if echo "net-misc/curl -debug" > /mnt/gentoo/etc/portage/package.use/curl; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição swap temporaria de 30gb";
-if fallocate -l 30G /mnt/gentoo/home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "alterando permissões no swap";
-if chmod 600 /mnt/gentoo/home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "formatando arquivo de partição swap";
-if mkswap /mnt/gentoo/home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "ativando swap";
-if swapon /mnt/gentoo/home/ST; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando diretorio /var/tmp/portage";
-if mkdir -p /mnt/gentoo/var/tmp/portage; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição tmpfs temporaria do diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,noatime tmpfs /mnt/gentoo/var/tmp/portage; then
 echo ""
 else
 echo "FALHOU" && exit
