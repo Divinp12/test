@@ -18,6 +18,9 @@ mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home && \
+echo "/dev/sda1 /boot vfat defaults 0 1
+/dev/sda2 / ext4 defaults,noatime 0 1
+/dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/MYFSTAB && \
 echo "";
 
 
@@ -1373,16 +1376,6 @@ fi;
 
 echo "instalando kernel customizavel";
 if make install -j64 -C /usr/src/linux*/; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando partições em fstab";
-if echo "/dev/sda1 /boot vfat defaults 0 1
-/dev/sda2 / ext4 defaults,noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2" > /etc/fstab; then
 echo ""
 else
 echo "FALHOU" && exit
