@@ -1,6 +1,7 @@
 #!/bin/bash
 
-clear && \
+clear;
+
 echo "formatando 1 disco valido";
 wipefs -a /dev/sda > /dev/null 2>&1 && \
 parted -s /dev/sda mklabel gpt && \
