@@ -48,6 +48,14 @@ echo "FALHOU" && exit
 fi;
 
 
+echo "movendo arquivo de partições (MYFSTAB) para o diretorio /etc/fstab";
+if mv /mnt/gentoo/MYFSTAB /mnt/gentoo/etc/fstab; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "sobscrevendo arquivo make.conf";
 if echo 'COMMON_FLAGS="-O3 -march=native"
 CFLAGS="-O3 -march=native"
