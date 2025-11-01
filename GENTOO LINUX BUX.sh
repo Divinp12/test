@@ -66,7 +66,7 @@ FFLAGS="-O3 -march=native"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -test -debug"
+USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -170,7 +170,7 @@ fi;
 
 
 echo "criando configuração do pacote glibc";
-if echo "sys-libs/glibc -ssp -debug -doc -systemd -nscd -systemtap -test" > /mnt/gentoo/etc/portage/package.use/glibc; then
+if echo "sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test" > /mnt/gentoo/etc/portage/package.use/glibc; then
 echo ""
 else
 echo "FALHOU" && exit
