@@ -1376,4 +1376,46 @@ if rc-update add dhcpcd default; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;'
+fi;
+
+
+echo "adicionando suporte NetworkManager na inicializacao";
+if rc-update add NetworkManager default; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "sobscrevendo arquivo grub";
+if echo "GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR=\"BUX\"
+GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"
+GRUB_CMDLINE_LINUX=\"\"
+GRUB_PRELOAD_MODULES=\"part_gpt part_msdos\"
+GRUB_GFXMODE=auto
+GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_DISABLE_RECOVERY=true" > /etc/default/grub; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "configurando grub";
+if grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=. --recheck > /dev/null 2>&1; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando grub na inicialização";
+if grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+'
