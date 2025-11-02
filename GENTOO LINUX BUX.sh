@@ -449,7 +449,7 @@ fi;
 
 echo "instalando pacotes importantes";
 if emerge --quiet \
-sys-devel/gcc \
+=sys-devel/gcc-15.2.1_p20251018 \
 sys-libs/glibc \
 sys-devel/binutils \
 sys-apps/coreutils \
