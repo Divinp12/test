@@ -202,7 +202,7 @@ fi;
 
 
 echo "criando configuração do pacote bash";
-if echo "app-shells/bash -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
+if echo "app-shells/bash -bashlogger -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
 echo ""
 else
 echo "FALHOU" && exit
