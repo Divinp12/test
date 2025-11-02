@@ -169,124 +169,22 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "criando configuração do pacote gcc";
-if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote glibc";
-if echo "sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test" > /mnt/gentoo/etc/portage/package.use/glibc; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote cmake";
-if echo "dev-build/cmake -doc -gui -ncurses -test" > /mnt/gentoo/etc/portage/package.use/cmake; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote binutils";
-if echo "sys-devel/binutils -nls -doc -zstd" > /mnt/gentoo/etc/portage/package.use/binutils; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote bash";
-if echo "app-shells/bash -bashlogger -net -examples -nls -plugins" > /mnt/gentoo/etc/portage/package.use/bash; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote mesa";
-if echo "media-libs/mesa opengl vulkan lavapipe -X -debug -zstd -virgl -vmware -zink" > /mnt/gentoo/etc/portage/package.use/mesa; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote sway";
-if echo "gui-wm/sway -swaybar -wallpapers" > /mnt/gentoo/etc/portage/package.use/sway; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote wayland";
-if echo "dev-libs/wayland -doc" > /mnt/gentoo/etc/portage/package.use/wayland; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote fastfetch";
-if echo "app-misc/fastfetch -X -gnome -xfce" > /mnt/gentoo/etc/portage/package.use/fastfetch; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote pulseaudio";
-if echo "media-sound/pulseaudio-daemon -X -doc -systemd" > /mnt/gentoo/etc/portage/package.use/pulseaudio; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote networkmanager";
-if echo "net-misc/networkmanager -gtk-doc -modemmanager -bluetooth -systemd" > /mnt/gentoo/etc/portage/package.use/networkmanager; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote grub";
-if echo "sys-boot/grub -fonts -themes -doc -efiemu -libzfs -nls -sdl -secureboot -truetype" > /mnt/gentoo/etc/portage/package.use/grub; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote freetype";
-if echo "media-libs/freetype harfbuzz -debug -doc -X" > /mnt/gentoo/etc/portage/package.use/freetype; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote wget";
-if echo "net-misc/wget -libproxy -debug -nls" > /mnt/gentoo/etc/portage/package.use/wget; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando configuração do pacote curl";
-if echo "net-misc/curl -debug" > /mnt/gentoo/etc/portage/package.use/curl; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "criando configuração do pacote";
+if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test
+sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test
+dev-build/cmake -doc -gui -ncurses -test
+sys-devel/binutils -nls -doc -zstd
+app-shells/bash -bashlogger -net -examples -nls -plugins
+media-libs/mesa opengl vulkan lavapipe -X -debug -zstd -virgl -vmware -zink
+gui-wm/sway -swaybar -wallpapers
+dev-libs/wayland -doc
+app-misc/fastfetch -X -gnome -xfce
+media-sound/pulseaudio-daemon -X -doc -systemd
+net-misc/networkmanager -gtk-doc -modemmanager -bluetooth -systemd
+sys-boot/grub -fonts -themes -doc -efiemu -libzfs -nls -sdl -secureboot -truetype
+media-libs/freetype harfbuzz -debug -doc -X
+net-misc/wget -libproxy -debug -nls
+net-misc/curl -debug" > /mnt/gentoo/etc/portage/package.use/PACOTES; then
 
 
 echo "adicionando fuso horario brasileiro";
