@@ -185,7 +185,9 @@ net-misc/networkmanager -gtk-doc -modemmanager -bluetooth -systemd
 sys-boot/grub -fonts -themes -doc -efiemu -libzfs -nls -sdl -secureboot -truetype
 media-libs/freetype harfbuzz -debug -doc -X
 net-misc/wget -libproxy -debug -nls
-net-misc/curl -debug" > /mnt/gentoo/etc/portage/package.use/PACOTES; then
+net-misc/curl -debug
+www-client/google-chrome pt-BR -selinux -af -am -ar -bg -bn -ca -cs -da -de -el -en-GB -es -es-419 -et -fa -fi -fil -fr -gu -he -hi -hr -hu -id -it -ja -kn -ko -lt -lv -ml -mr -ms -nb -nl -pl -pt-PT -ro -ru -sk -sl -sr -sv -sw -ta -te -th -tr -uk -ur -vi -zh-CN -zh-TW
+" > /mnt/gentoo/etc/portage/package.use/PACOTES; then
 
 
 echo "adicionando fuso horario brasileiro";
