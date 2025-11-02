@@ -58,11 +58,11 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-O3 -march=native"
-CFLAGS="-O3 -march=native"
-CXXFLAGS="-O3 -march=native"
-FCFLAGS="-O3 -march=native"
-FFLAGS="-O3 -march=native"
+if echo 'COMMON_FLAGS="-O2"
+CFLAGS="-O2"
+CXXFLAGS="-O2"
+FCFLAGS="-O2"
+FFLAGS="-O2"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
@@ -170,7 +170,7 @@ fi;
 
 
 echo "criando configuração do pacote gcc";
-if echo "sys-devel/gcc -nls -debug -doc -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
+if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
