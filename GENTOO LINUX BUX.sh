@@ -146,7 +146,15 @@ fi;
 
 
 echo "habilitando versao 6.17.5 do pacote gentoo-sources"
-if echo "=sys-kernel/gentoo-sources-6.17.5 ~amd64" > /mnt/gentoo/etc/portage/package.accept_keywords/kernel; then
+if echo "=sys-kernel/gentoo-sources-6.17.5" > /mnt/gentoo/etc/portage/package.accept_keywords/gentoo-sources; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "habilitando versao 15.2.1_p20251018 do pacote gcc"
+if echo "=sys-devel/gcc-15.2.1_p20251018" > /mnt/gentoo/etc/portage/package.accept_keywords/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -162,7 +170,7 @@ fi;
 
 
 echo "criando configuração do pacote gcc";
-if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
+if echo "sys-devel/gcc -nls -debug -doc -test" > /mnt/gentoo/etc/portage/package.use/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
