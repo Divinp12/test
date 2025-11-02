@@ -174,6 +174,7 @@ if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d 
 sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
+sys-apps/coreutils -nls -selinux -test
 app-shells/bash -bashlogger -net -examples -nls -plugins
 media-libs/mesa opengl vulkan lavapipe -X -debug -zstd -virgl -vmware -zink
 gui-wm/sway -swaybar -wallpapers
