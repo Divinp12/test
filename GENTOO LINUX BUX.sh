@@ -1226,7 +1226,7 @@ fi;
 
 
 echo "compilando kernel customizavel";
-if make -j64 -C /usr/src/linux*/; then
+if yes n | make -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
