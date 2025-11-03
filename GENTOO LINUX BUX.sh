@@ -182,6 +182,8 @@ sys-devel/binutils -nls -doc -zstd
 
 sys-apps/coreutils -nls -selinux -test
 
+sys-apps/util-linux -nls -selinux -audit -systemd -test
+
 app-shells/bash -bashlogger -net -examples -nls -plugins
 
 media-libs/mesa opengl vulkan lavapipe -X -debug -zstd -virgl -vmware -zink
