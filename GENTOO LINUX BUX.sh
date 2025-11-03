@@ -171,21 +171,39 @@ fi;
 
 echo "criando configuração do pacote";
 if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test
+
 sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test
+
+dev-build/make -doc -nls -test
+
 dev-build/cmake -doc -gui -ncurses -test
+
 sys-devel/binutils -nls -doc -zstd
+
 sys-apps/coreutils -nls -selinux -test
+
 app-shells/bash -bashlogger -net -examples -nls -plugins
+
 media-libs/mesa opengl vulkan lavapipe -X -debug -zstd -virgl -vmware -zink
+
 gui-wm/sway -swaybar -wallpapers
+
 dev-libs/wayland -doc
+
 app-misc/fastfetch -X -gnome -xfce
+
 media-sound/pulseaudio-daemon -X -doc -systemd
+
 net-misc/networkmanager -gtk-doc -modemmanager -bluetooth -systemd
+
 sys-boot/grub -fonts -themes -doc -efiemu -libzfs -nls -sdl -secureboot -truetype
+
 media-libs/freetype harfbuzz -debug -doc -X
+
 net-misc/wget -libproxy -debug -nls
+
 net-misc/curl -debug
+
 www-client/google-chrome pt-BR -selinux -af -am -ar -bg -bn -ca -cs -da -de -el -en-GB -es -es-419 -et -fa -fi -fil -fr -gu -he -hi -hr -hu -id -it -ja -kn -ko -lt -lv -ml -mr -ms -nb -nl -pl -pt-PT -ro -ru -sk -sl -sr -sv -sw -ta -te -th -tr -uk -ur -vi -zh-CN -zh-TW
 " > /mnt/gentoo/etc/portage/package.use/PACOTES; then
 
