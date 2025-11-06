@@ -19,38 +19,12 @@ mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home && \
-echo "baixando stage3";
-if wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251026T170339Z/stage3-amd64-openrc-20251026T170339Z.tar.xz > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "extraindo stage3";
-if tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "deletando stage3";
-if rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partições no arquivo fstab";
-if echo "/dev/sda1 /boot vfat defaults 0 1
+wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251026T170339Z/stage3-amd64-openrc-20251026T170339Z.tar.xz > /dev/null 2>&1 && \
+tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
+rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1 && \
+echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda2 / ext4 defaults,noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+/dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab;
 
 
 echo "sobscrevendo arquivo make.conf";
