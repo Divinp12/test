@@ -28,11 +28,11 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-O2 -g0 -s -fno-var-tracking -fno-record-gcc-switches -fno-stack-protector -fno-stack-check -fno-stack-clash-protection -fomit-frame-pointer -fno-ident -fdata-sections -fno-mudflap -fno-pie -fno-pic -fno-plt -fvisibility=hidden -fno-semantic-interposition"
-CFLAGS="-O2 -g0 -s -fno-var-tracking -fno-record-gcc-switches -fno-stack-protector -fno-stack-check -fno-stack-clash-protection -fomit-frame-pointer -fno-ident -fdata-sections -fno-mudflap -fno-pie -fno-pic -fno-plt -fvisibility=hidden -fno-semantic-interposition"
-CXXFLAGS="-O2 -g0 -s -fno-var-tracking -fno-record-gcc-switches -fno-stack-protector -fno-stack-check -fno-stack-clash-protection -fomit-frame-pointer -fno-ident -fdata-sections -fno-mudflap -fno-pie -fno-pic -fno-plt -fvisibility=hidden -fno-semantic-interposition"
-FCFLAGS="-O2 -g0 -s -fno-var-tracking -fno-record-gcc-switches -fno-stack-protector -fno-stack-check -fno-stack-clash-protection -fomit-frame-pointer -fno-ident -fdata-sections -fno-mudflap -fno-pie -fno-pic -fno-plt -fvisibility=hidden -fno-semantic-interposition"
-FFLAGS="-O2 -g0 -s -fno-var-tracking -fno-record-gcc-switches -fno-stack-protector -fno-stack-check -fno-stack-clash-protection -fomit-frame-pointer -fno-ident -fdata-sections -fno-mudflap -fno-pie -fno-pic -fno-plt -fvisibility=hidden -fno-semantic-interposition"
+if echo 'COMMON_FLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+CFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+CXXFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+FCFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+FFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
