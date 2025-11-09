@@ -1265,7 +1265,7 @@ fi;
 
 
 echo "adicionando nome bux ao usuario root";
-if echo "hostname="bux"" > /etc/conf.d/hostname; then
+if echo "hostname=\"bux\"" > /etc/conf.d/hostname; then
 echo ""
 else
 echo "FALHOU" && exit
