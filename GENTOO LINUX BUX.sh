@@ -339,7 +339,7 @@ fi;
 
 
 echo "instalando gcc";
-if emerge --quiet =sys-devel/gcc-15.2.1_p20251018
+if emerge --quiet =sys-devel/gcc-15.2.1_p20251018; then
 echo ""
 else
 echo "FALHOU" && exit
