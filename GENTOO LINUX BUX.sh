@@ -27,12 +27,12 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab;
 
 
-echo "sobscrevendo arquivo make.conf";
-if echo 'COMMON_FLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-CFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-CXXFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-FCFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-FFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+echo "sobscrevendo arquivo make.conf para instalacao do gcc";
+if echo 'COMMON_FLAGS="-O0"
+CFLAGS="-O0"
+CXXFLAGS="-O0"
+FCFLAGS="-O0"
+FFLAGS="-O0"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
@@ -332,6 +332,32 @@ fi;
 
 echo "sincronizando repositorios do portage";
 if emerge --sync --quiet > /dev/null 2>&1; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "instalando gcc";
+if emerge --quiet =sys-devel/gcc-15.2.1_p20251018
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "sobscrevendo arquivo make.conf";
+if echo \'COMMON_FLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+CFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+CXXFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+FCFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+FFLAGS="-O2 -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
+MAKEOPTS="-j64"
+EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
+USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
+LC_MESSAGES=C.utf8
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"\' > /etc/portage/make.conf; then
 echo ""
 else
 echo "FALHOU" && exit
