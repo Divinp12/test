@@ -347,11 +347,11 @@ fi;
 
 
 echo "sobscrevendo arquivo make.conf";
-if echo \'COMMON_FLAGS="-O2 -march=native -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-CFLAGS="-O2 -march=native -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-CXXFLAGS="-O2 -march=native -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-FCFLAGS="-O2 -march=native -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
-FFLAGS="-O2 -march=native -g0 -s -DNDEBUG -fno-var-tracking -fno-record-gcc-switches -fno-ident -fno-mudflap"
+if echo \'COMMON_FLAGS="-O3 -march=native -fno-mudflap"
+CFLAGS="-O3 -march=native -fno-mudflap"
+CXXFLAGS="-O3 -march=native -fno-mudflap"
+FCFLAGS="-O3 -march=native -fno-mudflap"
+FFLAGS="-O3 -march=native -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
