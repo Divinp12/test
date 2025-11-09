@@ -366,7 +366,6 @@ fi;
 
 echo "instalando pacotes importantes";
 if emerge --quiet \
-=sys-devel/gcc-15.2.1_p20251018 \
 sys-libs/glibc \
 sys-devel/binutils \
 sys-apps/coreutils \
@@ -1342,6 +1341,4 @@ if grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
-
-'
+fi;'
