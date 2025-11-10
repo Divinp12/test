@@ -28,11 +28,11 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-if echo 'COMMON_FLAGS="-O0"
-CFLAGS="-O0"
-CXXFLAGS="-O0"
-FCFLAGS="-O0"
-FFLAGS="-O0"
+if echo 'COMMON_FLAGS="-O0 -pipe"
+CFLAGS="-O0 -pipe"
+CXXFLAGS="-O0 -pipe"
+FCFLAGS="-O0 -pipe"
+FFLAGS="-O0 -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
