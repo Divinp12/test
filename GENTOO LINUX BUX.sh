@@ -55,7 +55,7 @@ fi;
 
 
 echo "montando partição swap temporario";
-if fallocate -l 20G /mnt/gentoo/SWAP; then
+if fallocate -l 30G /mnt/gentoo/SWAP; then
 echo ""
 else
 echo "FALHOU" && exit
