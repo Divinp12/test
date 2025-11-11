@@ -343,32 +343,21 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "entrando no ambiente chroot"
-chroot /mnt/gentoo /bin/bash -c '
-echo "";
-
-echo "adicionando perfil de configuração";
-if source /etc/profile; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "aplicando mudanças de idiomas e caracteres brasileiro";
-if locale-gen > /dev/null 2>&1; then
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && locale-gen > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
-if emerge-webrsync --quiet > /dev/null 2>&1; then
+if source /etc/profile && emerge-webrsync --quiet > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "selecionando perfil do portage";
