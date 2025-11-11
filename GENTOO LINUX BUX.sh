@@ -35,10 +35,59 @@ FCFLAGS="-O0 -pipe"
 FFLAGS="-O0 -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
+PORTAGE_TMPDIR="/var/tmp/portage"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "criando pasta SWAP no diretorio /mnt/gentoo";
+if mkdir -p /mnt/gentoo/SWAP; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "montando partição swap temporario";
+if fallocate -l 20G /mnt/gentoo/SWAP; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando permissões do diretorio /mnt/gentoo/SWAP";
+if chmod 600 /mnt/gentoo/SWAP; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "formatando partição swap";
+if mkswap /mnt/gentoo/SWAP; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "ativando swap";
+if swapon /mnt/gentoo/SWAP; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "montando partição tmpfs no diretorio /var/tmp/portage";
+if mount -t tmpfs -o size=100%,mode=1777 tmpfs /var/tmp/portage; then
 echo ""
 else
 echo "FALHOU" && exit
