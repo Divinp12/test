@@ -28,11 +28,11 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-if echo 'COMMON_FLAGS="-O0 -pipe"
-CFLAGS="-O0 -pipe"
-CXXFLAGS="-O0 -pipe"
-FCFLAGS="-O0 -pipe"
-FFLAGS="-O0 -pipe"
+if echo 'COMMON_FLAGS="-O1 -pipe"
+CFLAGS="-O1 -pipe"
+CXXFLAGS="-O1 -pipe"
+FCFLAGS="-O1 -pipe"
+FFLAGS="-O1 -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 PORTAGE_TMPDIR="/var/tmp/portage"
