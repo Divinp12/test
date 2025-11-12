@@ -87,7 +87,7 @@ fi;
 
 
 echo "montando partição tmpfs no diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,mode=1777 tmpfs /var/tmp/portage; then
+if mount -t tmpfs -o size=100%,mode=1777 tmpfs /mnt/gentoo/var/tmp/portage; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -353,6 +353,7 @@ fi;'
 
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
+chroot /mnt/gentoo /bin/bash -c '
 if source /etc/profile && emerge-webrsync --quiet > /dev/null 2>&1; then
 echo ""
 else
@@ -361,31 +362,34 @@ fi;'
 
 
 echo "selecionando perfil do portage";
-if eselect profile set 1 > /dev/null 2>&1; then
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && eselect profile set 1 > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "sincronizando repositorios do portage";
-if emerge --sync --quiet > /dev/null 2>&1; then
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --sync --quiet > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "instalando gcc";
-if emerge --quiet =sys-devel/gcc-15.2.1_p20251018; then
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet =sys-devel/gcc-15.2.1_p20251018; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "sobscrevendo arquivo make.conf para instalação dos pacotes do sistema";
-if echo \'COMMON_FLAGS="-O2 -march=native -fno-mudflap"
+if echo 'COMMON_FLAGS="-O2 -march=native -fno-mudflap"
 CFLAGS="-O2 -march=native -fno-mudflap"
 CXXFLAGS="-O2 -march=native -fno-mudflap"
 FCFLAGS="-O2 -march=native -fno-mudflap"
@@ -396,7 +400,7 @@ PORTAGE_TMPDIR="/var/tmp/portage"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"\' > /etc/portage/make.conf; then
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -404,7 +408,8 @@ fi;
 
 
 echo "instalando pacotes importantes";
-if emerge --quiet \
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet \
 sys-libs/glibc \
 sys-devel/binutils \
 sys-apps/coreutils \
@@ -431,40 +436,46 @@ sys-boot/efibootmgr \
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "atualizando variáveis de ambiente globais";
-if env-update; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "limpando kernel customizavel";
-if make clean -j64 -C /usr/src/linux*/; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-echo "limpando profundamente kernel customizavel";
-if make mrproper -j64 -C /usr/src/linux*/; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando arquivo de configuração (.config)";
-if make defconfig -j64 -C /usr/src/linux*/; then
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && env-update; then
 echo ""
 else
 echo "FALHOU" && exit
 fi;'
 
 
+echo "limpando kernel customizavel";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && make clean -j64 -C /usr/src/linux*/; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+
+echo "limpando profundamente kernel customizavel";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && make mrproper -j64 -C /usr/src/linux*/; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+
+echo "adicionando arquivo de configuração (.config)";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && make defconfig -j64 -C /usr/src/linux*/; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+
+echo "configurando arquivo de configuração (.config)";
 sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZPOOL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SWAP)(=.*| is not set)?$/\2=n/' \
@@ -1262,49 +1273,35 @@ sed -i -E \
 /mnt/gentoo/usr/src/linux*/.config;
 
 
-chroot /mnt/gentoo /bin/bash '
-echo "adicionando perfil de configuração";
-if source /etc/profile; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "atualizando variáveis de ambiente globais";
-if env-update; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "compilando kernel customizavel";
-if yes n | make -j64 -C /usr/src/linux*/; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && yes n | make -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "instalando modulos do kernel customizavel";
-if make modules_install -j64 -C /usr/src/linux*/; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && make modules_install -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "instalando kernel customizavel";
-if make install -j64 -C /usr/src/linux*/; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && make install -j64 -C /usr/src/linux*/; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "sobscrevendo arquivo make.conf para uso normal";
-if echo \'COMMON_FLAGS="-O3 -march=native -fno-mudflap"
+if echo 'COMMON_FLAGS="-O3 -march=native -fno-mudflap"
 CFLAGS="-O3 -march=native -fno-mudflap"
 CXXFLAGS="-O3 -march=native -fno-mudflap"
 FCFLAGS="-O3 -march=native -fno-mudflap"
@@ -1314,7 +1311,7 @@ MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"\' > /etc/portage/make.conf; then
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -1322,7 +1319,7 @@ fi;
 
 
 echo "adicionando nome bux ao usuario root";
-if echo "hostname=\"bux\"" > /etc/conf.d/hostname; then
+if echo "hostname=\"bux\"" > /mnt/gentoo/etc/conf.d/hostname; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -1330,43 +1327,48 @@ fi;
 
 
 echo "adicionando senha bux ao usuario root";
-if echo -e "bux\nbux" | passwd root; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && echo -e "bux\nbux" | passwd root; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "adicionando usuario normal com nome bux";
-if useradd -m -g users -G wheel bux; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && useradd -m -g users -G wheel bux; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "adicionando senha bux ao usuario normal";
-if echo -e "bux\nbux" | passwd bux; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && echo -e "bux\nbux" | passwd bux; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "adicionando suporte DHCP na inicializacao";
-if rc-update add dhcpcd default; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && rc-update add dhcpcd default; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "adicionando suporte NetworkManager na inicializacao";
-if rc-update add NetworkManager default; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && rc-update add NetworkManager default; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "sobscrevendo arquivo grub";
@@ -1378,7 +1380,7 @@ GRUB_CMDLINE_LINUX=\"\"
 GRUB_PRELOAD_MODULES=\"part_gpt part_msdos\"
 GRUB_GFXMODE=auto
 GRUB_GFXPAYLOAD_LINUX=keep
-GRUB_DISABLE_RECOVERY=true" > /etc/default/grub; then
+GRUB_DISABLE_RECOVERY=true" > /mnt/gentoo/etc/default/grub; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -1386,15 +1388,17 @@ fi;
 
 
 echo "configurando grub";
-if grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=. --recheck > /dev/null 2>&1; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=. --recheck > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
-fi;
+fi;'
 
 
 echo "adicionando grub na inicialização";
-if grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1; then
+chroot /mnt/gentoo /bin/bash '
+if source /etc/profile && grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
