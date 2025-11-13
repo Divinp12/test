@@ -389,11 +389,11 @@ fi;'
 
 
 echo "sobscrevendo arquivo make.conf para instalação dos pacotes do sistema";
-if echo 'COMMON_FLAGS="-O2 -march=native -fno-mudflap"
-CFLAGS="-O2 -march=native -fno-mudflap"
-CXXFLAGS="-O2 -march=native -fno-mudflap"
-FCFLAGS="-O2 -march=native -fno-mudflap"
-FFLAGS="-O2 -march=native -fno-mudflap"
+if echo 'COMMON_FLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+CFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+CXXFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+FCFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+FFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 PORTAGE_TMPDIR="/var/tmp/portage"
@@ -1301,11 +1301,11 @@ fi;'
 
 
 echo "sobscrevendo arquivo make.conf para uso normal";
-if echo 'COMMON_FLAGS="-O3 -march=native -fno-mudflap"
-CFLAGS="-O3 -march=native -fno-mudflap"
-CXXFLAGS="-O3 -march=native -fno-mudflap"
-FCFLAGS="-O3 -march=native -fno-mudflap"
-FFLAGS="-O3 -march=native -fno-mudflap"
+if echo 'COMMON_FLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+CFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+CXXFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+FCFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+FFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
