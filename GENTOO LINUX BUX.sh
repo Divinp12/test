@@ -173,7 +173,7 @@ fi;
 
 
 echo "habilitando versao 15.2.1_p20251018 do pacote gcc"
-if echo "=sys-devel/gcc-15.2.1_p20251018" > /mnt/gentoo/etc/portage/package.accept_keywords/gcc; then
+if echo "=sys-devel/gcc-15.2.1_p20251108-r1" > /mnt/gentoo/etc/portage/package.accept_keywords/gcc; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -381,7 +381,7 @@ fi;'
 
 echo "instalando gcc";
 chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet =sys-devel/gcc-15.2.1_p20251018; then
+if source /etc/profile && emerge --quiet =sys-devel/gcc-15.2.1_p20251108-r1; then
 echo ""
 else
 echo "FALHOU" && exit
