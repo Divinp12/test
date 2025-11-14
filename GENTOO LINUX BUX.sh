@@ -19,7 +19,7 @@ mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
 mkdir /mnt/gentoo/home && \
 mount /dev/sda3 /mnt/gentoo/home && \
-wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251026T170339Z/stage3-amd64-openrc-20251026T170339Z.tar.xz > /dev/null 2>&1 && \
+wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251109T170053Z/stage3-amd64-openrc-20251109T170053Z.tar.xz > /dev/null 2>&1 && \
 tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
 rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1 && \
 echo "/dev/sda1 /boot vfat defaults 0 1
