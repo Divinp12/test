@@ -165,7 +165,7 @@ fi;
 
 
 echo "habilitando versao 6.17.5 do pacote gentoo-sources"
-if echo "=sys-kernel/gentoo-sources-6.17.5" > /mnt/gentoo/etc/portage/package.accept_keywords/gentoo-sources; then
+if echo "=sys-kernel/gentoo-sources-6.17.8" > /mnt/gentoo/etc/portage/package.accept_keywords/gentoo-sources; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -419,7 +419,7 @@ sys-libs/readline \
 sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
-=sys-kernel/gentoo-sources-6.17.5 \
+=sys-kernel/gentoo-sources-6.17.8 \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
