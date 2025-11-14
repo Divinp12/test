@@ -1353,6 +1353,47 @@ echo "FALHOU" && exit
 fi;'
 
 
+echo "adicionando autostartx do kde plasma";
+if echo "exec sway > /dev/null 2>&1" > /mnt/gentoo/home/bux/.bash_profile; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando diretorio de configuração do sway";
+if mkdir -p /mnt/gentoo/home/bux/.config/sway; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
+echo "adicionando arquivo de configuração do sway";
+if echo "set \$mod Mod4
+default_border pixel 1
+default_floating_border none
+input * { pointer_accel 0 }
+output * bg #000000 solid_color
+output * { compositor none }
+bindsym \$mod+z exec foot
+bindsym \$mod+x kill
+bindsym \$mod+v exec wofi --show drun --no-dmenu
+bindsym \$mod+c reload
+bindsym \$mod+b fullscreen toggle
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+include /etc/sway/config.d/*" > /mnt/gentoo/home/bux/.config/sway/config; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "adicionando suporte DHCP na inicializacao";
 chroot /mnt/gentoo /bin/bash '
 if source /etc/profile && rc-update add dhcpcd default; then
