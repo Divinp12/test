@@ -1300,15 +1300,6 @@ echo "FALHOU" && exit
 fi;'
 
 
-echo "gerando imagens no inicializador do sistema";
-chroot /mnt/gentoo /bin/bash '
-if source /etc/profile && mkinitcpio -P > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-
 echo "sobscrevendo arquivo make.conf para uso normal";
 if echo 'COMMON_FLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
 CFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
