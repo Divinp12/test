@@ -152,6 +152,10 @@ net-misc/wget -libproxy -debug -nls
 net-misc/curl -debug
 www-client/google-chrome pt-BR -selinux -af -am -ar -bg -bn -ca -cs -da -de -el -en-GB -es -es-419 -et -fa -fi -fil -fr -gu -he -hi -hr -hu -id -it -ja -kn -ko -lt -lv -ml -mr -ms -nb -nl -pl -pt-PT -ro -ru -sk -sl -sr -sv -sw -ta -te -th -tr -uk -ur -vi -zh-CN -zh-TW
 " > /mnt/gentoo/etc/portage/package.use/pacotes; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
 
 
 echo "adicionando fuso horario brasileiro";
