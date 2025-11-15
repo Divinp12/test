@@ -27,20 +27,12 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab;
 
 
-echo "criando pasta PORTAGE no diretorio /mnt/gentoo/home";
-if mkdir -p /mnt/gentoo/home/PORTAGE; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-if echo 'COMMON_FLAGS="-O1 -pipe"
-CFLAGS="-O1 -pipe"
-CXXFLAGS="-O1 -pipe"
-FCFLAGS="-O1 -pipe"
-FFLAGS="-O1 -pipe"
+if echo 'COMMON_FLAGS="-O1"
+CFLAGS="-O1"
+CXXFLAGS="-O1"
+FCFLAGS="-O1"
+FFLAGS="-O1"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
 PORTAGE_TMPDIR="/home/PORTAGE"
@@ -62,35 +54,8 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "adicionando permissões do diretorio /mnt/gentoo/SWAP";
-if chmod 600 /mnt/gentoo/home/SWAP; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "formatando partição swap";
-if mkswap /mnt/gentoo/home/SWAP; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "ativando swap";
-if swapon /mnt/gentoo/home/SWAP; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição tmpfs no diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,mode=1777 tmpfs /mnt/gentoo/home/PORTAGE; then
-echo ""
-else
-echo "FALHOU" && exit
+echo "adicionando permissões do dire
+echo "FALHOU" && e
 fi;
 
 
