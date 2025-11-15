@@ -27,6 +27,14 @@ echo "/dev/sda1 /boot vfat defaults 0 1
 /dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab;
 
 
+echo "criando pasta PORTAGE no diretorio /mnt/gentoo/home";
+if mkdir -p /mnt/gentoo/home/PORTAGE; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;
+
+
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
 if echo 'COMMON_FLAGS="-O1 -pipe"
 CFLAGS="-O1 -pipe"
@@ -35,7 +43,7 @@ FCFLAGS="-O1 -pipe"
 FFLAGS="-O1 -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
-PORTAGE_TMPDIR="/var/tmp/portage"
+PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
@@ -46,16 +54,8 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "criando pasta SWAP no diretorio /mnt/gentoo";
-if mkdir -p /mnt/gentoo/SWAP; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "montando partição swap temporario";
-if fallocate -l 30G /mnt/gentoo/SWAP; then
+if fallocate -l 30G /mnt/gentoo/home/SWAP; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -63,7 +63,7 @@ fi;
 
 
 echo "adicionando permissões do diretorio /mnt/gentoo/SWAP";
-if chmod 600 /mnt/gentoo/SWAP; then
+if chmod 600 /mnt/gentoo/home/SWAP; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -71,7 +71,7 @@ fi;
 
 
 echo "formatando partição swap";
-if mkswap /mnt/gentoo/SWAP; then
+if mkswap /mnt/gentoo/home/SWAP; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -79,7 +79,7 @@ fi;
 
 
 echo "ativando swap";
-if swapon /mnt/gentoo/SWAP; then
+if swapon /mnt/gentoo/home/SWAP; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -371,7 +371,7 @@ FCFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
 FFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
-PORTAGE_TMPDIR="/var/tmp/portage"
+PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
