@@ -1283,6 +1283,7 @@ FCFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
 FFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
+PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
