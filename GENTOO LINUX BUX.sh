@@ -33,9 +33,7 @@ CFLAGS="-O1"
 CXXFLAGS="-O1"
 FCFLAGS="-O1"
 FFLAGS="-O1"
-RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
-PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
@@ -43,19 +41,6 @@ GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.con
 echo ""
 else
 echo "FALHOU" && exit
-fi;
-
-
-echo "montando partição swap temporario";
-if fallocate -l 30G /mnt/gentoo/home/SWAP; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "adicionando permissões do dire
-echo "FALHOU" && e
 fi;
 
 
@@ -75,7 +60,7 @@ kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
 gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes-nao-usados; then
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -98,7 +83,7 @@ kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
 gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes-nao-usados; then
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -113,8 +98,8 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "adicionando licença do pacote linux-firmware";
-if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license/linux-firmware; then
+echo "adicionando licença de pacotes especificos";
+if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license/pacotes; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -131,7 +116,7 @@ fi;
 
 echo "habilitando versões especificas de pacotes"
 if echo "=sys-kernel/gentoo-sources-6.17.8
-=sys-devel/gcc-15.2.1_p20251108-r1" > /mnt/gentoo/etc/portage/package.accept_keywords/PACOTES; then
+=sys-devel/gcc-15.2.1_p20251108-r1" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -166,7 +151,7 @@ media-libs/freetype harfbuzz -debug -doc -X
 net-misc/wget -libproxy -debug -nls
 net-misc/curl -debug
 www-client/google-chrome pt-BR -selinux -af -am -ar -bg -bn -ca -cs -da -de -el -en-GB -es -es-419 -et -fa -fi -fil -fr -gu -he -hi -hr -hu -id -it -ja -kn -ko -lt -lv -ml -mr -ms -nb -nl -pl -pt-PT -ro -ru -sk -sl -sr -sv -sw -ta -te -th -tr -uk -ur -vi -zh-CN -zh-TW
-" > /mnt/gentoo/etc/portage/package.use/PACOTES; then
+" > /mnt/gentoo/etc/portage/package.use/pacotes; then
 
 
 echo "adicionando fuso horario brasileiro";
@@ -329,14 +314,13 @@ fi;'
 
 
 echo "sobscrevendo arquivo make.conf para instalação dos pacotes do sistema";
-if echo 'COMMON_FLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
-CFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
-CXXFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
-FCFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
-FFLAGS="-O2 -march=native -mtune=native -fno-mudflap -pipe"
+if echo 'COMMON_FLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+CFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+CXXFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+FCFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
+FFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
-PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
@@ -1241,14 +1225,13 @@ fi;'
 
 
 echo "sobscrevendo arquivo make.conf para uso normal";
-if echo 'COMMON_FLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
-CFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
-CXXFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
-FCFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
-FFLAGS="-O3 -march=native -mtune=native -fno-mudflap -pipe"
+if echo 'COMMON_FLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+CFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+CXXFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+FCFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
+FFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
 RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
 MAKEOPTS="-j64"
-PORTAGE_TMPDIR="/home/PORTAGE"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
 LC_MESSAGES=C.utf8
@@ -1389,7 +1372,7 @@ fi;'
 echo "sobscrevendo arquivo grub";
 if echo "GRUB_DEFAULT=0
 GRUB_TIMEOUT=0
-GRUB_DISTRIBUTOR=\"BUX\"
+GRUB_DISTRIBUTOR=\"bux\"
 GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"
 GRUB_CMDLINE_LINUX=\"\"
 GRUB_PRELOAD_MODULES=\"part_gpt part_msdos\"
@@ -1404,7 +1387,7 @@ fi;
 
 echo "configurando grub";
 chroot /mnt/gentoo /bin/bash '
-if source /etc/profile && grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=. --recheck > /dev/null 2>&1; then
+if source /etc/profile && grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=bux --recheck > /dev/null 2>&1; then
 echo ""
 else
 echo "FALHOU" && exit
