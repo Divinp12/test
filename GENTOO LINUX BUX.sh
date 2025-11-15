@@ -87,7 +87,7 @@ fi;
 
 
 echo "montando partição tmpfs no diretorio /var/tmp/portage";
-if mount -t tmpfs -o size=100%,mode=1777 tmpfs /mnt/gentoo/var/tmp/portage; then
+if mount -t tmpfs -o size=100%,mode=1777 tmpfs /mnt/gentoo/home/PORTAGE; then
 echo ""
 else
 echo "FALHOU" && exit
