@@ -136,7 +136,7 @@ fi;
 
 echo "criando configuração do pacote";
 if echo "sys-devel/gcc -nls -pie -debug -doc -test
-sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test
+sys-libs/glibc -selinux -audit -debug -doc -systemd -test
 dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
