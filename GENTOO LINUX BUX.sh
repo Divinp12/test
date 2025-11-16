@@ -22,17 +22,20 @@ mount /dev/sda3 /mnt/gentoo/home && \
 wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20251109T170053Z/stage3-amd64-openrc-20251109T170053Z.tar.xz > /dev/null 2>&1 && \
 tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
 rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1 && \
-echo "/dev/sda1 /boot vfat defaults 0 1
-/dev/sda2 / ext4 defaults,noatime 0 1
-/dev/sda3 /home ext4 defaults,noatime 0 2" > /mnt/gentoo/etc/fstab;
+mkdir -p /mnt/gentoo/etc && \
+echo "UUID=$(blkid -s UUID -o value /dev/sda1) /boot/EFI vfat rw,relatime,noatime 0 2
+UUID=$(blkid -s UUID -o value /dev/sda2) / ext4 rw,relatime,noatime 0 1
+UUID=$(blkid -s UUID -o value /dev/sda3) /home ext4 rw,relatime,noatime 0 2" > /mnt/gentoo/etc/fstab && \
+mount -a -v && \
+echo "";
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-if echo 'COMMON_FLAGS="-O1"
-CFLAGS="-O1"
-CXXFLAGS="-O1"
-FCFLAGS="-O1"
-FFLAGS="-O1"
+if echo 'COMMON_FLAGS="-O0"
+CFLAGS="-O0"
+CXXFLAGS="-O0"
+FCFLAGS="-O0"
+FFLAGS="-O0"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug"
@@ -132,7 +135,7 @@ fi;
 
 
 echo "criando configuração do pacote";
-if echo "sys-devel/gcc -nls -pie -ssp -libssp -rust -ada -cobol -fortran -go -d -modula2 -jit -debug -default-stack-clash-protection -valgrind -vtv -systemtap -cet -doc -zstd -test
+if echo "sys-devel/gcc -nls -pie -debug -doc -test
 sys-libs/glibc -ssp -static-pie -selinux -audit -debug -doc -systemd -nscd -systemtap -cet -test
 dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
