@@ -5,9 +5,9 @@ clear;
 echo "formatando 1 disco valido";
 wipefs -a /dev/sda > /dev/null 2>&1 && \
 parted -s /dev/sda mklabel gpt && \
-parted -s /dev/sda mkpart ESP fat32 1MiB 500MiB && \
+parted -s /dev/sda mkpart ESP fat32 1MiB 300MiB && \
 parted -s /dev/sda set 1 esp on && \
-parted -s /dev/sda mkpart primary ext4 500MiB 30000MiB && \
+parted -s /dev/sda mkpart primary ext4 300MiB 30000MiB && \
 parted -s /dev/sda mkpart primary ext4 30000MiB 100% && \
 partprobe && \
 mkfs.fat -F32 /dev/sda1 > /dev/null 2>&1 && \
