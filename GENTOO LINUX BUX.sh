@@ -118,7 +118,7 @@ fi;
 
 
 echo "habilitando versões especificas de pacotes"
-if echo "=sys-kernel/gentoo-sources-6.17.8
+if echo "=sys-kernel/gentoo-sources-6.18.0
 =sys-devel/gcc-15.2.1_p20251108-r1" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes; then
 echo ""
 else
