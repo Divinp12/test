@@ -358,7 +358,7 @@ gui-apps/wofi \
 app-misc/fastfetch \
 gui-apps/foot \
 media-sound/pulseaudio-daemon \
-media-sound/pavucontrol \
+media-sound/pamix \
 net-misc/networkmanager \
 net-misc/dhcpcd \
 sys-boot/grub \
