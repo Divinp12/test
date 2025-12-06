@@ -1231,24 +1231,6 @@ echo "FALHOU" && exit
 fi;'
 
 
-echo "sobscrevendo arquivo make.conf para uso normal";
-if echo 'COMMON_FLAGS="-O3 -march=native -mtune=native -fno-mudflap"
-CFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
-CXXFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
-FCFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
-FFLAGS="-O3 -march=native -mtune=native -fno-mudflap"
-RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
-MAKEOPTS="-j64"
-EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie"
-LC_MESSAGES=C.utf8
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
 echo "adicionando nome bux ao usuario root";
 if echo "hostname=\"bux\"" > /mnt/gentoo/etc/conf.d/hostname; then
 echo ""
