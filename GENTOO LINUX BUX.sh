@@ -119,7 +119,7 @@ fi;
 
 echo "habilitando versões especificas de pacotes"
 if echo "=sys-kernel/gentoo-sources-6.18.0
-=sys-devel/gcc-15.2.1_p20251108-r1" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes; then
+=sys-devel/gcc-15.2.1_p20251122" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes; then
 echo ""
 else
 echo "FALHOU" && exit
@@ -313,14 +313,14 @@ fi;'
 
 echo "instalando gcc";
 chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet =sys-devel/gcc-15.2.1_p20251108-r1; then
+if source /etc/profile && emerge --quiet =sys-devel/gcc-15.2.1_p20251122; then
 echo ""
 else
 echo "FALHOU" && exit
 fi;'
 
 
-echo "sobscrevendo arquivo make.conf para instalação dos pacotes do sistema";
+echo "sobscrevendo arquivo make.conf para sistema e instalação dos pacotes do sistema";
 if echo 'COMMON_FLAGS="-O2 -march=native -mtune=native -fno-mudflap"
 CFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
 CXXFLAGS="-O2 -march=native -mtune=native -fno-mudflap"
@@ -350,7 +350,7 @@ sys-libs/readline \
 sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
-=sys-kernel/gentoo-sources-6.17.8 \
+=sys-kernel/gentoo-sources-6.18.0 \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
