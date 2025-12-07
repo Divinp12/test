@@ -38,6 +38,7 @@ FCFLAGS="-O0"
 FFLAGS="-O0"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
+USE="-doc -test"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -134,7 +135,7 @@ fi;
 
 
 echo "criando configuração do pacote";
-if echo "sys-devel/gcc -nls -pie -debug -doc -test
+if echo "sys-devel/gcc -doc -test
 sys-libs/glibc -selinux -audit -debug -doc -systemd -test
 dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
