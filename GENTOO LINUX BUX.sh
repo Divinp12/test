@@ -5,9 +5,9 @@ clear;
 echo "formatando 1 disco valido";
 wipefs -a /dev/sda > /dev/null 2>&1 && \
 parted -s /dev/sda mklabel gpt && \
-parted -s /dev/sda mkpart ESP fat32 1MiB 300MiB && \
+parted -s /dev/sda mkpart ESP fat32 1MiB 100MiB && \
 parted -s /dev/sda set 1 esp on && \
-parted -s /dev/sda mkpart primary ext4 300MiB 30000MiB && \
+parted -s /dev/sda mkpart primary ext4 100MiB 30000MiB && \
 parted -s /dev/sda mkpart primary ext4 30000MiB 100% && \
 partprobe && \
 mkfs.fat -F32 /dev/sda1 > /dev/null 2>&1 && \
@@ -38,7 +38,7 @@ FCFLAGS="-O0"
 FFLAGS="-O0"
 MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
-USE="-debug -doc -test"
+USE=""
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
 echo ""
@@ -135,8 +135,7 @@ fi;
 
 
 echo "criando configuração do pacote";
-if echo "sys-devel/gcc -debug -doc -test
-sys-libs/glibc -selinux -audit -debug -doc -systemd -test
+if echo "sys-libs/glibc -selinux -audit -debug -doc -systemd -test
 dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
@@ -337,17 +336,65 @@ else
 echo "FALHOU" && exit
 fi;
 
+echo "instalando glibc e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-libs/glibc; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando binutils e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-devel/binutils; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando coreutils e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-apps/coreutils; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando bash e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet app-shells/bash; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando ncurses e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-libs/ncurses; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando readline e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-libs/readline; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
+
+echo "instalando file e dependências";
+chroot /mnt/gentoo /bin/bash -c '
+if source /etc/profile && emerge --quiet sys-apps/file; then
+echo ""
+else
+echo "FALHOU" && exit
+fi;'
 
 echo "instalando pacotes importantes";
 chroot /mnt/gentoo /bin/bash -c '
 if source /etc/profile && emerge --quiet \
-sys-libs/glibc \
-sys-devel/binutils \
-sys-apps/coreutils \
-app-shells/bash \
-sys-libs/ncurses \
-sys-libs/readline \
-sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.18.0 \
@@ -358,7 +405,6 @@ gui-apps/wofi \
 app-misc/fastfetch \
 gui-apps/foot \
 media-sound/pulseaudio-daemon \
-media-sound/pamix \
 net-misc/networkmanager \
 net-misc/dhcpcd \
 sys-boot/grub \
