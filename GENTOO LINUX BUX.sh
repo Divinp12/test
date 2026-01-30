@@ -135,8 +135,7 @@ fi;
 
 
 echo "criando configuração do pacote";
-if echo "sys-libs/glibc -selinux -audit -debug -doc -systemd -test
-dev-build/make -doc -nls -test
+if echo "dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
 sys-apps/coreutils -nls -selinux -test
@@ -336,65 +335,16 @@ else
 echo "FALHOU" && exit
 fi;
 
-echo "instalando glibc e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-libs/glibc; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando binutils e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-devel/binutils; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando coreutils e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-apps/coreutils; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando bash e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet app-shells/bash; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando ncurses e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-libs/ncurses; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando readline e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-libs/readline; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
-echo "instalando file e dependências";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge --quiet sys-apps/file; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
-
 echo "instalando pacotes importantes";
 chroot /mnt/gentoo /bin/bash -c '
 if source /etc/profile && emerge --quiet \
+sys-libs/glibc \
+sys-devel/binutils \
+sys-apps/coreutils \
+app-shells/bash \
+sys-libs/ncurses \
+sys-libs/readline \
+sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
 =sys-kernel/gentoo-sources-6.18.0 \
@@ -403,7 +353,6 @@ dev-libs/wayland \
 gui-wm/sway \
 gui-apps/wofi \
 app-misc/fastfetch \
-gui-apps/foot \
 media-sound/pulseaudio-daemon \
 net-misc/networkmanager \
 net-misc/dhcpcd \
