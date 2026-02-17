@@ -1,13 +1,9 @@
 #!/bin/bash
 
 clear && \
-sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz wget && \
-wget -P /home/bux/Downloads https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.67.tar.xz && \
-sudo tar -xvpf /home/bux/Downloads/linux-6.12.67.tar.xz -C /home/bux/Downloads --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
-sudo rm -rf /home/bux/Downloads/linux-6.12.67.tar.xz && \
-sudo make clean -j64 -C /home/bux/Downloads/linux-6.12.67 && \
-sudo make mrproper -j64 -C /home/bux/Downloads/linux-6.12.67 && \
-sudo make defconfig -j64 -C /home/bux/Downloads/linux-6.12.67;
+cd /home/bux/ && \
+sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz && \
+git clone https://gitlab.archlinux.org/archlinux/packaging/packages/linux.git && \
 #-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 
 sudo sed -i -E \
@@ -804,16 +800,11 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
-/home/bux/Downloads/linux-6.12.67/.config;
+/home/bux/linux/config.x86_64;
 
 #CONFIG_DYNAMIC_DEBUG=y
 #CONFIG_DYNAMIC_DEBUG_CORE=y
 
-sudo make -j64 -C /home/bux/Downloads/linux-6.12.67 && \
-sudo make modules_install -j64 -C /home/bux/Downloads/linux-6.12.67 && \
-sudo make install -j64 -C /home/bux/Downloads/linux-6.12.67 && \
-sudo mv /home/bux/Downloads/linux-6.12.67/arch/x86/boot/bzImage /boot/vmlinuz-6.12.67 && \
-sudo rm -rf /home/bux/Downloads/linux-6.12.67 && \
-sudo mkinitcpio -k $(make -s kernelversion) -g /boot/initramfs-6.12.67.img && \
+makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
