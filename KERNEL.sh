@@ -690,6 +690,8 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DEBUG_KERNEL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_INFO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DYNAMIC_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DYNAMIC_DEBUG_CORE)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_RING)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_TASK)(=.*| is not set)?$/\2=n/' \
@@ -800,11 +802,7 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
-/home/bux/linux/config.x86_64;
-
-#CONFIG_DYNAMIC_DEBUG=y
-#CONFIG_DYNAMIC_DEBUG_CORE=y
-
+/home/bux/linux/config.x86_64 && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
