@@ -802,28 +802,21 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN5_I2C)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_S3FWRN82_UART)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NFC_ST95HF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IOMMU_IOVA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IOMMU_API)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_IOMMUFD_DRIVER)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
 
-
-CONFIG_IOMMU_IOVA=y
-CONFIG_IOMMU_API=y
-CONFIG_IOMMUFD_DRIVER=y
 CONFIG_IOMMU_SUPPORT=y
-
-#
-# Generic IOMMU Pagetable Support
-#
 CONFIG_IOMMU_IO_PGTABLE=y
-# end of Generic IOMMU Pagetable Support
-
-# CONFIG_IOMMU_DEBUGFS is not set
-# CONFIG_IOMMU_DEFAULT_DMA_STRICT is not set
+CONFIG_IOMMU_DEBUGFS
+CONFIG_IOMMU_DEFAULT_DMA_STRICT
 CONFIG_IOMMU_DEFAULT_DMA_LAZY=y
-# CONFIG_IOMMU_DEFAULT_PASSTHROUGH is not set
+CONFIG_IOMMU_DEFAULT_PASSTHROUGH
 CONFIG_IOMMU_DMA=y
 CONFIG_IOMMU_SVA=y
 CONFIG_IOMMU_IOPF=y
@@ -831,7 +824,7 @@ CONFIG_AMD_IOMMU=y
 CONFIG_DMAR_TABLE=y
 CONFIG_INTEL_IOMMU=y
 CONFIG_INTEL_IOMMU_SVM=y
-# CONFIG_INTEL_IOMMU_DEFAULT_ON is not set
+CONFIG_INTEL_IOMMU_DEFAULT_ON
 CONFIG_INTEL_IOMMU_FLOPPY_WA=y
 CONFIG_INTEL_IOMMU_SCALABLE_MODE_DEFAULT_ON=y
 CONFIG_INTEL_IOMMU_PERF_EVENTS=y
@@ -840,15 +833,9 @@ CONFIG_IOMMUFD=m
 CONFIG_IRQ_REMAP=y
 CONFIG_HYPERV_IOMMU=y
 CONFIG_VIRTIO_IOMMU=m
-
-
-# CONFIG_DEBUG_PREEMPT is not set
-
-#
-# Lock Debugging (spinlocks, mutexes, etc...)
-#
+CONFIG_DEBUG_PREEMPT
 CONFIG_LOCK_DEBUGGING_SUPPORT=y
-# CONFIG_PROVE_LOCKING is not set
+CONFIG_PROVE_LOCKING
 # CONFIG_LOCK_STAT is not set
 # CONFIG_DEBUG_RT_MUTEXES is not set
 # CONFIG_DEBUG_SPINLOCK is not set
@@ -869,28 +856,18 @@ CONFIG_LOCK_DEBUGGING_SUPPORT=y
 CONFIG_STACKTRACE=y
 # CONFIG_WARN_ALL_UNSEEDED_RANDOM is not set
 # CONFIG_DEBUG_KOBJECT is not set
-
-#
-# Debug kernel data structures
-#
 # CONFIG_DEBUG_LIST is not set
 # CONFIG_DEBUG_PLIST is not set
 # CONFIG_DEBUG_SG is not set
 # CONFIG_DEBUG_NOTIFIERS is not set
 # CONFIG_DEBUG_CLOSURES is not set
 # CONFIG_DEBUG_MAPLE_TREE is not set
-# end of Debug kernel data structures
-
 
 CONFIG_CEC_CORE=m
 CONFIG_CEC_NOTIFIER=y
 CONFIG_CEC_PIN=y
-
-#
-# CEC support
-#
 CONFIG_MEDIA_CEC_RC=y
-# CONFIG_CEC_PIN_ERROR_INJ is not set
+CONFIG_CEC_PIN_ERROR_INJ
 CONFIG_MEDIA_CEC_SUPPORT=y
 CONFIG_CEC_CH7322=m
 CONFIG_CEC_NXP_TDA9950=m
@@ -901,5 +878,3 @@ CONFIG_CEC_SECO_RC=y
 CONFIG_USB_EXTRON_DA_HD_4K_PLUS_CEC=m
 CONFIG_USB_PULSE8_CEC=m
 CONFIG_USB_RAINSHADOW_CEC=m
-# end of CEC support
-
