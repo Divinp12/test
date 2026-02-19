@@ -836,6 +836,22 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_CEC_CH7322)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_CEC_NXP_TDA9950)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_CEC_CROS_EC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CEC_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CEC_SECO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_CEC_SECO_RC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_USB_EXTRON_DA_HD_4K_PLUS_CEC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_USB_PULSE8_CEC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_USB_RAINSHADOW_CEC)(=.*| is not set)?$/\2=n/' \
+
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+
 /home/bux/linux/config.x86_64 && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
@@ -871,10 +887,3 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg;
 # CONFIG_DEBUG_NOTIFIERS is not set
 # CONFIG_DEBUG_CLOSURES is not set
 # CONFIG_DEBUG_MAPLE_TREE is not set
-
-# CONFIG_CEC_GPIO=m
-# CONFIG_CEC_SECO=m
-# CONFIG_CEC_SECO_RC=y
-# CONFIG_USB_EXTRON_DA_HD_4K_PLUS_CEC=m
-# CONFIG_USB_PULSE8_CEC=m
-# CONFIG_USB_RAINSHADOW_CEC=m
