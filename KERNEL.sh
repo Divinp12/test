@@ -842,21 +842,24 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_USB_EXTRON_DA_HD_4K_PLUS_CEC)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_USB_PULSE8_CEC)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_USB_RAINSHADOW_CEC)(=.*| is not set)?$/\2=n/' \
-
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
-
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_GZIP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_BZIP2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_LZMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_XZ)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_LZO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_KERNEL_LZ4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KERNEL_GZIP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_KERNEL_BZIP2)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
+# CONFIG_KERNEL_LZMA is not set
+# CONFIG_KERNEL_XZ is not set
+# CONFIG_KERNEL_LZO is not set
+# CONFIG_KERNEL_LZ4 is not set
+CONFIG_KERNEL_ZSTD=y
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
