@@ -918,28 +918,28 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PATA_HPT366)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_HPT37X)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_HPT3X2N)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_HPT3X3)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_HPT3X3_DMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_IT8213)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_IT821X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_JMICRON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_MARVELL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_NETCELL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_NINJA32)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_NS87415)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_OLDPIIX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_OPTIDMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PDC2027X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PDC_OLD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_RADISYS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_RDC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_SCH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_SERVERWORKS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_SIL680)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_SIS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_TOSHIBA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_TRIFLEX)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,27 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_PATA_HPT3X3=m
-CONFIG_PATA_HPT3X3_DMA=y
-CONFIG_PATA_IT8213=m
-CONFIG_PATA_IT821X=m
-CONFIG_PATA_JMICRON=m
-CONFIG_PATA_MARVELL=m
-CONFIG_PATA_NETCELL=m
-CONFIG_PATA_NINJA32=m
-CONFIG_PATA_NS87415=m
-CONFIG_PATA_OLDPIIX=m
-CONFIG_PATA_OPTIDMA=m
-CONFIG_PATA_PDC2027X=m
-CONFIG_PATA_PDC_OLD=m
-CONFIG_PATA_RADISYS=m
-CONFIG_PATA_RDC=m
-CONFIG_PATA_SCH=m
-CONFIG_PATA_SERVERWORKS=m
-CONFIG_PATA_SIL680=m
-CONFIG_PATA_SIS=m
-CONFIG_PATA_TOSHIBA=m
-CONFIG_PATA_TRIFLEX=m
 CONFIG_PATA_VIA=m
 CONFIG_PATA_WINBOND=m
 
