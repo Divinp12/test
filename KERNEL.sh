@@ -907,18 +907,18 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NLS_MAC_ROMANIAN)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NLS_MAC_TURKISH)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NLS_UCS2_UTILS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_ALI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_AMD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_ARTOP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_ATIIXP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_ATP867X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_CMD64X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_CYPRESS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_EFAR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_HPT366)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_HPT37X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_HPT3X2N)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1185,6 +1185,68 @@ sudo sed -i -E \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
+
+CONFIG_PATA_HPT3X3=m
+CONFIG_PATA_HPT3X3_DMA=y
+CONFIG_PATA_IT8213=m
+CONFIG_PATA_IT821X=m
+CONFIG_PATA_JMICRON=m
+CONFIG_PATA_MARVELL=m
+CONFIG_PATA_NETCELL=m
+CONFIG_PATA_NINJA32=m
+CONFIG_PATA_NS87415=m
+CONFIG_PATA_OLDPIIX=m
+CONFIG_PATA_OPTIDMA=m
+CONFIG_PATA_PDC2027X=m
+CONFIG_PATA_PDC_OLD=m
+CONFIG_PATA_RADISYS=m
+CONFIG_PATA_RDC=m
+CONFIG_PATA_SCH=m
+CONFIG_PATA_SERVERWORKS=m
+CONFIG_PATA_SIL680=m
+CONFIG_PATA_SIS=m
+CONFIG_PATA_TOSHIBA=m
+CONFIG_PATA_TRIFLEX=m
+CONFIG_PATA_VIA=m
+CONFIG_PATA_WINBOND=m
+
+#
+# PIO-only SFF controllers
+#
+CONFIG_PATA_CMD640_PCI=m
+CONFIG_PATA_MPIIX=m
+CONFIG_PATA_NS87410=m
+CONFIG_PATA_OPTI=m
+CONFIG_PATA_PCMCIA=m
+CONFIG_PATA_RZ1000=m
+CONFIG_PATA_PARPORT=m
+
+#
+# Parallel IDE protocol modules
+#
+CONFIG_PATA_PARPORT_ATEN=m
+CONFIG_PATA_PARPORT_BPCK=m
+CONFIG_PATA_PARPORT_BPCK6=m
+CONFIG_PATA_PARPORT_COMM=m
+CONFIG_PATA_PARPORT_DSTR=m
+CONFIG_PATA_PARPORT_FIT2=m
+CONFIG_PATA_PARPORT_FIT3=m
+CONFIG_PATA_PARPORT_EPAT=m
+CONFIG_PATA_PARPORT_EPATC8=y
+CONFIG_PATA_PARPORT_EPIA=m
+CONFIG_PATA_PARPORT_FRIQ=m
+CONFIG_PATA_PARPORT_FRPW=m
+CONFIG_PATA_PARPORT_KBIC=m
+CONFIG_PATA_PARPORT_KTTI=m
+CONFIG_PATA_PARPORT_ON20=m
+CONFIG_PATA_PARPORT_ON26=m
+
+#
+# Generic fallback / legacy drivers
+#
+CONFIG_PATA_ACPI=m
+CONFIG_PATA_LEGACY=m
+
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
