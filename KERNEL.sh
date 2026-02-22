@@ -867,48 +867,47 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_855)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_857)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_860)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_861)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_862)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_863)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_864)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_865)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_866)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_869)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_936)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_950)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_932)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_949)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_874)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_8)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_1250)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_CODEPAGE_1251)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_1)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_3)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_5)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_6)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_7)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_9)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_13)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_14)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_ISO8859_15)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_KOI8_R)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_KOI8_U)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_ROMAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_CELTIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_CENTEURO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_CROATIAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_CYRILLIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_GAELIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_GREEK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_ICELAND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_INUIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_ROMANIAN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_MAC_TURKISH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NLS_UCS2_UTILS)(=.*| is not set)?$/\2=n/' \
 
-
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,47 +1185,6 @@ sudo sed -i -E \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_NLS_CODEPAGE_861=m
-CONFIG_NLS_CODEPAGE_862=m
-CONFIG_NLS_CODEPAGE_863=m
-CONFIG_NLS_CODEPAGE_864=m
-CONFIG_NLS_CODEPAGE_865=m
-CONFIG_NLS_CODEPAGE_866=m
-CONFIG_NLS_CODEPAGE_869=m
-CONFIG_NLS_CODEPAGE_936=m
-CONFIG_NLS_CODEPAGE_950=m
-CONFIG_NLS_CODEPAGE_932=m
-CONFIG_NLS_CODEPAGE_949=m
-CONFIG_NLS_CODEPAGE_874=m
-CONFIG_NLS_ISO8859_8=m
-CONFIG_NLS_CODEPAGE_1250=m
-CONFIG_NLS_CODEPAGE_1251=m
-CONFIG_NLS_ISO8859_1=m
-CONFIG_NLS_ISO8859_2=m
-CONFIG_NLS_ISO8859_3=m
-CONFIG_NLS_ISO8859_4=m
-CONFIG_NLS_ISO8859_5=m
-CONFIG_NLS_ISO8859_6=m
-CONFIG_NLS_ISO8859_7=m
-CONFIG_NLS_ISO8859_9=m
-CONFIG_NLS_ISO8859_13=m
-CONFIG_NLS_ISO8859_14=m
-CONFIG_NLS_ISO8859_15=m
-CONFIG_NLS_KOI8_R=m
-CONFIG_NLS_KOI8_U=m
-CONFIG_NLS_MAC_ROMAN=m
-CONFIG_NLS_MAC_CELTIC=m
-CONFIG_NLS_MAC_CENTEURO=m
-CONFIG_NLS_MAC_CROATIAN=m
-CONFIG_NLS_MAC_CYRILLIC=m
-CONFIG_NLS_MAC_GAELIC=m
-CONFIG_NLS_MAC_GREEK=m
-CONFIG_NLS_MAC_ICELAND=m
-CONFIG_NLS_MAC_INUIT=m
-CONFIG_NLS_MAC_ROMANIAN=m
-CONFIG_NLS_MAC_TURKISH=m
-CONFIG_NLS_UCS2_UTILS=m
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
