@@ -939,8 +939,8 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PATA_SIS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_TOSHIBA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_TRIFLEX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_VIA)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,7 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_PATA_VIA=m
 CONFIG_PATA_WINBOND=m
 
 #
