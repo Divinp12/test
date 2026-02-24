@@ -967,33 +967,33 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PATA_ACPI)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_LEGACY)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_YENTA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA_O2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA_RICOH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA_TI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA_ENE_TUNE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA_TOSHIBA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PD6729)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_I82092)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PCCARD_NONSTATIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RAPIDIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_HFCPCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_HFCMULTI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_HFCUSB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_AVMFRITZ)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_SPEEDFAX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_INFINEON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_W6692)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_NETJET)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_HDLC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_IPAC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MISDN_ISAR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_CLIENT_KTIMER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_CLIENT_LDISC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_CLIENT_PARPORT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_CLIENT_GPIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_GENERATOR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_GENERATOR_DUMMY)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,41 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_YENTA_O2=y
-CONFIG_YENTA_RICOH=y
-CONFIG_YENTA_TI=y
-CONFIG_YENTA_ENE_TUNE=y
-CONFIG_YENTA_TOSHIBA=y
-CONFIG_PD6729=m
-CONFIG_I82092=m
-CONFIG_PCCARD_NONSTATIC=y
-# CONFIG_RAPIDIO is not set
-
-
-#
-# mISDN hardware drivers
-#
-CONFIG_MISDN_HFCPCI=m
-CONFIG_MISDN_HFCMULTI=m
-CONFIG_MISDN_HFCUSB=m
-CONFIG_MISDN_AVMFRITZ=m
-CONFIG_MISDN_SPEEDFAX=m
-CONFIG_MISDN_INFINEON=m
-CONFIG_MISDN_W6692=m
-CONFIG_MISDN_NETJET=m
-CONFIG_MISDN_HDLC=m
-CONFIG_MISDN_IPAC=m
-CONFIG_MISDN_ISAR=m
-
-#
-# PPS clients support
-#
-CONFIG_PPS_CLIENT_KTIMER=m
-CONFIG_PPS_CLIENT_LDISC=m
-CONFIG_PPS_CLIENT_PARPORT=m
-CONFIG_PPS_CLIENT_GPIO=m
-CONFIG_PPS_GENERATOR=m
-# CONFIG_PPS_GENERATOR_DUMMY is not set
 CONFIG_PPS_GENERATOR_TIO=m
 
 #
