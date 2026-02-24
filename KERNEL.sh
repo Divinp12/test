@@ -940,34 +940,34 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PATA_TOSHIBA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_TRIFLEX)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PATA_VIA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_WINBOND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_CMD640_PCI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_MPIIX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_NS87410)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_OPTI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PCMCIA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_RZ1000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_ATEN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_BPCK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_BPCK6)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_COMM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_DSTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_FIT2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_FIT3)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_EPAT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_EPATC8)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_EPIA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_FRIQ)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_FRPW)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_KBIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_KTTI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_ON20)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_PARPORT_ON26)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_ACPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PATA_LEGACY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_YENTA)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,49 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_PATA_WINBOND=m
-
-#
-# PIO-only SFF controllers
-#
-CONFIG_PATA_CMD640_PCI=m
-CONFIG_PATA_MPIIX=m
-CONFIG_PATA_NS87410=m
-CONFIG_PATA_OPTI=m
-CONFIG_PATA_PCMCIA=m
-CONFIG_PATA_RZ1000=m
-CONFIG_PATA_PARPORT=m
-
-#
-# Parallel IDE protocol modules
-#
-CONFIG_PATA_PARPORT_ATEN=m
-CONFIG_PATA_PARPORT_BPCK=m
-CONFIG_PATA_PARPORT_BPCK6=m
-CONFIG_PATA_PARPORT_COMM=m
-CONFIG_PATA_PARPORT_DSTR=m
-CONFIG_PATA_PARPORT_FIT2=m
-CONFIG_PATA_PARPORT_FIT3=m
-CONFIG_PATA_PARPORT_EPAT=m
-CONFIG_PATA_PARPORT_EPATC8=y
-CONFIG_PATA_PARPORT_EPIA=m
-CONFIG_PATA_PARPORT_FRIQ=m
-CONFIG_PATA_PARPORT_FRPW=m
-CONFIG_PATA_PARPORT_KBIC=m
-CONFIG_PATA_PARPORT_KTTI=m
-CONFIG_PATA_PARPORT_ON20=m
-CONFIG_PATA_PARPORT_ON26=m
-
-#
-# Generic fallback / legacy drivers
-#
-CONFIG_PATA_ACPI=m
-CONFIG_PATA_LEGACY=m
-
-#
-# PC-card bridges
-#
-CONFIG_YENTA=m
 CONFIG_YENTA_O2=y
 CONFIG_YENTA_RICOH=y
 CONFIG_YENTA_TI=y
