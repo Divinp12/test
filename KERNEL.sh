@@ -993,29 +993,29 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PPS_CLIENT_GPIO)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PPS_GENERATOR)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_PPS_GENERATOR_DUMMY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PPS_GENERATOR_TIO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_OPTIONAL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DP83640_PHY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_INES)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_KVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_VMCLOCK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_IDT82P33)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_IDTCM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_FC3W)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_MOCK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_VMW)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_1588_CLOCK_OCP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_DFL_TOD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PTP_NETC_V4_TIMER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DPLL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZL3073X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZL3073X_I2C)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ZL3073X_SPI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_ACNTSA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_APOLLO)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,42 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_PPS_GENERATOR_TIO=m
-
-#
-# PTP clock support
-#
-CONFIG_PTP_1588_CLOCK=m
-CONFIG_PTP_1588_CLOCK_OPTIONAL=m
-CONFIG_DP83640_PHY=m
-CONFIG_PTP_1588_CLOCK_INES=m
-CONFIG_PTP_1588_CLOCK_KVM=m
-CONFIG_PTP_1588_CLOCK_VMCLOCK=m
-CONFIG_PTP_1588_CLOCK_IDT82P33=m
-CONFIG_PTP_1588_CLOCK_IDTCM=m
-CONFIG_PTP_1588_CLOCK_FC3W=m
-CONFIG_PTP_1588_CLOCK_MOCK=m
-CONFIG_PTP_1588_CLOCK_VMW=m
-CONFIG_PTP_1588_CLOCK_OCP=m
-CONFIG_PTP_DFL_TOD=m
-CONFIG_PTP_NETC_V4_TIMER=m
-# end of PTP clock support
-
-#
-# DPLL device support
-#
-CONFIG_DPLL=y
-CONFIG_ZL3073X=m
-CONFIG_ZL3073X_I2C=m
-CONFIG_ZL3073X_SPI=m
-# end of DPLL device support
-
-#
-# Speakup console speech
-#
-CONFIG_SPEAKUP=m
-CONFIG_SPEAKUP_SYNTH_ACNTSA=m
-CONFIG_SPEAKUP_SYNTH_APOLLO=m
 CONFIG_SPEAKUP_SYNTH_AUDPTR=m
 CONFIG_SPEAKUP_SYNTH_BNS=m
 CONFIG_SPEAKUP_SYNTH_DECTLK=m
