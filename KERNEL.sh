@@ -1065,18 +1065,18 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_RTRS_CLIENT)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_RTRS_SERVER)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_OPA_VNIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_M88DS3103)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_MXL5XX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STB0899)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STB6100)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STV090x)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STV0910)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STV6110x)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STV6111)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_DRXK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_MN88472)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_MN88473)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,17 +1186,6 @@ makepkg -si -j$(nproc) --noconfirm --skippgpcheck --skipchecksums --skipinteg &&
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_DVB_M88DS3103=m
-CONFIG_DVB_MXL5XX=m
-CONFIG_DVB_STB0899=m
-CONFIG_DVB_STB6100=m
-CONFIG_DVB_STV090x=m
-CONFIG_DVB_STV0910=m
-CONFIG_DVB_STV6110x=m
-CONFIG_DVB_STV6111=m
-CONFIG_DVB_DRXK=m
-CONFIG_DVB_MN88472=m
-CONFIG_DVB_MN88473=m
 CONFIG_DVB_SI2165=m
 CONFIG_DVB_TDA18271C2DD=m
 CONFIG_DVB_CX24110=m
