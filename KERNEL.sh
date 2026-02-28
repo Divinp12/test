@@ -1182,7 +1182,7 @@ sudo sed -i -E \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
-makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
+makepkg -si -j$(nproc) --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
