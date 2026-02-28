@@ -1015,20 +1015,20 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_SPEAKUP)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_ACNTSA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_APOLLO)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_AUDPTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_BNS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_DECTLK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_DECEXT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_LTLK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_SOFT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_SPKOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_TXPRT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SPEAKUP_SYNTH_DUMMY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_USER_MAD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_USER_ACCESS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_USER_MEM)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,21 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_SPEAKUP_SYNTH_AUDPTR=m
-CONFIG_SPEAKUP_SYNTH_BNS=m
-CONFIG_SPEAKUP_SYNTH_DECTLK=m
-CONFIG_SPEAKUP_SYNTH_DECEXT=m
-CONFIG_SPEAKUP_SYNTH_LTLK=m
-CONFIG_SPEAKUP_SYNTH_SOFT=m
-CONFIG_SPEAKUP_SYNTH_SPKOUT=m
-CONFIG_SPEAKUP_SYNTH_TXPRT=m
-CONFIG_SPEAKUP_SYNTH_DUMMY=m
-# end of Speakup console speech
-
-CONFIG_INFINIBAND=m
-CONFIG_INFINIBAND_USER_MAD=m
-CONFIG_INFINIBAND_USER_ACCESS=m
-CONFIG_INFINIBAND_USER_MEM=y
 CONFIG_INFINIBAND_ON_DEMAND_PAGING=y
 CONFIG_INFINIBAND_ADDR_TRANS=y
 CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS=y
