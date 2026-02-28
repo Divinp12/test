@@ -1127,55 +1127,55 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DVB_SP887X)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_STV0367)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_TDA10048)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TDA1004X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ZD1301_DEMOD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ZL10353)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_STV0297)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TDA10021)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TDA10023)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_VES1820)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_AU8522)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_AU8522_DTV)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_AU8522_V4L)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_BCM3510)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LG2160)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LGDT3305)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LGDT3306A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LGDT330X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_MXL692)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_NXT200X)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_OR51132)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_OR51211)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_S5H1409)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_S5H1411)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_DIB8000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_MB86A20S)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_S921)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TC90522)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_PLL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TUNER_DIB0070)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TUNER_DIB0090)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_A8293)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_AF9033)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ASCOT2E)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ATBM8830)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_HELENE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_HORUS3A)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ISL6405)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ISL6421)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_ISL6423)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_IX2505V)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LGS8GXX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LNBH25)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LNBP21)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_LNBP22)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_M88RS2000)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_TDA665x)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_DRX39XYJ)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_CXD2099)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_SP2)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DVB_DUMMY_FE)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1185,55 +1185,6 @@ sudo sed -i -E \
 makepkg -si -j$(nproc) --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_DVB_TDA1004X=m
-CONFIG_DVB_ZD1301_DEMOD=m
-CONFIG_DVB_ZL10353=m
-CONFIG_DVB_STV0297=m
-CONFIG_DVB_TDA10021=m
-CONFIG_DVB_TDA10023=m
-CONFIG_DVB_VES1820=m
-CONFIG_DVB_AU8522=m
-CONFIG_DVB_AU8522_DTV=m
-CONFIG_DVB_AU8522_V4L=m
-CONFIG_DVB_BCM3510=m
-CONFIG_DVB_LG2160=m
-CONFIG_DVB_LGDT3305=m
-CONFIG_DVB_LGDT3306A=m
-CONFIG_DVB_LGDT330X=m
-CONFIG_DVB_MXL692=m
-CONFIG_DVB_NXT200X=m
-CONFIG_DVB_OR51132=m
-CONFIG_DVB_OR51211=m
-CONFIG_DVB_S5H1409=m
-CONFIG_DVB_S5H1411=m
-CONFIG_DVB_DIB8000=m
-CONFIG_DVB_MB86A20S=m
-CONFIG_DVB_S921=m
-CONFIG_DVB_TC90522=m
-CONFIG_DVB_PLL=m
-CONFIG_DVB_TUNER_DIB0070=m
-CONFIG_DVB_TUNER_DIB0090=m
-CONFIG_DVB_A8293=m
-CONFIG_DVB_AF9033=m
-CONFIG_DVB_ASCOT2E=m
-CONFIG_DVB_ATBM8830=m
-CONFIG_DVB_HELENE=m
-CONFIG_DVB_HORUS3A=m
-CONFIG_DVB_ISL6405=m
-CONFIG_DVB_ISL6421=m
-CONFIG_DVB_ISL6423=m
-CONFIG_DVB_IX2505V=m
-CONFIG_DVB_LGS8GXX=m
-CONFIG_DVB_LNBH25=m
-CONFIG_DVB_LNBP21=m
-CONFIG_DVB_LNBP22=m
-CONFIG_DVB_M88RS2000=m
-CONFIG_DVB_TDA665x=m
-CONFIG_DVB_DRX39XYJ=m
-CONFIG_DVB_CXD2099=m
-CONFIG_DVB_SP2=m
-CONFIG_DVB_DUMMY_FE=m
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
