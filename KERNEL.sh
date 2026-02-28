@@ -1028,12 +1028,12 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_USER_MAD)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_USER_ACCESS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_USER_MEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ON_DEMAND_PAGING)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ADDR_TRANS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_VIRT_DMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_BNXT_RE)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1186,10 +1186,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_INFINIBAND_ON_DEMAND_PAGING=y
-CONFIG_INFINIBAND_ADDR_TRANS=y
-CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS=y
-CONFIG_INFINIBAND_VIRT_DMA=y
 CONFIG_INFINIBAND_BNXT_RE=m
 CONFIG_INFINIBAND_CXGB4=m
 CONFIG_INFINIBAND_EFA=m
