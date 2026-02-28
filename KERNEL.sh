@@ -1033,39 +1033,39 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_VIRT_DMA)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_INFINIBAND_BNXT_RE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_CXGB4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_EFA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ERDMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_HFI1)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HFI1_DEBUG_SDMA_ORDER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SDMA_VERBOSITY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IONIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IRDMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MANA_INFINIBAND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MLX4_INFINIBAND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MLX5_INFINIBAND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_MTHCA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_MTHCA_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_OCRDMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_QEDR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_USNIC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_VMWARE_PVRDMA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_RDMAVT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RDMA_RXE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_RDMA_SIW)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IPOIB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IPOIB_CM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IPOIB_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_IPOIB_DEBUG_DATA)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_SRP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_SRPT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ISER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_ISERT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_RTRS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_RTRS_CLIENT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_RTRS_SERVER)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_INFINIBAND_OPA_VNIC)(=.*| is not set)?$/\2=n/' \
 
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
@@ -1185,40 +1185,6 @@ sudo sed -i -E \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_INFINIBAND_BNXT_RE=m
-CONFIG_INFINIBAND_CXGB4=m
-CONFIG_INFINIBAND_EFA=m
-CONFIG_INFINIBAND_ERDMA=m
-CONFIG_INFINIBAND_HFI1=m
-# CONFIG_HFI1_DEBUG_SDMA_ORDER is not set
-# CONFIG_SDMA_VERBOSITY is not set
-CONFIG_INFINIBAND_IONIC=m
-CONFIG_INFINIBAND_IRDMA=m
-CONFIG_MANA_INFINIBAND=m
-CONFIG_MLX4_INFINIBAND=m
-CONFIG_MLX5_INFINIBAND=m
-CONFIG_INFINIBAND_MTHCA=m
-CONFIG_INFINIBAND_MTHCA_DEBUG=y
-CONFIG_INFINIBAND_OCRDMA=m
-CONFIG_INFINIBAND_QEDR=m
-CONFIG_INFINIBAND_USNIC=m
-CONFIG_INFINIBAND_VMWARE_PVRDMA=m
-CONFIG_INFINIBAND_RDMAVT=m
-CONFIG_RDMA_RXE=m
-CONFIG_RDMA_SIW=m
-CONFIG_INFINIBAND_IPOIB=m
-CONFIG_INFINIBAND_IPOIB_CM=y
-CONFIG_INFINIBAND_IPOIB_DEBUG=y
-# CONFIG_INFINIBAND_IPOIB_DEBUG_DATA is not set
-CONFIG_INFINIBAND_SRP=m
-CONFIG_INFINIBAND_SRPT=m
-CONFIG_INFINIBAND_ISER=m
-CONFIG_INFINIBAND_ISERT=m
-CONFIG_INFINIBAND_RTRS=m
-CONFIG_INFINIBAND_RTRS_CLIENT=m
-CONFIG_INFINIBAND_RTRS_SERVER=m
-CONFIG_INFINIBAND_OPA_VNIC=m
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
