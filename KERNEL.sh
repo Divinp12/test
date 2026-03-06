@@ -1198,9 +1198,7 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_HSA_AMD_SVM)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 echo "";
-fi;
-
-
+fi && \
 echo "escaneando hardware intel e instalando drivers intel";
 if lspci | grep -i intel > /dev/null 2>&1; then
 echo "HARDWARE INTEL ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
@@ -1241,32 +1239,29 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DRM_XE_ENABLE_SCHEDTIMEOUT_LIMIT)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 echo "";
-fi;
-
-
+fi && \
 echo "escaneando hardware nvidia e instalando drivers nvidia";
 if lspci | grep -i nvidia > /dev/null 2>&1; then
 echo "HARDWARE NVIDIA ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
 else
-echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO NVIDIA" && echo "";
-fi;
-
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO NVIDIA" && \
+sudo sed -i -E \
+-e 's/^(# ?)?(CONFIG_DRM_NOUVEAU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NOUVEAU_DEBUG)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NOUVEAU_DEBUG_DEFAULT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NOUVEAU_DEBUG_MMU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_NOUVEAU_DEBUG_PUSH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_NOUVEAU_BACKLIGHT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_NOUVEAU_SVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_NOUVEAU_CH7006)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_NOUVEAU_SIL164)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_NOVA)(=.*| is not set)?$/\2=n/' \
+/home/bux/linux/config.x86_64 && echo "";
+fi && \
 cd /home/bux/linux && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_DRM_NOUVEAU=m
-CONFIG_NOUVEAU_DEBUG=5
-CONFIG_NOUVEAU_DEBUG_DEFAULT=3
-CONFIG_NOUVEAU_DEBUG_MMU is not set
-CONFIG_NOUVEAU_DEBUG_PUSH is not set
-CONFIG_DRM_NOUVEAU_BACKLIGHT=y
-CONFIG_DRM_NOUVEAU_SVM=y
-CONFIG_DRM_NOUVEAU_CH7006=m
-CONFIG_DRM_NOUVEAU_SIL164=m
-CONFIG_DRM_NOVA is not set
-
 
 CONFIG_DRM_VGEM=m
 CONFIG_DRM_VKMS=m
@@ -1279,7 +1274,6 @@ CONFIG_DRM_MGAG200=m
 CONFIG_DRM_QXL=m
 CONFIG_DRM_VIRTIO_GPU=m
 CONFIG_DRM_VIRTIO_GPU_KMS=y
-
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
