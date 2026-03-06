@@ -1175,6 +1175,16 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DVB_CXD2099)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_SP2)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_DUMMY_FE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VGEM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VKMS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VMWGFX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VMWGFX_MKSSTATS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_UDL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AST)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_MGAG200)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_QXL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VIRTIO_GPU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_VIRTIO_GPU_KMS)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 echo "escaneando hardware amd e removendo/ativando drivers amd";
 if lspci | grep -i amd > /dev/null 2>&1; then
@@ -1262,18 +1272,6 @@ cd /home/bux/linux && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_DRM_VGEM=m
-CONFIG_DRM_VKMS=m
-CONFIG_DRM_VMWGFX=m
-CONFIG_DRM_VMWGFX_MKSSTATS=y
-CONFIG_DRM_GMA500=m
-CONFIG_DRM_UDL=m
-CONFIG_DRM_AST=m
-CONFIG_DRM_MGAG200=m
-CONFIG_DRM_QXL=m
-CONFIG_DRM_VIRTIO_GPU=m
-CONFIG_DRM_VIRTIO_GPU_KMS=y
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
