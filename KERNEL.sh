@@ -1176,6 +1176,29 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DVB_SP2)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_DUMMY_FE)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
+echo "escaneando hardware amd, sincronizando repositorios do pacman e instalando drivers amd";
+if lspci | grep -i amd > /dev/null 2>&1; then
+echo "HARDWARE AMD ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
+else
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO AMD" && echo "";
+fi;
+
+
+echo "escaneando hardware intel, sincronizando repositorios do pacman e instalando drivers intel";
+if lspci | grep -i intel > /dev/null 2>&1; then
+echo "HARDWARE INTEL ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
+else
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO INTEL" && echo "";
+fi;
+
+
+echo "escaneando hardware nvidia, sincronizando repositorios do pacman e instalando drivers nvidia";
+if lspci | grep -i nvidia > /dev/null 2>&1; then
+echo "HARDWARE NVIDIA ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
+else
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO NVIDIA" && echo "";
+fi;
+
 cd /home/bux/linux && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
