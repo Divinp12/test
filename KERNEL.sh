@@ -1176,23 +1176,75 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DVB_SP2)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DVB_DUMMY_FE)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
-echo "escaneando hardware amd, sincronizando repositorios do pacman e instalando drivers amd";
+echo "escaneando hardware amd e removendo/ativando drivers amd";
 if lspci | grep -i amd > /dev/null 2>&1; then
 echo "HARDWARE AMD ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
 else
-echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO AMD" && echo "";
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO AMD" && \
+sudo sed -i -E \
+-e 's/^(# ?)?(CONFIG_DRM_RADEON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_RADEON_USERPTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMDGPU)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMDGPU_SI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMDGPU_CIK)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMDGPU_USERPTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_ISP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_ACP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_DC)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_DC_FP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_DC_SI)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_AMD_SECURE_DISPLAY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HSA_AMD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HSA_AMD_SVM)(=.*| is not set)?$/\2=n/' \
+/home/bux/linux/config.x86_64 && \
+echo "";
 fi;
 
 
-echo "escaneando hardware intel, sincronizando repositorios do pacman e instalando drivers intel";
+echo "escaneando hardware intel e instalando drivers intel";
 if lspci | grep -i intel > /dev/null 2>&1; then
 echo "HARDWARE INTEL ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
 else
-echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO INTEL" && echo "";
+echo "Ñ ENCONTRADO...REMOVENDO MODULOS DE VIDEO INTEL" && \
+sudo sed -i -E \
+-e 's/^(# ?)?(CONFIG_DRM_I915)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_FORCE_PROBE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_CAPTURE_ERROR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_COMPRESS_ERROR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_USERPTR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_GVT_KVMGT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_PXP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_DP_TUNNEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_REQUEST_TIMEOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_FENCE_TIMEOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_USERFAULT_AUTOSUSPEND)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_HEARTBEAT_INTERVAL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_PREEMPT_TIMEOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_PREEMPT_TIMEOUT_COMPUTE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_MAX_REQUEST_BUSYWAIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_STOP_TIMEOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_TIMESLICE_DURATION)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_I915_GVT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_DISPLAY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_DP_TUNNEL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_GPUSVM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_PAGEMAP)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_FORCE_PROBE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_JOB_TIMEOUT_MAX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_JOB_TIMEOUT_MIN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_TIMESLICE_MAX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_TIMESLICE_MIN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_PREEMPT_TIMEOUT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_PREEMPT_TIMEOUT_MAX)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_PREEMPT_TIMEOUT_MIN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DRM_XE_ENABLE_SCHEDTIMEOUT_LIMIT)(=.*| is not set)?$/\2=n/' \
+/home/bux/linux/config.x86_64 && \
+echo "";
 fi;
 
 
-echo "escaneando hardware nvidia, sincronizando repositorios do pacman e instalando drivers nvidia";
+echo "escaneando hardware nvidia e instalando drivers nvidia";
 if lspci | grep -i nvidia > /dev/null 2>&1; then
 echo "HARDWARE NVIDIA ENCONTRADO...ATIVANDO MODULOS DE VIDEO" && echo "";
 else
@@ -1204,23 +1256,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-
-CONFIG_DRM_RADEON=m
-CONFIG_DRM_RADEON_USERPTR=y
-CONFIG_DRM_AMDGPU=m
-CONFIG_DRM_AMDGPU_SI=y
-CONFIG_DRM_AMDGPU_CIK=y
-CONFIG_DRM_AMDGPU_USERPTR=y
-CONFIG_DRM_AMD_ISP=y
-CONFIG_DRM_AMD_ACP=y
-CONFIG_DRM_AMD_DC=y
-CONFIG_DRM_AMD_DC_FP=y
-CONFIG_DRM_AMD_DC_SI=y
-CONFIG_DRM_AMD_SECURE_DISPLAY=y
-CONFIG_HSA_AMD=y
-CONFIG_HSA_AMD_SVM=y
-
-
 CONFIG_DRM_NOUVEAU=m
 CONFIG_NOUVEAU_DEBUG=5
 CONFIG_NOUVEAU_DEBUG_DEFAULT=3
@@ -1231,40 +1266,6 @@ CONFIG_DRM_NOUVEAU_SVM=y
 CONFIG_DRM_NOUVEAU_CH7006=m
 CONFIG_DRM_NOUVEAU_SIL164=m
 CONFIG_DRM_NOVA is not set
-
-
-CONFIG_DRM_I915=m
-CONFIG_DRM_I915_FORCE_PROBE="*"
-CONFIG_DRM_I915_CAPTURE_ERROR=y
-CONFIG_DRM_I915_COMPRESS_ERROR=y
-CONFIG_DRM_I915_USERPTR=y
-CONFIG_DRM_I915_GVT_KVMGT=m
-CONFIG_DRM_I915_PXP=y
-CONFIG_DRM_I915_DP_TUNNEL=y
-CONFIG_DRM_I915_REQUEST_TIMEOUT=20000
-CONFIG_DRM_I915_FENCE_TIMEOUT=10000
-CONFIG_DRM_I915_USERFAULT_AUTOSUSPEND=250
-CONFIG_DRM_I915_HEARTBEAT_INTERVAL=2500
-CONFIG_DRM_I915_PREEMPT_TIMEOUT=640
-CONFIG_DRM_I915_PREEMPT_TIMEOUT_COMPUTE=7500
-CONFIG_DRM_I915_MAX_REQUEST_BUSYWAIT=8000
-CONFIG_DRM_I915_STOP_TIMEOUT=100
-CONFIG_DRM_I915_TIMESLICE_DURATION=1
-CONFIG_DRM_I915_GVT=y
-CONFIG_DRM_XE=m
-CONFIG_DRM_XE_DISPLAY=y
-CONFIG_DRM_XE_DP_TUNNEL=y
-CONFIG_DRM_XE_GPUSVM=y
-CONFIG_DRM_XE_PAGEMAP=y
-CONFIG_DRM_XE_FORCE_PROBE=""
-CONFIG_DRM_XE_JOB_TIMEOUT_MAX=10000
-CONFIG_DRM_XE_JOB_TIMEOUT_MIN=1
-CONFIG_DRM_XE_TIMESLICE_MAX=10000000
-CONFIG_DRM_XE_TIMESLICE_MIN=1
-CONFIG_DRM_XE_PREEMPT_TIMEOUT=640000
-CONFIG_DRM_XE_PREEMPT_TIMEOUT_MAX=10000000
-CONFIG_DRM_XE_PREEMPT_TIMEOUT_MIN=1
-CONFIG_DRM_XE_ENABLE_SCHEDTIMEOUT_LIMIT=y
 
 
 CONFIG_DRM_VGEM=m
