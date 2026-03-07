@@ -692,6 +692,29 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DEBUG_FS)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DYNAMIC_DEBUG)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DYNAMIC_DEBUG_CORE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_AS_HAS_NON_CONST_ULEB128)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_NONE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_DWARF4)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_DWARF5)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_REDUCED)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_COMPRESSED_NONE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_COMPRESSED_ZLIB)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_COMPRESSED_ZSTD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_SPLIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_BTF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PAHOLE_HAS_SPLIT_BTF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_PAHOLE_HAS_LANG_EXCLUDE)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_INFO_BTF_MODULES)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_MODULE_ALLOW_BTF_MISMATCH)(=.*| is not set)?$/\2=n/' \
+
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
+
+
 -e 's/^(# ?)?(CONFIG_VHOST)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_RING)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_TASK)(=.*| is not set)?$/\2=n/' \
@@ -1283,21 +1306,6 @@ makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
-CONFIG_AS_HAS_NON_CONST_ULEB128=y
-# CONFIG_DEBUG_INFO_NONE is not set
-# CONFIG_DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT is not set
-# CONFIG_DEBUG_INFO_DWARF4 is not set
-CONFIG_DEBUG_INFO_DWARF5=y
-# CONFIG_DEBUG_INFO_REDUCED is not set
-CONFIG_DEBUG_INFO_COMPRESSED_NONE=y
-# CONFIG_DEBUG_INFO_COMPRESSED_ZLIB is not set
-# CONFIG_DEBUG_INFO_COMPRESSED_ZSTD is not set
-# CONFIG_DEBUG_INFO_SPLIT is not set
-CONFIG_DEBUG_INFO_BTF=y
-CONFIG_PAHOLE_HAS_SPLIT_BTF=y
-CONFIG_PAHOLE_HAS_LANG_EXCLUDE=y
-CONFIG_DEBUG_INFO_BTF_MODULES=y
-# CONFIG_MODULE_ALLOW_BTF_MISMATCH is not set
 CONFIG_GDB_SCRIPTS=y
 CONFIG_FRAME_WARN=2048
 CONFIG_STRIP_ASM_SYMS=y
