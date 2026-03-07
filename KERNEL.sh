@@ -1185,6 +1185,16 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_DRM_QXL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DRM_VIRTIO_GPU)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DRM_VIRTIO_GPU_KMS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HAVE_EBPF_JIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_ARCH_WANT_DEFAULT_BPF_JIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_SYSCALL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_JIT)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_JIT_ALWAYS_ON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_JIT_DEFAULT_ON)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_UNPRIV_DEFAULT_OFF)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_PRELOAD)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_BPF_LSM)(=.*| is not set)?$/\2=n/' \
 /home/bux/linux/config.x86_64 && \
 echo "escaneando hardware amd e removendo/ativando drivers amd";
 if lspci | grep -i amd > /dev/null 2>&1; then
