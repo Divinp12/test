@@ -707,14 +707,16 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_PAHOLE_HAS_LANG_EXCLUDE)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_DEBUG_INFO_BTF_MODULES)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_MODULE_ALLOW_BTF_MISMATCH)(=.*| is not set)?$/\2=n/' \
-
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
--e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
-
-
+-e 's/^(# ?)?(CONFIG_GDB_SCRIPTS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_FRAME_WARN)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_STRIP_ASM_SYMS)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_READABLE_ASM)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_HEADERS_INSTALL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_SECTION_MISMATCH)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_SECTION_MISMATCH_WARN_ONLY)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_OBJTOOL)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_OBJTOOL_WERROR)(=.*| is not set)?$/\2=n/' \
+-e 's/^(# ?)?(CONFIG_DEBUG_FORCE_WEAK_PER_CPU)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_RING)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_VHOST_TASK)(=.*| is not set)?$/\2=n/' \
@@ -1305,18 +1307,6 @@ cd /home/bux/linux && \
 makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
 sudo mkinitcpio -P && \
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-CONFIG_GDB_SCRIPTS=y
-CONFIG_FRAME_WARN=2048
-CONFIG_STRIP_ASM_SYMS=y
-# CONFIG_READABLE_ASM is not set
-# CONFIG_HEADERS_INSTALL is not set
-# CONFIG_DEBUG_SECTION_MISMATCH is not set
-CONFIG_SECTION_MISMATCH_WARN_ONLY=y
-CONFIG_OBJTOOL=y
-# CONFIG_OBJTOOL_WERROR is not set
-# CONFIG_DEBUG_FORCE_WEAK_PER_CPU is not set
-# end of Compile-time checks and compiler options
 
 # CONFIG_DEBUG_PREEMPT
 # CONFIG_LOCK_DEBUGGING_SUPPORT=y
