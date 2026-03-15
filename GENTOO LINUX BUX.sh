@@ -193,76 +193,24 @@ echo "FALHOU" && exit
 fi;
 
 
-echo "copiando arquivo resolv.conf e colando no diretorio /etc";
-if cp --dereference /etc/resolv.conf /mnt/gentoo/etc/; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta proc";
-if mount --types proc /proc /mnt/gentoo/proc/; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta sys";
-if mount --rbind /sys /mnt/gentoo/sys; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta sys novamente";
-if mount --make-rslave /mnt/gentoo/sys; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta dev";
-if mount --rbind /dev /mnt/gentoo/dev; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta dev novamente";
-if mount --make-rslave /mnt/gentoo/dev; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta run";
-if mount --bind /run /mnt/gentoo/run; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "montando pasta run novamente"
-if mount --make-slave /mnt/gentoo/run; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
-
-
-echo "criando pasta repos.conf no diretorio /mnt/gentoo/etc/portage";
-if mkdir --parents /mnt/gentoo/etc/portage/repos.conf; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "copiando arquivo resolv.conf e colando em /etc" && \
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
+echo "montando pasta proc" && \
+mount --types proc /proc /mnt/gentoo/proc/ && \
+echo "montando pasta sys" && \
+mount --rbind /sys /mnt/gentoo/sys && \
+echo "montando pasta sys novamente" && \
+mount --make-rslave /mnt/gentoo/sys && \
+echo "montando pasta dev" && \
+mount --rbind /dev /mnt/gentoo/dev && \
+echo "montando pasta dev novamente" && \
+mount --make-rslave /mnt/gentoo/dev && \
+echo "montando pasta run" && \
+mount --bind /run /mnt/gentoo/run && \
+echo "montando pasta run novamente" && \
+mount --make-slave /mnt/gentoo/run && \
+echo "criando pasta repos.conf em /mnt/gentoo/etc/portage" && \
+mkdir --parents /mnt/gentoo/etc/portage/repos.conf && \
 
 
 echo "copiando arquivo repos.conf e colando em /mnt/gentoo/etc/portage/repos.conf";
