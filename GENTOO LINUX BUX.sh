@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-trap 'echo "FALHOU"; exit 1' ERR
+trap 'echo "FALHOU no comando: $BASH_COMMAND"' ERR
 clear;
 
 echo "formatando 1 disco valido";
