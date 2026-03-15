@@ -176,20 +176,12 @@ cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos
 
 echo "aplicando mudanças de idiomas e caracteres brasileiro";
 chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && locale-gen > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
+source /etc/profile && locale-gen > /dev/null 2>&1';
 
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
 chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && emerge-webrsync --quiet > /dev/null 2>&1; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;'
+source /etc/profile && emerge-webrsync --quiet > /dev/null 2>&1;'
 
 
 echo "selecionando perfil do portage";
