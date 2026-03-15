@@ -184,8 +184,7 @@ emerge-webrsync --quiet > /dev/null 2>&1;
 
 
 echo "selecionando perfil do portage";
-chroot /mnt/gentoo /bin/bash -c '
-if source /etc/profile && eselect profile set 1 > /dev/null 2>&1;
+eselect profile set 1 > /dev/null 2>&1;
 
 
 echo "sincronizando repositorios do portage";
