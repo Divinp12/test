@@ -1,5 +1,6 @@
 #!/bin/bash
-
+set -e
+trap 'echo "FALHOU"; exit 1' ERR
 clear;
 
 echo "formatando 1 disco valido";
@@ -31,7 +32,7 @@ echo "";
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-if echo 'COMMON_FLAGS="-O0"
+echo 'COMMON_FLAGS="-O0"
 CFLAGS="-O0"
 CXXFLAGS="-O0"
 FCFLAGS="-O0"
@@ -40,102 +41,62 @@ MAKEOPTS="-j64"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
 USE=""
 LC_MESSAGES=C.utf8
-GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf;
 
 
 echo "adicionando pasta package.mask no diretorio /mnt/gentoo/etc/portage";
-if mkdir -p /mnt/gentoo/etc/portage/package.mask; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+mkdir -p /mnt/gentoo/etc/portage/package.mask;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-if echo "app-shells/fish
+echo "app-shells/fish
 app-shells/zsh
 app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
 gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes;
 
 
 echo "adicionando pasta package.provided no diretorio /mnt/gentoo/etc/portage";
-if mkdir -p /mnt/gentoo/etc/portage/package.provided; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+mkdir -p /mnt/gentoo/etc/portage/package.provided;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-if echo "app-shells/fish
+echo "app-shells/fish
 app-shells/zsh
 app-shells/zsh-completions
 kde-plasma/plasma-meta
 kde-plasma/kde-apps-meta
 kde-plasma/plasma-desktop
 gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes;
 
 
 echo "adicionando pasta package.license no diretorio /mnt/gentoo/etc/portage";
-if mkdir -p /mnt/gentoo/etc/portage/package.license; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+mkdir -p /mnt/gentoo/etc/portage/package.license;
 
 
 echo "adicionando licença de pacotes especificos";
-if echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license/pacotes; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" > /mnt/gentoo/etc/portage/package.license/pacotes;
 
 
 echo "adicionando pasta package.accept_keywords no diretorio /etc/portage";
-if mkdir -p /mnt/gentoo/etc/portage/package.accept_keywords; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+mkdir -p /mnt/gentoo/etc/portage/package.accept_keywords;
 
 
 echo "habilitando versões especificas de pacotes"
-if echo "=sys-kernel/gentoo-sources-6.18.0
-=sys-devel/gcc-15.2.1_p20251122" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "=sys-kernel/gentoo-sources-6.18.0
+=sys-devel/gcc-15.2.1_p20251122" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes;
 
 
 echo "adicionando pasta package.use no diretorio /mnt/gentoo/etc/portage";
-if mkdir -p /mnt/gentoo/etc/portage/package.use; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+mkdir -p /mnt/gentoo/etc/portage/package.use;
 
 
 echo "criando configuração do pacote";
-if echo "dev-build/make -doc -nls -test
+echo "dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
 sys-apps/coreutils -nls -selinux -test
@@ -152,73 +113,65 @@ media-libs/freetype harfbuzz -debug -doc -X
 net-misc/wget -libproxy -debug -nls
 net-misc/curl -debug
 www-client/google-chrome pt-BR -selinux -af -am -ar -bg -bn -ca -cs -da -de -el -en-GB -es -es-419 -et -fa -fi -fil -fr -gu -he -hi -hr -hu -id -it -ja -kn -ko -lt -lv -ml -mr -ms -nb -nl -pl -pt-PT -ro -ru -sk -sl -sr -sv -sw -ta -te -th -tr -uk -ur -vi -zh-CN -zh-TW
-" > /mnt/gentoo/etc/portage/package.use/pacotes; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+" > /mnt/gentoo/etc/portage/package.use/pacotes;
 
 
 echo "adicionando fuso horario brasileiro";
-if cp /mnt/gentoo/usr/share/zoneinfo/America/Sao_Paulo /mnt/gentoo/etc/localtime; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+cp /mnt/gentoo/usr/share/zoneinfo/America/Sao_Paulo /mnt/gentoo/etc/localtime;
 
 
 echo "adicionando identificador de fuso horario brasileiro";
-if echo "America/Sao_Paulo" > /mnt/gentoo/etc/timezone; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "America/Sao_Paulo" > /mnt/gentoo/etc/timezone;
 
 
 echo "adicionando idioma e caracteres brasileiro";
-if echo "pt_BR.UTF-8 UTF-8" > /mnt/gentoo/etc/locale.gen; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+echo "pt_BR.UTF-8 UTF-8" > /mnt/gentoo/etc/locale.gen;
 
 
 echo "adicionando suporte ipv6";
-if echo "127.0.0.1 localhost.localdomain localhost
+echo "127.0.0.1 localhost.localdomain localhost
 ::1 localhost.localdomain localhost
-127.0.0.1 bux.localdomain bux" > /mnt/gentoo/etc/hosts; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+127.0.0.1 bux.localdomain bux" > /mnt/gentoo/etc/hosts;
 
 
-echo "copiando arquivo resolv.conf e colando em /etc" && \
-cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ && \
-echo "montando pasta proc" && \
-mount --types proc /proc /mnt/gentoo/proc/ && \
-echo "montando pasta sys" && \
-mount --rbind /sys /mnt/gentoo/sys && \
-echo "montando pasta sys novamente" && \
-mount --make-rslave /mnt/gentoo/sys && \
-echo "montando pasta dev" && \
-mount --rbind /dev /mnt/gentoo/dev && \
-echo "montando pasta dev novamente" && \
-mount --make-rslave /mnt/gentoo/dev && \
-echo "montando pasta run" && \
-mount --bind /run /mnt/gentoo/run && \
-echo "montando pasta run novamente" && \
-mount --make-slave /mnt/gentoo/run && \
-echo "criando pasta repos.conf em /mnt/gentoo/etc/portage" && \
-mkdir --parents /mnt/gentoo/etc/portage/repos.conf && \
+echo "copiando arquivo resolv.conf e colando em /etc";
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/;
+
+
+echo "montando pasta proc";
+mount --types proc /proc /mnt/gentoo/proc/;
+
+
+echo "montando pasta sys";
+mount --rbind /sys /mnt/gentoo/sys;
+
+
+echo "montando pasta sys novamente";
+mount --make-rslave /mnt/gentoo/sys;
+
+
+echo "montando pasta dev";
+mount --rbind /dev /mnt/gentoo/dev;
+
+
+echo "montando pasta dev novamente";
+mount --make-rslave /mnt/gentoo/dev;
+
+
+echo "montando pasta run";
+mount --bind /run /mnt/gentoo/run;
+
+
+echo "montando pasta run novamente";
+mount --make-slave /mnt/gentoo/run;
+
+
+echo "criando pasta repos.conf em /mnt/gentoo/etc/portage";
+mkdir --parents /mnt/gentoo/etc/portage/repos.conf;
 
 
 echo "copiando arquivo repos.conf e colando em /mnt/gentoo/etc/portage/repos.conf";
-if cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf; then
-echo ""
-else
-echo "FALHOU" && exit
-fi;
+cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf;
 
 
 echo "aplicando mudanças de idiomas e caracteres brasileiro";
