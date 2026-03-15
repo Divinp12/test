@@ -32,13 +32,12 @@ echo "";
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-echo 'COMMON_FLAGS="-O0"
-CFLAGS="-O0"
-CXXFLAGS="-O0"
-FCFLAGS="-O0"
-FFLAGS="-O0"
-MAKEOPTS="-j64"
-EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y"
+echo 'COMMON_FLAGS="-O2"
+CFLAGS="-O2"
+CXXFLAGS="-O2"
+FCFLAGS="-O2"
+FFLAGS="-O2"
+MAKEOPTS="-j\$(nproc)"
 USE=""
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf;
