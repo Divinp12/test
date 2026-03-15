@@ -196,6 +196,10 @@ echo "instalando gcc";
 emerge --quiet =sys-devel/gcc-15.2.1_p20251122;
 
 
+echo "instalando glibc";
+emerge --quiet sys-libs/glibc;
+
+
 echo "sobscrevendo arquivo make.conf para sistema e instalação dos pacotes do sistema";
 echo "COMMON_FLAGS=\"-O2 -march=native -mtune=native\"
 CFLAGS=\"-O2 -march=native -mtune=native\"
@@ -204,14 +208,13 @@ FCFLAGS=\"-O2 -march=native -mtune=native\"
 FFLAGS=\"-O2 -march=native -mtune=native\"
 RUSTFLAGS=\"\${RUSTFLAGS} -C target-cpu=native\"
 MAKEOPTS=\"-j\$(nproc)\"
-USE=\"wayland pulseaudio dbus -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie\"
+USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie\"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS=\"http://gentoo.c3sl.ufpr.br/\"" > /mnt/gentoo/etc/portage/make.conf;
 
 
 echo "instalando pacotes importantes";
 emerge --quiet \
-sys-libs/glibc \
 sys-devel/binutils \
 sys-apps/coreutils \
 app-shells/bash \
