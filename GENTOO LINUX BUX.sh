@@ -87,7 +87,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.accept_keywords;
 
 echo "habilitando versões especificas de pacotes"
 echo "=sys-kernel/gentoo-sources-6.19.8
-=sys-devel/gcc-15.2.1_p20251122" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes;
+=sys-devel/gcc-15.2.1_p20260214" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes;
 
 
 echo "adicionando pasta package.use no diretorio /mnt/gentoo/etc/portage";
@@ -193,7 +193,7 @@ emerge --sync --quiet > /dev/null 2>&1;
 
 
 echo "instalando gcc";
-emerge --quiet =sys-devel/gcc-15.2.1_p20251122;
+emerge --quiet =sys-devel/gcc-15.2.1_p20260214;
 
 
 echo "instalando glibc";
