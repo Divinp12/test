@@ -8,27 +8,21 @@ wipefs -a /dev/sda > /dev/null 2>&1 && \
 parted -s /dev/sda mklabel gpt && \
 parted -s /dev/sda mkpart ESP fat32 1MiB 100MiB && \
 parted -s /dev/sda set 1 esp on && \
-parted -s /dev/sda mkpart primary ext4 100MiB 30000MiB && \
-parted -s /dev/sda mkpart primary ext4 30000MiB 100% && \
+parted -s /dev/sda mkpart primary ext4 100MiB 100% && \
 partprobe && \
 mkfs.fat -F32 /dev/sda1 > /dev/null 2>&1 && \
 mkfs.ext4 -F /dev/sda2 > /dev/null 2>&1 && \
-mkfs.ext4 -F /dev/sda3 > /dev/null 2>&1 && \
 mount /dev/sda2 /mnt/gentoo && \
 mkdir /mnt/gentoo/boot && \
 mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
-mkdir /mnt/gentoo/home && \
-mount /dev/sda3 /mnt/gentoo/home && \
 wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20260322T154603Z/stage3-amd64-nomultilib-openrc-20260322T154603Z.tar.xz > /dev/null 2>&1 && \
 tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
 rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1 && \
 mkdir -p /mnt/gentoo/etc && \
 echo "UUID=$(blkid -s UUID -o value /dev/sda1) /boot/EFI vfat rw,relatime,noatime 0 2
-UUID=$(blkid -s UUID -o value /dev/sda2) / ext4 rw,relatime,noatime 0 1
-UUID=$(blkid -s UUID -o value /dev/sda3) /home ext4 rw,relatime,noatime 0 2" > /mnt/gentoo/etc/fstab && \
-mount -a -v && \
-echo "";
+UUID=$(blkid -s UUID -o value /dev/sda2) / ext4 rw,relatime,noatime 0 1" > /mnt/gentoo/etc/fstab && \
+mount -a -v;
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
@@ -48,14 +42,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.mask;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-echo "app-shells/fish
-app-shells/zsh
-app-shells/zsh-completions
-kde-plasma/plasma-meta
-kde-plasma/kde-apps-meta
-kde-plasma/plasma-desktop
-gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes;
+echo "sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes;
 
 
 echo "adicionando pasta package.provided no diretorio /mnt/gentoo/etc/portage";
@@ -63,14 +50,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.provided;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-echo "app-shells/fish
-app-shells/zsh
-app-shells/zsh-completions
-kde-plasma/plasma-meta
-kde-plasma/kde-apps-meta
-kde-plasma/plasma-desktop
-gnome-base/gdm
-sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes;
+echo "sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes;
 
 
 echo "adicionando pasta package.license no diretorio /mnt/gentoo/etc/portage";
