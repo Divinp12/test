@@ -255,16 +255,6 @@ make defconfig -j$(nproc) -C /usr/src/linux*/;
 
 echo "configurando arquivo de configuração (.config)";
 sed -i -E \
-
-#!/bin/bash
-
-clear && \
-cd /home/bux/ && \
-sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz && \
-git clone https://gitlab.archlinux.org/archlinux/packaging/packages/linux.git && \
-#-e 's/^(# ?)?(testandoollll)(=.*| is not set)?$/\2=n/' \
-
-sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_ZPOOL)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_SWAP)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_ZSWAP)(=.*| is not set)?$/\2=n/' \
