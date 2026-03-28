@@ -1568,7 +1568,7 @@ echo -e "bux\nbux" | passwd bux;
 echo "adicionando autostartx do kde plasma";
 echo "if [ \"\$(tty)\" = \"/dev/tty1\" ]; then
 exec sway > /dev/null 2>&1
-fi;" > /mnt/gentoo/home/bux/.bashrc;
+fi;" > /mnt/gentoo/home/bux/.bash_profile;
 
 
 echo "adicionando diretorio de configuração do sway";
