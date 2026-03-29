@@ -31,7 +31,7 @@ CFLAGS="-O2"
 CXXFLAGS="-O2"
 FCFLAGS="-O2"
 FFLAGS="-O2"
-MAKEOPTS="-j\$(nproc)"
+MAKEOPTS="-j2"
 USE=""
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf;
@@ -187,7 +187,7 @@ CXXFLAGS=\"-O2 -march=native -mtune=native\"
 FCFLAGS=\"-O2 -march=native -mtune=native\"
 FFLAGS=\"-O2 -march=native -mtune=native\"
 RUSTFLAGS=\"\${RUSTFLAGS} -C target-cpu=native\"
-MAKEOPTS=\"-j\$(nproc)\"
+MAKEOPTS=\"-j2\"
 USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie\"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS=\"http://gentoo.c3sl.ufpr.br/\"" > /mnt/gentoo/etc/portage/make.conf;
