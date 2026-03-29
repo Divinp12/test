@@ -32,7 +32,7 @@ CXXFLAGS="-O2 -pipe"
 FCFLAGS="-O2 -pipe"
 FFLAGS="-O2 -pipe"
 MAKEOPTS="-j1"
-USE=""
+USE="-doc -nls -multilib"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf;
 
@@ -75,7 +75,9 @@ mkdir -p /mnt/gentoo/etc/portage/package.use;
 
 
 echo "criando configuração do pacote";
-echo "dev-build/make -doc -nls -test
+echo "sys-devel/gcc -doc -nls -multilib
+sys-libs/glibc -doc -nls -multilib
+dev-build/make -doc -nls -test
 dev-build/cmake -doc -gui -ncurses -test
 sys-devel/binutils -nls -doc -zstd
 sys-apps/coreutils -nls -selinux -test
