@@ -230,7 +230,7 @@ make mrproper -j$(nproc) -C /usr/src/linux*/;
 
 
 echo "adicionando arquivo de configuração (.config)";
-make defconfig -j$(nproc) -C /usr/src/linux*/;
+make defconfig -j$(nproc) -C /usr/src/linux*/;'
 
 
 echo "configurando arquivo de configuração (.config)";
@@ -1537,6 +1537,14 @@ sudo sed -i -E \
 fi;
 
 
+echo "entrando no ambiente chroot";
+chroot /mnt/gentoo /bin/bash -c '
+
+
+echo "atualizando variáveis de ambiente globais";
+source /etc/profile && env-update;
+
+
 echo "compilando kernel customizavel";
 make all -j$(nproc) -C /usr/src/linux*/;
 
@@ -1646,4 +1654,4 @@ grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=bux -
 
 
 echo "adicionando grub na inicialização";
-grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1;
+grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1;'
