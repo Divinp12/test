@@ -31,7 +31,7 @@ CFLAGS="-O2 -pipe"
 CXXFLAGS="-O2 -pipe"
 FCFLAGS="-O2 -pipe"
 FFLAGS="-O2 -pipe"
-MAKEOPTS="-j2"
+MAKEOPTS="-j1"
 USE=""
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS="http://gentoo.c3sl.ufpr.br/"' > /mnt/gentoo/etc/portage/make.conf;
@@ -169,7 +169,7 @@ eselect profile set 1 > /dev/null 2>&1;
 
 
 echo "sincronizando repositorios do portage";
-emerge --sync --quiet > /dev/null 2>&1;
+emerge -q --sync > /dev/null 2>&1;
 
 
 echo "instalando gcc";
@@ -181,14 +181,14 @@ emerge -q sys-libs/glibc;
 
 
 echo "sobscrevendo arquivo make.conf para sistema e instalação dos pacotes do sistema";
-echo "COMMON_FLAGS=\"-O2 -march=native -mtune=native\"
-CFLAGS=\"-O2 -march=native -mtune=native\"
-CXXFLAGS=\"-O2 -march=native -mtune=native\"
-FCFLAGS=\"-O2 -march=native -mtune=native\"
-FFLAGS=\"-O2 -march=native -mtune=native\"
+echo "COMMON_FLAGS=\"-O2 -march=native -mtune=native -pipe\"
+CFLAGS=\"-O2 -march=native -mtune=native -pipe\"
+CXXFLAGS=\"-O2 -march=native -mtune=native -pipe\"
+FCFLAGS=\"-O2 -march=native -mtune=native -pipe\"
+FFLAGS=\"-O2 -march=native -mtune=native -pipe\"
 RUSTFLAGS=\"\${RUSTFLAGS} -C target-cpu=native\"
-MAKEOPTS=\"-j2\"
-USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie\"
+MAKEOPTS=\"-j1\"
+USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -kde -plasma -systemd -selinux -audit -test -debug -pie -multilib\"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS=\"http://gentoo.c3sl.ufpr.br/\"" > /mnt/gentoo/etc/portage/make.conf;
 
