@@ -161,7 +161,7 @@ source /etc/profile && locale-gen > /dev/null 2>&1;
 
 
 echo "sincronizando arvore de ebuilds do gentoo via web";
-emerge-webrsync --quiet > /dev/null 2>&1;
+emerge-webrsync -q > /dev/null 2>&1;
 
 
 echo "selecionando perfil do portage";
@@ -173,11 +173,11 @@ emerge --sync --quiet > /dev/null 2>&1;
 
 
 echo "instalando gcc";
-emerge --quiet =sys-devel/gcc-15.2.1_p20260214;
+emerge -q =sys-devel/gcc-15.2.1_p20260214;
 
 
 echo "instalando glibc";
-emerge --quiet sys-libs/glibc;
+emerge -q sys-libs/glibc;
 
 
 echo "sobscrevendo arquivo make.conf para sistema e instalação dos pacotes do sistema";
