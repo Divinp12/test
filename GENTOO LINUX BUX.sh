@@ -26,11 +26,11 @@ mount -a -v;
 
 
 echo "sobscrevendo arquivo make.conf para instalacao do gcc";
-echo 'COMMON_FLAGS="-O2"
-CFLAGS="-O2"
-CXXFLAGS="-O2"
-FCFLAGS="-O2"
-FFLAGS="-O2"
+echo 'COMMON_FLAGS="-O2 -pipe"
+CFLAGS="-O2 -pipe"
+CXXFLAGS="-O2 -pipe"
+FCFLAGS="-O2 -pipe"
+FFLAGS="-O2 -pipe"
 MAKEOPTS="-j2"
 USE=""
 LC_MESSAGES=C.utf8
