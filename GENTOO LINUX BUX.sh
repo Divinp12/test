@@ -211,7 +211,6 @@ dev-libs/wayland \
 gui-wm/sway \
 media-sound/pulseaudio-daemon \
 net-misc/networkmanager \
-net-misc/dhcpcd \
 sys-boot/grub \
 sys-boot/efibootmgr;
 
@@ -1626,10 +1625,6 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ t
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 include /etc/sway/config.d/*" > /mnt/gentoo/etc/sway/config;
-
-
-echo "adicionando suporte DHCP na inicializacao";
-rc-update add dhcpcd default;
 
 
 echo "adicionando suporte NetworkManager na inicializacao";
