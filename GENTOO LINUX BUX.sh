@@ -209,8 +209,6 @@ sys-firmware/sof-firmware \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
-gui-apps/wofi \
-app-misc/fastfetch \
 media-sound/pulseaudio-daemon \
 net-misc/networkmanager \
 net-misc/dhcpcd \
