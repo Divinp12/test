@@ -42,7 +42,8 @@ mkdir -p /mnt/gentoo/etc/portage/package.mask;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-echo "sys-apps/systemd" > /mnt/gentoo/etc/portage/package.mask/pacotes;
+echo "sys-apps/systemd
+media-fonts/*" > /mnt/gentoo/etc/portage/package.mask/pacotes;
 
 
 echo "adicionando pasta package.provided no diretorio /mnt/gentoo/etc/portage";
@@ -50,7 +51,8 @@ mkdir -p /mnt/gentoo/etc/portage/package.provided;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-echo "sys-apps/systemd" > /mnt/gentoo/etc/portage/package.provided/pacotes;
+echo "sys-apps/systemd
+media-fonts/*" > /mnt/gentoo/etc/portage/package.provided/pacotes;
 
 
 echo "adicionando pasta package.license no diretorio /mnt/gentoo/etc/portage";
@@ -190,7 +192,7 @@ FCFLAGS=\"-O2 -march=native -mtune=native -pipe\"
 FFLAGS=\"-O2 -march=native -mtune=native -pipe\"
 RUSTFLAGS=\"\${RUSTFLAGS} -C target-cpu=native\"
 MAKEOPTS=\"-j2\"
-USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -gnome -kde -plasma -xfce -systemd -selinux -audit -test -debug -pie -multilib\"
+USE=\"wayland pulseaudio dbus openrc -nls -X -aqua -bluetooth -doc -gtk-doc -gnome -kde -plasma -xfce -systemd -selinux -audit -test -debug -pie -multilib -fonts\"
 LC_MESSAGES=C.utf8
 GENTOO_MIRRORS=\"http://gentoo.c3sl.ufpr.br/\"" > /mnt/gentoo/etc/portage/make.conf;
 
