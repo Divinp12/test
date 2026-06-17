@@ -43,8 +43,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.mask;
 
 
 echo "adicionando bloqueio de instalação e atualização de pacotes não usados";
-echo "sys-apps/systemd
-media-fonts/*" > /mnt/gentoo/etc/portage/package.mask/pacotes;
+echo "#nenhum" > /mnt/gentoo/etc/portage/package.mask/pacotes;
 
 
 echo "adicionando pasta package.provided no diretorio /mnt/gentoo/etc/portage";
@@ -52,8 +51,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.provided;
 
 
 echo "adicionando ignoração de verificação de pacotes não usados";
-echo "sys-apps/systemd
-media-fonts/*" > /mnt/gentoo/etc/portage/package.provided/pacotes;
+echo "#nenhum" > /mnt/gentoo/etc/portage/package.provided/pacotes;
 
 
 echo "adicionando pasta package.license no diretorio /mnt/gentoo/etc/portage";
