@@ -16,7 +16,7 @@ mount /dev/sda2 /mnt/gentoo && \
 mkdir /mnt/gentoo/boot && \
 mkdir /mnt/gentoo/boot/EFI && \
 mount /dev/sda1 /mnt/gentoo/boot/EFI && \
-wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20260322T154603Z/stage3-amd64-nomultilib-openrc-20260322T154603Z.tar.xz > /dev/null 2>&1 && \
+wget -P /mnt/gentoo https://distfiles.gentoo.org/releases/amd64/autobuilds/20260531T160106Z/stage3-amd64-nomultilib-openrc-20260531T160106Z.tar.xz > /dev/null 2>&1 && \
 tar xvpf /mnt/gentoo/stage3-*.tar.xz -C /mnt/gentoo --xattrs-include='*.*' --numeric-owner > /dev/null 2>&1 && \
 rm -rf /mnt/gentoo/stage3-*.tar.xz > /dev/null 2>&1 && \
 mkdir -p /mnt/gentoo/etc && \
