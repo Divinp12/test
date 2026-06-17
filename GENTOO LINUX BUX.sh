@@ -67,7 +67,7 @@ mkdir -p /mnt/gentoo/etc/portage/package.accept_keywords;
 
 
 echo "habilitando versões especificas de pacotes"
-echo "=sys-kernel/gentoo-sources-6.19.8
+echo "=sys-kernel/gentoo-sources-7.0.12-r1
 =sys-devel/gcc-15.2.1_p20260214" > /mnt/gentoo/etc/portage/package.accept_keywords/pacotes;
 
 
@@ -207,7 +207,7 @@ sys-libs/readline \
 sys-apps/file \
 sys-kernel/linux-firmware \
 sys-firmware/sof-firmware \
-=sys-kernel/gentoo-sources-6.19.8 \
+=sys-kernel/gentoo-sources-7.0.12-r1 \
 media-libs/mesa \
 dev-libs/wayland \
 gui-wm/sway \
