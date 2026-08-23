@@ -22,7 +22,7 @@ sudo mkdir -p /tmp/-/DB;
 
 sudo chmod 777 /tmp/-/linux-*/bin/rexglue;
 
-sudo ./tmp/-/linux-*/bin/rexglue init --app_name DB --app_root /home/bux/360/DB;
+sudo ./tmp/-/linux-*/bin/rexglue init --app_name DB --app_root /tmp/-/DB;
 
 sudo mkdir -p /tmp/-/DB/assets;
 
