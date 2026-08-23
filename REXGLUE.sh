@@ -8,6 +8,7 @@ if [ -f /tmp/-/linux-*/bin/rexglue ]; then
 echo "Arquivo rexglue ja existe";
 else
 echo "baixando rexglue" && \
+sudo rm -rf /tmp/-/*.zip && \
 wget -P /tmp/- https://github.com/rexglue/rexglue-sdk/releases/download/nightly-20260816-509ed5bf/rexglue-sdk-0.10.0-dev.g509ed5b-linux-amd64.zip && \
 unzip /tmp/-/*.zip -d /tmp/- && \
 sudo rm -rf /tmp/-/*.zip;
