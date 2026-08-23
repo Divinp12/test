@@ -13,16 +13,16 @@ echo "baixando rexglue";
 
 wget -P /tmp/- https://github.com/rexglue/rexglue-sdk/releases/download/nightly-20260816-509ed5bf/rexglue-sdk-0.10.0-dev.g509ed5b-linux-amd64.zip;
 
-unzip rexglue-sdk*.zip -d /tmp/-;
+unzip /tmp/-/rexglue*.zip -d /tmp/-;
 
-sudo rm -rf /tmp/-/rexglue-sdk*.zip;
+sudo rm -rf /tmp/-/rexglue*.zip;
 fi;
 
 sudo mkdir -p /tmp/-/DB;
 
-sudo chmod 777 /tmp/-/linux-amd64/bin/rexglue;
+sudo chmod 777 /tmp/-/linux-*/bin/rexglue;
 
-sudo ./tmp/-/linux-amd64/bin/rexglue init --app_name DB --app_root /home/bux/360/DB;
+sudo ./tmp/-/linux-*/bin/rexglue init --app_name DB --app_root /home/bux/360/DB;
 
 sudo mkdir -p /tmp/-/DB/assets;
 
