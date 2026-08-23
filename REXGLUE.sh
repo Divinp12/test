@@ -28,8 +28,8 @@ sudo mkdir -p /tmp/-/DB/assets;
 
 sudo mkdir -p /tmp/-/DB/build;
 
-cmake /tmp/-/ -DCMAKE_BUILD_TYPE=Release;
+cmake /tmp/-/DB -DCMAKE_BUILD_TYPE=Release;
 
-cmake --build /tmp/-/build --target DB_codegen;
+cmake --build /tmp/-/DB/build --target DB_codegen;
 
 make -j$(nproc);
