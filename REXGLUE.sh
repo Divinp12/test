@@ -6,15 +6,10 @@ sudo mkdir -p /tmp/-;
 
 if [ -f /tmp/-/linux-amd64/bin/rexglue ]; then
 echo "Arquivo rexglue ja existe";
-
 else
-
-echo "baixando rexglue";
-
-wget -P /tmp/- https://github.com/rexglue/rexglue-sdk/releases/download/nightly-20260816-509ed5bf/rexglue-sdk-0.10.0-dev.g509ed5b-linux-amd64.zip;
-
-unzip /tmp/-/rexglue*.zip -d /tmp/-;
-
+echo "baixando rexglue" && \
+wget -P /tmp/- https://github.com/rexglue/rexglue-sdk/releases/download/nightly-20260816-509ed5bf/rexglue-sdk-0.10.0-dev.g509ed5b-linux-amd64.zip && \
+unzip /tmp/-/rexglue*.zip -d /tmp/- && \
 sudo rm -rf /tmp/-/rexglue*.zip;
 fi;
 
