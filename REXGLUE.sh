@@ -4,7 +4,7 @@ clear;
 
 sudo mkdir -p /tmp/-;
 
-if [ -f /tmp/-/linux-amd64/bin/rexglue ]; then
+if [ -f /tmp/-/linux-*/bin/rexglue ]; then
 echo "Arquivo rexglue ja existe";
 else
 echo "baixando rexglue" && \
