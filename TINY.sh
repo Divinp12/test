@@ -1,10 +1,9 @@
 #!/bin/bash
 clear;
-
-cd /home/bux/ && \
+cd /tmp && \
 sudo pacman -Sy --noconfirm bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python3 tar xz && \
-git clone https://gitlab.archlinux.org/archlinux/packaging/packages/linux.git && \
+git clone https://github.com/torvalds/linux && \
+make tinyconfig && \
+make -j$(nproc);
 
-cd /home/bux/linux && \
-makepkg -si --noconfirm --skippgpcheck --skipchecksums --skipinteg && \
-sudo mkinitcpio -P &&
+#sudo mkinitcpio -P
