@@ -1220,7 +1220,7 @@ sudo sed -i -E \
 -e 's/^(# ?)?(CONFIG_BPF_UNPRIV_DEFAULT_OFF)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_BPF_PRELOAD)(=.*| is not set)?$/\2=n/' \
 -e 's/^(# ?)?(CONFIG_BPF_LSM)(=.*| is not set)?$/\2=n/' \
-/tmp/linux-*/config.x86_64 && \
+/tmp/linux-*/.config && \
 make -C /tmp/linux-* -j$(nproc) && \
 sudo mv /tmp/linux-*/arch/x86/boot/bzImage /boot/EFI && \
 sudo mv /boot/EFI/bzImage /boot/EFI/vmlinuz-bux && \
