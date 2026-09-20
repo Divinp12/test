@@ -9,5 +9,3 @@ make -C /tmp/linux-* -j$(nproc) && \
 sudo mv /tmp/linux-*/arch/x86/boot/bzImage /boot/EFI && \
 sudo mv /boot/EFI/bzImage /boot/EFI/vmlinuz-bux && \
 sudo mkinitcpio -k /boot/EFI/vmlinuz-bux -g /boot/EFI/initramfs-bux.img
-
-#sudo mkinitcpio -P
