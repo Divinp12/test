@@ -6,5 +6,6 @@ tar xvpf /tmp/linux-*.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner && \
 sudo rm -rf /tmp/linux-*.tar.xz && \
 make tinyconfig && \
 make -j$(nproc);
+sudo mkinitcpio -k /boot/vmlinuz-bux -g /boot/initramfs-bux.img
 
 #sudo mkinitcpio -P
