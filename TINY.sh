@@ -24,6 +24,11 @@ KCONFIG_CONFIG=/tmp/linux-*/.config /tmp/linux-*/scripts/config \
   --enable PACKET \
   --enable FUTEX \
   --enable PRINTK \
+  --enable USB \
+  --enable USB_XHCI_HCD \
+  --enable USB_STORAGE \
+  --enable SCSI \
+  --enable BLK_DEV_SD \
   --disable MODULES \
   --set-str CMDLINE 'root=/dev/sda2 rootwait rw console=ttyS0,115200 init=/bin/sh' && \
 make -C /tmp/linux-* olddefconfig && \
