@@ -6,7 +6,7 @@ wget -P /tmp https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.6.tar.xz && 
 tar xvpf /tmp/linux-*.tar.xz -C /tmp --xattrs-include='*.*' --numeric-owner && \
 sudo rm -rf /tmp/linux-*.tar.xz && \
 make -C /tmp/linux-* tinyconfig && \
-/tmp/linux-*/scripts/config \
+KCONFIG_CONFIG=/tmp/linux-*/.config /tmp/linux-*/scripts/config \
   --enable 64BIT \
   --enable ACPI \
   --enable EFI \
